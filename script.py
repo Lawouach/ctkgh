@@ -1,6 +1,6 @@
 import secrets
 
-from ghapi import GhApi
+from ghapi.all import GhApi
 
 
 ACTION = """name: Run Reliably Experiment
