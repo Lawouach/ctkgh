@@ -37,7 +37,7 @@ def make_tree(api: GhApi, blob_sha: str) -> str:
     return api.git.create_tree(
         base_treestring=last_commit_sha,
         tree=[{
-            "path": f".github/workflows/{name}",
+            "path": f".github/workflows/action-{name}.yaml",
             "mode": "100644",
             "type": "blob",
             "sha": blob_sha
