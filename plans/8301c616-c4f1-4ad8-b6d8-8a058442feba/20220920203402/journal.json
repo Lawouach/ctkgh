@@ -1,0 +1,122 @@
+{
+  "chaoslib-version": "1.28.0",
+  "platform": "Linux-5.15.0-1019-azure-x86_64-with-glibc2.31",
+  "node": "fv-az424-137",
+  "experiment": {
+    "title": "A simple hello world experiment",
+    "method": [
+      {
+        "name": "say-hello",
+        "type": "action",
+        "provider": {
+          "path": "echo",
+          "type": "process",
+          "arguments": "hello"
+        }
+      }
+    ],
+    "version": "1.0.0",
+    "description": "n/a",
+    "steady-state-hypothesis": {
+      "title": "Check we can say hello",
+      "probes": [
+        {
+          "name": "echo-hello",
+          "type": "probe",
+          "provider": {
+            "path": "echo",
+            "type": "process",
+            "arguments": "hello boom"
+          },
+          "tolerance": 0
+        }
+      ]
+    },
+    "dry": null
+  },
+  "start": "2022-09-20T20:34:52.847345",
+  "status": "completed",
+  "deviated": false,
+  "steady_states": {
+    "before": {
+      "steady_state_met": true,
+      "probes": [
+        {
+          "activity": {
+            "name": "echo-hello",
+            "type": "probe",
+            "provider": {
+              "path": "echo",
+              "type": "process",
+              "arguments": "hello boom"
+            },
+            "tolerance": 0
+          },
+          "output": {
+            "status": 0,
+            "stdout": "hello boom\n",
+            "stderr": ""
+          },
+          "status": "succeeded",
+          "start": "2022-09-20T20:34:52.847919",
+          "end": "2022-09-20T20:34:52.850418",
+          "duration": 0.002499,
+          "tolerance_met": true
+        }
+      ]
+    },
+    "after": {
+      "steady_state_met": true,
+      "probes": [
+        {
+          "activity": {
+            "name": "echo-hello",
+            "type": "probe",
+            "provider": {
+              "path": "echo",
+              "type": "process",
+              "arguments": "hello boom"
+            },
+            "tolerance": 0
+          },
+          "output": {
+            "status": 0,
+            "stdout": "hello boom\n",
+            "stderr": ""
+          },
+          "status": "succeeded",
+          "start": "2022-09-20T20:34:52.853568",
+          "end": "2022-09-20T20:34:52.855811",
+          "duration": 0.002243,
+          "tolerance_met": true
+        }
+      ]
+    },
+    "during": []
+  },
+  "run": [
+    {
+      "activity": {
+        "name": "say-hello",
+        "type": "action",
+        "provider": {
+          "path": "echo",
+          "type": "process",
+          "arguments": "hello"
+        }
+      },
+      "output": {
+        "status": 0,
+        "stdout": "hello\n",
+        "stderr": ""
+      },
+      "status": "succeeded",
+      "start": "2022-09-20T20:34:52.850851",
+      "end": "2022-09-20T20:34:52.853207",
+      "duration": 0.002356
+    }
+  ],
+  "rollbacks": [],
+  "end": "2022-09-20T20:34:52.856264",
+  "duration": 0.01053762435913086
+}
