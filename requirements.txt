@@ -1,0 +1,12 @@
+-e git+https://github.com/chaostoolkit-incubator/chaostoolkit-reliably.git@big-reset#egg=chaostoolkit-reliably
+chaostoolkit-kubernetes
+chaostoolkit-opentracing
+opentelemetry-api
+opentelemetry-sdk
+opentelemetry-opentracing-shim
+opentelemetry-exporter-otlp-proto-http
+opentelemetry-propagator-b3
+chaostoolkit-slack
+jsonpath2
+chardet
+chaostoolkit-aws
