@@ -1,4 +1,4 @@
--e git+https://github.com/chaostoolkit-incubator/chaostoolkit-reliably.git@big-reset#egg=chaostoolkit-reliably
+-e git+https://github.com/chaostoolkit-incubator/chaostoolkit-reliably.git@big-reset#egg=chaosreliably
 chaostoolkit-kubernetes
 chaostoolkit-opentracing
 opentelemetry-api
