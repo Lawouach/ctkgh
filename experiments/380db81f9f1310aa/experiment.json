@@ -1,1 +1,0 @@
-{"title": "hey", "description": "n/a", "method": [{"type": "action", "name": "say-hello", "provider": {"type": "process", "path": "echo", "arguments": "hello there"}}]}
