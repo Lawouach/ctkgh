@@ -10,3 +10,4 @@ chaostoolkit-slack
 jsonpath2
 chardet
 chaostoolkit-aws
+aws-az-failure-chaostoolkit
