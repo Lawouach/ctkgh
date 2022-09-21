@@ -1,0 +1,49 @@
+name: Reliably Plan [f0f92253-9e99-4edb-a05f-0db198466227]
+
+on:
+  push:
+    paths:
+      - "plans/f0f92253-9e99-4edb-a05f-0db198466227/**"
+    branches:
+    - main
+
+jobs:
+  run-experiment:
+    runs-on: ubuntu-latest
+    environment: myenv
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Install dependencies
+      run: |
+        python -m pip install --prefer-binary -q -U pip setuptools wheel
+        pip install --prefer-binary -U chaostoolkit
+        if [[ -f requirements.txt ]]; then
+            pip install --prefer-binary --no-cache-dir -r requirements.txt
+        fi
+    - name: Run experiment
+      working-directory: ./plans/f0f92253-9e99-4edb-a05f-0db198466227
+      env:
+        RELIABLY_HOST: app.reliably.dev
+        RELIABLY_TOKEN: ${{ secrets.RELIABLY_TOKEN }}
+      run : |
+        export PATH=$PATH:../../bin
+        chaos run             --rollback-strategy=always             --journal-path=journal-20220921202221.json             experiment.json
+    - name: Store results
+      working-directory: ./plans/f0f92253-9e99-4edb-a05f-0db198466227
+      run: |
+        mkdir 20220921202221
+        mv chaostoolkit.log 20220921202221/chaostoolkit.log
+        mv journal-20220921202221.json 20220921202221/journal.json
+        git config user.name "${GITHUB_ACTOR}"
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git add 20220921202221
+        git commit -s -m "Plan f0f92253-9e99-4edb-a05f-0db198466227 [20220921202221]"
+        git pull --rebase origin main
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_ACTOR: ${{ github.actor }}
