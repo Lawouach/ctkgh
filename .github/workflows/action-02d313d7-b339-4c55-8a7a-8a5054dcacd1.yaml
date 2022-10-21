@@ -1,0 +1,57 @@
+name: Reliably Plan [02d313d7-b339-4c55-8a7a-8a5054dcacd1]
+
+on:
+  push:
+    paths:
+    - "plans#/02d313d7-b339-4c55-8a7a-8a5054dcacd1/**"
+    branches:
+    - main
+
+jobs:
+  run-experiment:
+    runs-on: ubuntu-latest
+    environment: myenv
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Install dependencies
+      run: |
+        python -m pip install --prefer-binary -q -U pip setuptools wheel
+        pip install --prefer-binary -U chaostoolkit
+        if [[ -f requirements.txt ]]; then
+            pip install --prefer-binary --no-cache-dir -r requirements.txt
+        fi
+    - name: Run experiment
+      working-directory: ./plans/02d313d7-b339-4c55-8a7a-8a5054dcacd1
+      env:
+        RELIABLY_HOST: app.reliably.dev
+        RELIABLY_TOKEN: ${{ secrets.RELIABLY_TOKEN }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        OTEL_EXPORTER_OTLP_TRACES_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_TRACES_HEADERS }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+      run : |
+        export PATH=$PATH:../../bin
+        chaos run \
+            --rollback-strategy=always \
+            --journal-path=journal-2022-10-21 13:25:20.713935175 UTC.json \
+            experiment.json
+    - name: Store results
+      working-directory: ./plans/02d313d7-b339-4c55-8a7a-8a5054dcacd1
+      run: |
+        mkdir 2022-10-21 13:25:20.713935175 UTC
+        mv chaostoolkit.log 2022-10-21 13:25:20.713935175 UTC/chaostoolkit.log
+        mv journal-2022-10-21 13:25:20.713935175 UTC.json 2022-10-21 13:25:20.713935175 UTC/journal.json
+        git config user.name "${GITHUB_ACTOR}"
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git add 2022-10-21 13:25:20.713935175 UTC
+        git commit -s -m "Plan 02d313d7-b339-4c55-8a7a-8a5054dcacd1 [2022-10-21 13:25:20.713935175 UTC]"
+        git pull --rebase origin main
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_ACTOR: ${{ github.actor }}
