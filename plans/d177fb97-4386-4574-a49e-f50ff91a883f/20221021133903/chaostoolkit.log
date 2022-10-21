@@ -1,0 +1,322 @@
+[2022-10-21 13:39:45 DEBUG] [cli:112] ###############################################################################
+[2022-10-21 13:39:45 DEBUG] [cli:113] Running command 'run'
+[2022-10-21 13:39:45 DEBUG] [cli:117] Using settings file '/home/runner/.chaostoolkit/settings.yaml'
+[2022-10-21 13:39:46 DEBUG] [settings:30] The Chaos Toolkit settings file could not be found at '/home/runner/.chaostoolkit/settings.yaml'.
+[2022-10-21 13:39:46 DEBUG] [__init__:399] No controls to apply on 'loader'
+[2022-10-21 13:39:46 DEBUG] [__init__:399] No controls to apply on 'loader'
+[2022-10-21 13:39:46 DEBUG] [caching:24] Building activity cache...
+[2022-10-21 13:39:46 DEBUG] [caching:35] Cached 3 activities
+[2022-10-21 13:39:46 INFO] [experiment:58] Validating the experiment's syntax
+[2022-10-21 13:39:46 DEBUG] [configuration:63] Loading configuration...
+[2022-10-21 13:39:46 DEBUG] [secret:78] Loading secrets...
+[2022-10-21 13:39:46 DEBUG] [secret:78] Loading secrets...
+[2022-10-21 13:39:46 DEBUG] [secret:104] Done loading secrets
+[2022-10-21 13:39:46 DEBUG] [secret:104] Done loading secrets
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'validate_control'
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py' does not declare 'validate_control'
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2022-10-21 13:39:46 INFO] [experiment:109] Experiment looks valid
+[2022-10-21 13:39:46 DEBUG] [caching:42] Clearing activities cache
+[2022-10-21 13:39:46 DEBUG] [caching:24] Building activity cache...
+[2022-10-21 13:39:46 DEBUG] [caching:35] Cached 3 activities
+[2022-10-21 13:39:46 DEBUG] [configuration:63] Loading configuration...
+[2022-10-21 13:39:46 DEBUG] [secret:78] Loading secrets...
+[2022-10-21 13:39:46 DEBUG] [secret:78] Loading secrets...
+[2022-10-21 13:39:46 DEBUG] [secret:104] Done loading secrets
+[2022-10-21 13:39:46 DEBUG] [secret:104] Done loading secrets
+[2022-10-21 13:39:46 DEBUG] [configuration:160] Loading dynamic configuration...
+[2022-10-21 13:39:46 INFO] [run:320] Running experiment: Losing an AZ should not impact availability
+[2022-10-21 13:39:46 DEBUG] [run:714] 1 activities will be run in the background
+[2022-10-21 13:39:46 DEBUG] [__init__:52] Initializing controls
+[2022-10-21 13:39:46 DEBUG] [__init__:61] Initializing control 'reliably'
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'configure_control'
+[2022-10-21 13:39:46 DEBUG] [__init__:61] Initializing control 'slack'
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'configure_control'
+[2022-10-21 13:39:46 DEBUG] [__init__:61] Initializing control 'opentracing'
+[2022-10-21 13:39:46 DEBUG] [python:196] Control 'configure_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:39:46 DEBUG] [control:41] Configuring opentracing control...
+[2022-10-21 13:39:46 DEBUG] [control:47] Creating a opentelemetry tracer
+[2022-10-21 13:39:46 DEBUG] [control:61] OpenTracing tracer <opentelemetry.shim.opentracing_shim.TracerShim object at 0x7fd91af1d990> created
+[2022-10-21 13:39:46 INFO] [run:344] Steady-state strategy: default
+[2022-10-21 13:39:46 INFO] [run:348] Rollbacks strategy: always
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'reliably' on 'experiment'
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_experiment_control'
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'slack' on 'experiment'
+[2022-10-21 13:39:46 DEBUG] [python:196] Control 'before_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'opentracing' on 'experiment'
+[2022-10-21 13:39:46 DEBUG] [python:196] Control 'before_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'reliably' on 'experiment'
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_experiment_control'
+[2022-10-21 13:39:46 DEBUG] [run:506] Running steady-state hypothesis before the method
+[2022-10-21 13:39:46 INFO] [hypothesis:182] Steady state hypothesis: Users should always see the service available
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'reliably' on 'hypothesis'
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_hypothesis_control'
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'slack' on 'hypothesis'
+[2022-10-21 13:39:46 DEBUG] [python:196] Control 'before_hypothesis_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'opentracing' on 'hypothesis'
+[2022-10-21 13:39:46 DEBUG] [python:196] Control 'before_hypothesis_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'reliably' on 'hypothesis'
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_hypothesis_control'
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'slack' on 'activity'
+[2022-10-21 13:39:46 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'opentracing' on 'activity'
+[2022-10-21 13:39:46 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:39:46 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-10-21 13:39:46 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-10-21 13:39:46 INFO] [activity:204] Action: get-lb-unavailable-service-error-count-during-the-last-5m
+[2022-10-21 13:39:46 DEBUG] [python:33] Activity 'get-lb-unavailable-service-error-count-during-the-last-5m' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosaws/cloudwatch/probes.py'
+[2022-10-21 13:39:46 DEBUG] [__init__:76] Using AWS region 'eu-central-1'
+[2022-10-21 13:39:46 DEBUG] [__init__:85] Client will be using profile 'default' from boto3 session
+[2022-10-21 13:39:46 DEBUG] [probes:96] Request arguments: {'Namespace': 'AWS/ApplicationELB', 'MetricName': 'HTTPCode_ELB_503_Count', 'StartTime': datetime.datetime(2022, 10, 21, 13, 34, 46, 901214), 'EndTime': datetime.datetime(2022, 10, 21, 13, 39, 46, 901214), 'Period': 300, 'Dimensions': [{'Name': 'LoadBalancer', 'Value': 'app/k8s-default-lbdemo-b42659e47c/bcdbe82dbd3b2dea'}], 'Statistics': ['Sum']}
+[2022-10-21 13:39:47 DEBUG] [activity:221]   => succeeded with '0'
+[2022-10-21 13:39:47 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-10-21 13:39:47 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-10-21 13:39:47 DEBUG] [__init__:409] Applying after-control 'slack' on 'activity'
+[2022-10-21 13:39:47 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:39:47 DEBUG] [__init__:409] Applying after-control 'opentracing' on 'activity'
+[2022-10-21 13:39:47 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:39:47 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-10-21 13:39:47 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-10-21 13:39:47 DEBUG] [hypothesis:221] allowed tolerance is 0
+[2022-10-21 13:39:47 INFO] [hypothesis:231] Steady state hypothesis is met!
+[2022-10-21 13:39:47 DEBUG] [__init__:409] Applying after-control 'reliably' on 'hypothesis'
+[2022-10-21 13:39:47 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_hypothesis_control'
+[2022-10-21 13:39:47 DEBUG] [__init__:409] Applying after-control 'slack' on 'hypothesis'
+[2022-10-21 13:39:47 DEBUG] [python:196] Control 'after_hypothesis_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:39:47 DEBUG] [__init__:409] Applying after-control 'opentracing' on 'hypothesis'
+[2022-10-21 13:39:47 DEBUG] [python:196] Control 'after_hypothesis_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:39:47 DEBUG] [__init__:409] Applying after-control 'reliably' on 'hypothesis'
+[2022-10-21 13:39:47 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_hypothesis_control'
+[2022-10-21 13:39:47 INFO] [run:607] Playing your experiment's method now...
+[2022-10-21 13:39:47 DEBUG] [__init__:409] Applying before-control 'reliably' on 'method'
+[2022-10-21 13:39:47 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2022-10-21 13:39:47 DEBUG] [__init__:409] Applying before-control 'slack' on 'method'
+[2022-10-21 13:39:47 DEBUG] [python:196] Control 'before_method_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:39:48 DEBUG] [__init__:409] Applying before-control 'opentracing' on 'method'
+[2022-10-21 13:39:48 DEBUG] [python:196] Control 'before_method_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:39:48 DEBUG] [__init__:409] Applying before-control 'reliably' on 'method'
+[2022-10-21 13:39:48 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2022-10-21 13:39:48 DEBUG] [activity:132] activity will run in the background
+[2022-10-21 13:39:48 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-10-21 13:39:48 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-10-21 13:39:48 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-10-21 13:39:48 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-10-21 13:39:48 DEBUG] [__init__:409] Applying before-control 'slack' on 'activity'
+[2022-10-21 13:39:48 DEBUG] [__init__:409] Applying before-control 'slack' on 'activity'
+[2022-10-21 13:39:48 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:39:48 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:39:48 DEBUG] [__init__:409] Applying before-control 'opentracing' on 'activity'
+[2022-10-21 13:39:48 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:39:48 DEBUG] [__init__:434] Before-control 'opentracing' failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/control/__init__.py", line 415, in apply_controls
+        apply_python_control(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/control/python.py", line 179, in apply_python_control
+        func(context=context, **arguments)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py", line 224, in before_activity_control
+        scope = tracer.start_active_span(name, child_of=scope.span, finish_on_close=True)
+    AttributeError: 'NoneType' object has no attribute 'span'
+[2022-10-21 13:39:48 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-10-21 13:39:48 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-10-21 13:39:48 INFO] [activity:198] Action: Inject mild load into our application [in background]
+[2022-10-21 13:39:48 DEBUG] [process:52] Running: ../../bin/ddosify -d 330 -n 150 -o stdout-json -t http://k8s-default-lbdemo-b42659e47c-1929532341.eu-central-1.elb.amazonaws.com/consumer/data
+[2022-10-21 13:39:48 DEBUG] [__init__:409] Applying before-control 'opentracing' on 'activity'
+[2022-10-21 13:39:48 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:39:48 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-10-21 13:39:48 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-10-21 13:39:48 INFO] [activity:204] Action: Simulate AZ Failure for ALB
+[2022-10-21 13:39:48 DEBUG] [python:33] Activity 'Simulate AZ Failure for ALB' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/azchaosaws/utils.py'
+[2022-10-21 13:39:48 DEBUG] [__init__:46] Using AWS region 'eu-central-1'
+[2022-10-21 13:39:48 WARNING] [actions:80] [ELBV2] No LBs in the target AZ found...
+[2022-10-21 13:39:48 DEBUG] [activity:276] Activity failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/azchaosaws/utils.py", line 16, in wrapper
+        return fn(**kwargs)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/azchaosaws/elbv2/actions.py", line 81, in fail_az
+        raise FailedActivity("[ELBV2] No LBs in the target AZ found...")
+    chaoslib.exceptions.ActivityFailed: [ELBV2] No LBs in the target AZ found...
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/activity.py", line 269, in run_activity
+        result = run_python_activity(activity, configuration, secrets)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 58, in run_python_activity
+        raise ActivityFailed(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/azchaosaws/utils.py", line 16, in wrapper
+        return fn(**kwargs)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/azchaosaws/elbv2/actions.py", line 81, in fail_az
+        raise FailedActivity("[ELBV2] No LBs in the target AZ found...")
+    chaoslib.exceptions.ActivityFailed: chaoslib.exceptions.ActivityFailed: [ELBV2] No LBs in the target AZ found...
+[2022-10-21 13:39:48 ERROR] [activity:229]   => failed: chaoslib.exceptions.ActivityFailed: [ELBV2] No LBs in the target AZ found...
+[2022-10-21 13:39:48 INFO] [activity:239] Pausing after activity for 300s...
+[2022-10-21 13:44:48 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-10-21 13:44:48 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-10-21 13:44:48 DEBUG] [__init__:409] Applying after-control 'slack' on 'activity'
+[2022-10-21 13:44:48 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:44:49 DEBUG] [__init__:409] Applying after-control 'opentracing' on 'activity'
+[2022-10-21 13:44:49 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:44:49 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-10-21 13:44:49 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-10-21 13:44:49 DEBUG] [run:840] Waiting for background activities to complete
+[2022-10-21 13:45:18 DEBUG] [__init__:157] Data encoding detected as 'ascii' with a confidence of 1.0
+[2022-10-21 13:45:18 DEBUG] [activity:221]   => succeeded with '{'status': 0, 'stdout': '{"success_perc":0,"fail_perc":100,"success_count":0,"fail_count":150,"avg_duration":0,"steps":{"1":{"name":"","status_code_dist":{},"error_dist":{"dial tcp: lookup k8s-default-lbdemo-b42659e47c-1929532341.eu-central-1.elb.amazonaws.com on 127.0.0.53:53: no such host":150},"durations":{},"success_count":0,"fail_count":150,"success_perc":0,"fail_perc":100}}}\n', 'stderr': ''}'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-10-21 13:45:18 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying after-control 'slack' on 'activity'
+[2022-10-21 13:45:18 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying after-control 'opentracing' on 'activity'
+[2022-10-21 13:45:18 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:18 DEBUG] [__init__:434] After-control 'opentracing' failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/control/__init__.py", line 415, in apply_controls
+        apply_python_control(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/control/python.py", line 179, in apply_python_control
+        func(context=context, **arguments)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py", line 251, in after_activity_control
+        span = scope.span
+    AttributeError: 'NoneType' object has no attribute 'span'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-10-21 13:45:18 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying after-control 'reliably' on 'method'
+[2022-10-21 13:45:18 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying after-control 'slack' on 'method'
+[2022-10-21 13:45:18 DEBUG] [python:196] Control 'after_method_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying after-control 'opentracing' on 'method'
+[2022-10-21 13:45:18 DEBUG] [python:196] Control 'after_method_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying after-control 'reliably' on 'method'
+[2022-10-21 13:45:18 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2022-10-21 13:45:18 DEBUG] [run:536] Running steady-state hypothesis after the method
+[2022-10-21 13:45:18 INFO] [hypothesis:182] Steady state hypothesis: Users should always see the service available
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying before-control 'reliably' on 'hypothesis'
+[2022-10-21 13:45:18 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_hypothesis_control'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying before-control 'slack' on 'hypothesis'
+[2022-10-21 13:45:18 DEBUG] [python:196] Control 'before_hypothesis_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying before-control 'opentracing' on 'hypothesis'
+[2022-10-21 13:45:18 DEBUG] [python:196] Control 'before_hypothesis_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying before-control 'reliably' on 'hypothesis'
+[2022-10-21 13:45:18 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_hypothesis_control'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-10-21 13:45:18 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying before-control 'slack' on 'activity'
+[2022-10-21 13:45:18 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying before-control 'opentracing' on 'activity'
+[2022-10-21 13:45:18 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:18 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-10-21 13:45:18 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-10-21 13:45:18 INFO] [activity:204] Action: get-lb-unavailable-service-error-count-during-the-last-5m
+[2022-10-21 13:45:18 DEBUG] [python:33] Activity 'get-lb-unavailable-service-error-count-during-the-last-5m' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosaws/cloudwatch/probes.py'
+[2022-10-21 13:45:18 DEBUG] [__init__:76] Using AWS region 'eu-central-1'
+[2022-10-21 13:45:18 DEBUG] [__init__:85] Client will be using profile 'default' from boto3 session
+[2022-10-21 13:45:18 DEBUG] [probes:96] Request arguments: {'Namespace': 'AWS/ApplicationELB', 'MetricName': 'HTTPCode_ELB_503_Count', 'StartTime': datetime.datetime(2022, 10, 21, 13, 40, 18, 949016), 'EndTime': datetime.datetime(2022, 10, 21, 13, 45, 18, 949016), 'Period': 300, 'Dimensions': [{'Name': 'LoadBalancer', 'Value': 'app/k8s-default-lbdemo-b42659e47c/bcdbe82dbd3b2dea'}], 'Statistics': ['Sum']}
+[2022-10-21 13:45:19 DEBUG] [activity:221]   => succeeded with '0'
+[2022-10-21 13:45:19 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-10-21 13:45:19 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-10-21 13:45:19 DEBUG] [__init__:409] Applying after-control 'slack' on 'activity'
+[2022-10-21 13:45:19 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:45:19 DEBUG] [__init__:409] Applying after-control 'opentracing' on 'activity'
+[2022-10-21 13:45:19 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:19 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-10-21 13:45:19 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-10-21 13:45:19 DEBUG] [hypothesis:221] allowed tolerance is 0
+[2022-10-21 13:45:19 INFO] [hypothesis:231] Steady state hypothesis is met!
+[2022-10-21 13:45:19 DEBUG] [__init__:409] Applying after-control 'reliably' on 'hypothesis'
+[2022-10-21 13:45:19 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_hypothesis_control'
+[2022-10-21 13:45:19 DEBUG] [__init__:409] Applying after-control 'slack' on 'hypothesis'
+[2022-10-21 13:45:19 DEBUG] [python:196] Control 'after_hypothesis_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying after-control 'opentracing' on 'hypothesis'
+[2022-10-21 13:45:20 DEBUG] [python:196] Control 'after_hypothesis_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying after-control 'reliably' on 'hypothesis'
+[2022-10-21 13:45:20 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_hypothesis_control'
+[2022-10-21 13:45:20 WARNING] [run:641] Rollbacks were explicitly requested to be played
+[2022-10-21 13:45:20 INFO] [run:893] Let's rollback...
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying before-control 'reliably' on 'rollback'
+[2022-10-21 13:45:20 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying before-control 'slack' on 'rollback'
+[2022-10-21 13:45:20 DEBUG] [python:196] Control 'before_rollback_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying before-control 'opentracing' on 'rollback'
+[2022-10-21 13:45:20 DEBUG] [python:196] Control 'before_rollback_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying before-control 'reliably' on 'rollback'
+[2022-10-21 13:45:20 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2022-10-21 13:45:20 INFO] [rollback:30] Rollback: Recover AZ Failure for ALB
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-10-21 13:45:20 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying before-control 'slack' on 'activity'
+[2022-10-21 13:45:20 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying before-control 'opentracing' on 'activity'
+[2022-10-21 13:45:20 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-10-21 13:45:20 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-10-21 13:45:20 INFO] [activity:204] Action: Recover AZ Failure for ALB
+[2022-10-21 13:45:20 DEBUG] [python:33] Activity 'Recover AZ Failure for ALB' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/azchaosaws/elbv2/actions.py'
+[2022-10-21 13:45:20 DEBUG] [activity:276] Activity failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/azchaosaws/elbv2/actions.py", line 173, in recover_az
+        state_path = validate_fail_az_path(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/azchaosaws/helpers.py", line 42, in validate_fail_az_path
+        raise FailedActivity(
+    chaoslib.exceptions.ActivityFailed: [ELBV2] To rollback AZ failure, you must specify the path to the file generated from fail_az (fail_az.elbv2.json)
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/activity.py", line 269, in run_activity
+        result = run_python_activity(activity, configuration, secrets)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 58, in run_python_activity
+        raise ActivityFailed(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/azchaosaws/elbv2/actions.py", line 173, in recover_az
+        state_path = validate_fail_az_path(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/azchaosaws/helpers.py", line 42, in validate_fail_az_path
+        raise FailedActivity(
+    chaoslib.exceptions.ActivityFailed: chaoslib.exceptions.ActivityFailed: [ELBV2] To rollback AZ failure, you must specify the path to the file generated from fail_az (fail_az.elbv2.json)
+[2022-10-21 13:45:20 ERROR] [activity:229]   => failed: chaoslib.exceptions.ActivityFailed: [ELBV2] To rollback AZ failure, you must specify the path to the file generated from fail_az (fail_az.elbv2.json)
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-10-21 13:45:20 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying after-control 'slack' on 'activity'
+[2022-10-21 13:45:20 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying after-control 'opentracing' on 'activity'
+[2022-10-21 13:45:20 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-10-21 13:45:20 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying after-control 'reliably' on 'rollback'
+[2022-10-21 13:45:20 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying after-control 'slack' on 'rollback'
+[2022-10-21 13:45:20 DEBUG] [python:196] Control 'after_rollback_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying after-control 'opentracing' on 'rollback'
+[2022-10-21 13:45:20 DEBUG] [python:196] Control 'after_rollback_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying after-control 'reliably' on 'rollback'
+[2022-10-21 13:45:20 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2022-10-21 13:45:20 INFO] [run:458] Experiment ended with status: completed
+[2022-10-21 13:45:20 DEBUG] [__init__:409] Applying after-control 'reliably' on 'experiment'
+[2022-10-21 13:45:20 DEBUG] [python:196] Control 'after_experiment_control' loaded from '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py'
+[2022-10-21 13:45:20 DEBUG] [__init__:29] Reliably client TLS verification: True
+[2022-10-21 13:45:20 DEBUG] [__init__:30] Reliably client scheme: https
+[2022-10-21 13:45:21 DEBUG] [experiment:47] Response from https://app.reliably.dev/api/v1/organization/8f67bb6a-4944-40af-80b0-921023467cdc/experiments/4e6f6a1f-ebac-41c0-be7b-ac79803d896a/executions: 404
+[2022-10-21 13:45:21 DEBUG] [__init__:409] Applying after-control 'slack' on 'experiment'
+[2022-10-21 13:45:21 DEBUG] [python:196] Control 'after_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2022-10-21 13:45:21 DEBUG] [__init__:409] Applying after-control 'opentracing' on 'experiment'
+[2022-10-21 13:45:21 DEBUG] [python:196] Control 'after_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:21 DEBUG] [__init__:409] Applying after-control 'reliably' on 'experiment'
+[2022-10-21 13:45:21 DEBUG] [python:196] Control 'after_experiment_control' loaded from '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py'
+[2022-10-21 13:45:21 DEBUG] [__init__:29] Reliably client TLS verification: True
+[2022-10-21 13:45:21 DEBUG] [__init__:30] Reliably client scheme: https
+[2022-10-21 13:45:21 DEBUG] [experiment:47] Response from https://app.reliably.dev/api/v1/organization/8f67bb6a-4944-40af-80b0-921023467cdc/experiments/5653c16d-1e17-44b4-9f12-2fea9b246749/executions: 201
+[2022-10-21 13:45:21 DEBUG] [__init__:91] Cleaning up controls
+[2022-10-21 13:45:21 DEBUG] [__init__:100] Cleaning up control 'reliably'
+[2022-10-21 13:45:21 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/src/chaostoolkit-reliably/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2022-10-21 13:45:21 DEBUG] [__init__:100] Cleaning up control 'slack'
+[2022-10-21 13:45:21 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'cleanup_control'
+[2022-10-21 13:45:21 DEBUG] [__init__:100] Cleaning up control 'opentracing'
+[2022-10-21 13:45:21 DEBUG] [python:196] Control 'cleanup_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaostracing/control.py'
+[2022-10-21 13:45:21 DEBUG] [caching:42] Clearing activities cache
