@@ -1,0 +1,14 @@
+name: Run Reliably Experiment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-experiment:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run Reliably CLI
+      uses: reliablyhq/actions@v0
+      with:
+        args: --help
