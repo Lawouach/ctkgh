@@ -9,6 +9,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Run Reliably CLI
-      uses: reliablyhq/actions@v0
+      uses: reliablyhq/actions@v1
+      env:
+        RELIABLY_AGENT_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
       with:
         args: --help
