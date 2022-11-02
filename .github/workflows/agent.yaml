@@ -1,4 +1,4 @@
-name: Run Reliably Experiment
+name: Run Agent
 
 on:
   workflow_dispatch:
