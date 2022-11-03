@@ -13,4 +13,4 @@ jobs:
       env:
         RELIABLY_AGENT_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
       with:
-        args: --help
+        args: version
