@@ -1,0 +1,17 @@
+name: Execute a Reliably Plan
+
+on:
+  workflow_dispatch:
+    inputs:
+      experiment-url:
+        required: true
+
+jobs:
+  run-experiment:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run Reliably CLI
+      uses: reliablyhq/actions/plan@v0
+      env:
+        RELIABLY_TOKEN: ${{ secrets.RELIABLY_TOKEN }}
