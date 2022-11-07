@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       experiment-url:
+        description: The full URL to a Reliably experiment
         required: true
 
 jobs:
