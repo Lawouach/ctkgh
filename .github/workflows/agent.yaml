@@ -11,7 +11,7 @@ jobs:
     - name: Run Reliably CLI
       uses: reliablyhq/actions/agent@v0
       with:
-        reliably-version: 0.1.10
+        reliably-version: 0.1.11
       env:
         RELIABLY_AGENT_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
         OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_TRACES_ENDPOINT }}
