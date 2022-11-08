@@ -6,17 +6,19 @@ on:
       reliably-experiment-url:
         description: The full URL to a Reliably experiment
         required: true
+      environment-name:
+        description: The name of the environment to pass secrets
+        required: false
+        default: myenv
 
 jobs:
   run-experiment:
     runs-on: ubuntu-22.04
-    environment: myenv
+    environment: ${{ inputs.environment-name }}
     steps:
     - uses: actions/checkout@v3
-    - name: Install Reliably dependencies
-      uses: reliablyhq/actions/plan@main
-    - name: Run Reliably Experiment
-      run: |
+    - uses: reliablyhq/actions/plan@main
+    - run: |
         export PATH=$PATH:./bin
         chaos run --rollback-strategy=always ${{ inputs.reliably-experiment-url }}
       env:
