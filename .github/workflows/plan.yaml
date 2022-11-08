@@ -10,6 +10,7 @@ on:
 jobs:
   run-experiment:
     runs-on: ubuntu-22.04
+    environment: myenv
     steps:
     - uses: actions/checkout@v3
     - name: Run Reliably CLI
@@ -17,3 +18,5 @@ jobs:
       with:
         reliably-agent-token: ${{ secrets.RELIABLY_AGENT_TOKEN }}
         reliably-experiment-url: ${{ inputs.reliably-experiment-url }}
+      env:
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
