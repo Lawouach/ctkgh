@@ -13,11 +13,10 @@ jobs:
     environment: myenv
     steps:
     - uses: actions/checkout@v3
-    - name: Run Reliably CLI
-      uses: reliablyhq/actions/plan@v0
-      secrets: inherit
-      with:
-        reliably-agent-token: ${{ secrets.RELIABLY_AGENT_TOKEN }}
-        reliably-experiment-url: ${{ inputs.reliably-experiment-url }}
+    - name: Install Reliably dependencies
+      uses: reliablyhq/actions/plan@main
+    - name: Run Reliably Experiment
+      run: chaos run --rollback-strategy=always ${{ inputs.reliably-experiment-url }}
       env:
+        CHAOSTOOLKIT_LOADER_AUTH_BEARER_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
