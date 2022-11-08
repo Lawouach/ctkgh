@@ -15,5 +15,5 @@ jobs:
     - name: Run Reliably CLI
       uses: reliablyhq/actions/plan@v0
       with:
-        reliably-agent-token: ${{ secrets.RELIABLY_TOKEN }}
+        reliably-agent-token: ${{ secrets.RELIABLY_AGENT_TOKEN }}
         reliably-experiment-url: ${{ inputs.reliably-experiment-url }}
