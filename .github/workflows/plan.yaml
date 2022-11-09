@@ -3,7 +3,7 @@ name: Execute a Reliably Plan
 on:
   workflow_dispatch:
     inputs:
-      reliably-experiment-url:
+      experiment-url:
         description: The full URL to a Reliably experiment
         required: true
       environment-name:
