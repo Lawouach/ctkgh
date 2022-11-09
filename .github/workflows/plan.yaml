@@ -9,7 +9,6 @@ on:
       environment-name:
         description: The name of the environment to pass secrets
         required: false
-        default: myenv
 
 jobs:
   run-experiment:
@@ -18,9 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: reliablyhq/actions/plan@main
-    - run: |
-        export PATH=$PATH:./bin
-        chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
+    - run: chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
       env:
         CHAOSTOOLKIT_LOADER_AUTH_BEARER_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
