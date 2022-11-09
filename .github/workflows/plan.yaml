@@ -20,7 +20,7 @@ jobs:
     - uses: reliablyhq/actions/plan@main
     - run: |
         export PATH=$PATH:./bin
-        chaos run --rollback-strategy=always ${{ inputs.reliably-experiment-url }}
+        chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
       env:
         CHAOSTOOLKIT_LOADER_AUTH_BEARER_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
