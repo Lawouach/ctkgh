@@ -21,3 +21,5 @@ jobs:
       env:
         CHAOSTOOLKIT_LOADER_AUTH_BEARER_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        RELIABLY_HOST: app.reliably.dev
+        RELIABLY_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
