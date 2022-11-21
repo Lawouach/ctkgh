@@ -6,16 +6,20 @@ on:
       experiment-url:
         description: The full URL to a Reliably experiment
         required: true
-      environment-name:
-        description: The name of the environment to pass secrets
-        required: false
       plan-id:
         description: The identifier of the plan which triggered this workflow
+        required: true
+      environment-name:
+        description: The name of the environment to pass secrets
         required: false
       reliably-host:
         description: Reliably's host domain
         required: false
         default: app.reliably.dev
+
+concurrency: 
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   run-experiment:
