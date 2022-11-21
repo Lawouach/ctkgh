@@ -36,7 +36,7 @@ jobs:
         URL=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_REF}/plans/${{ inputs.plan-id }}/${UTCNOW}
         echo 'RELIABLY_EXECUTION_EXTRA=[{"type": "url", "provider": "github", "value": "${URL}"}]' >> $GITHUB_ENV
     - name: Execute Reliably Experiment
-      working-directory: ./plans/${{ inputs.plan-id }}
+      working-directory: ./plans/${{ env.basedir }}
       run: chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
       env:
         CHAOSTOOLKIT_LOADER_AUTH_BEARER_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
@@ -44,12 +44,9 @@ jobs:
         RELIABLY_HOST: ${{ inputs.reliably-host }}
         RELIABLY_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
     - name: Store results
-      working-directory: ./plans/${{ inputs.plan-id }}
+      working-directory: ./plans/${{ env.basedir }}
       run: |
         export EXECUTION_URL=$(cat journal.json | jq -r '.experiment.extensions[] | select(.name=="reliably") | .execution_url')
-
-        mv chaostoolkit.log ${{ env.basedir }}/chaostoolkit.log
-        mv journal.json ${{ env.basedir }}/journal.json
 
         git config user.name "${GITHUB_ACTOR}"
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
