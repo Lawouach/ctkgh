@@ -32,7 +32,7 @@ jobs:
       run: |
         NOW=$(date --utc --iso-8601=seconds)
         mkdir -p ./plans/${{ inputs.plan-id }}/${NOW}
-        echo "basedir=./plans/${{ inputs.plan-id }}/${NOW}"" >> $GITHUB_ENV
+        echo "basedir=./plans/${{ inputs.plan-id }}/${NOW}" >> $GITHUB_ENV
         URL=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_REF}/plans/${{ inputs.plan-id }}/${UTCNOW}
         echo 'RELIABLY_EXECUTION_EXTRA=[{"type": "url", "provider": "github", "value": "${URL}"}]' >> $GITHUB_ENV
     - name: Execute Reliably Experiment
