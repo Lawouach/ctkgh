@@ -24,6 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: reliablyhq/actions/plan@main
+    - run: mkdir -p ./plans/${{ inputs.plan-id }}
     - name: Execute Reliably Experiment
       working-directory: ./plans/${{ inputs.plan-id }}
       run: chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
