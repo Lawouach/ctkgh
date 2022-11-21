@@ -28,7 +28,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: reliablyhq/actions/plan@main
-    - run: mkdir -p ./plans/${{ inputs.plan-id }}
+    - name: Create directory to hold the results
+      run: |
+        export NOW=$(date --utc --iso-8601=seconds)
+        mkdir -p ./plans/${{ inputs.plan-id }}/${NOW}
+        URL=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_REF}/plans/${{ inputs.plan-id }}/${NOW}
+        echo 'RELIABLY_EXECUTION_EXTRA=[{"type": "url", "provider": "github", "value": "${URL}"}]' >> $GITHUB_ENV
     - name: Execute Reliably Experiment
       working-directory: ./plans/${{ inputs.plan-id }}
       run: chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
@@ -40,9 +45,6 @@ jobs:
     - name: Store results
       working-directory: ./plans/${{ inputs.plan-id }}
       run: |
-        export NOW=$(date --utc --iso-8601=seconds)
-        mkdir ${NOW}
-
         export EXECUTION_URL=$(cat journal.json | jq -r '.experiment.extensions[] | select(.name=="reliably") | .execution_url')
 
         mv chaostoolkit.log ${NOW}/chaostoolkit.log
