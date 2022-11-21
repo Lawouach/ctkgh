@@ -30,10 +30,9 @@ jobs:
     - uses: reliablyhq/actions/plan@main
     - name: Create directory to hold the results
       run: |
-        UTCNOW=$(date --utc --iso-8601=seconds)
-        echo NOW=${NOW} >> $GITHUB_ENV
-
-        mkdir -p ./plans/${{ inputs.plan-id }}/${UTCNOW}
+        NOW=$(date --utc --iso-8601=seconds)
+        mkdir -p ./plans/${{ inputs.plan-id }}/${NOW}
+        echo "basedir=./plans/${{ inputs.plan-id }}/${NOW}"" >> $GITHUB_ENV
         URL=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_REF}/plans/${{ inputs.plan-id }}/${UTCNOW}
         echo 'RELIABLY_EXECUTION_EXTRA=[{"type": "url", "provider": "github", "value": "${URL}"}]' >> $GITHUB_ENV
     - name: Execute Reliably Experiment
@@ -49,13 +48,13 @@ jobs:
       run: |
         export EXECUTION_URL=$(cat journal.json | jq -r '.experiment.extensions[] | select(.name=="reliably") | .execution_url')
 
-        mv chaostoolkit.log ${NOW}/chaostoolkit.log
-        mv journal.json ${NOW}/journal.json
+        mv chaostoolkit.log ${{ env.basedir }}/chaostoolkit.log
+        mv journal.json ${{ env.basedir }}/journal.json
 
         git config user.name "${GITHUB_ACTOR}"
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-        git add ${NOW}
-        git commit -s -m "Plan ${{ inputs.plan-id }} [${NOW}]" -m "Visit ${EXECUTION_URL}"
+        git add ${{ env.basedir }}
+        git commit -s -m "Plan ${{ inputs.plan-id }}" -m "Visit ${EXECUTION_URL}"
         git pull --rebase origin main
         git push
       env:
