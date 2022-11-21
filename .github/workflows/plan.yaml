@@ -12,6 +12,10 @@ on:
       plan-id:
         description: The identifier of the plan which triggered this workflow
         required: false
+      reliably-host:
+        description: Reliably's host domain
+        required: false
+        default: app.reliably.dev
 
 jobs:
   run-experiment:
@@ -20,24 +24,27 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: reliablyhq/actions/plan@main
-    - run: chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
-      working-directory: ./plans/${{ inputs.plan_id }}
+    - name: Execute Reliably Experiment
+      working-directory: ./plans/${{ inputs.plan-id }}
+      run: chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
       env:
         CHAOSTOOLKIT_LOADER_AUTH_BEARER_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        RELIABLY_HOST: app.reliably.dev
+        RELIABLY_HOST: ${{ inputs.reliably-host }}
         RELIABLY_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
     - name: Store results
-      working-directory: ./plans/${{ inputs.plan_id }}
+      working-directory: ./plans/${{ inputs.plan-id }}
       run: |
         export NOW=$(date --utc --iso-8601=seconds)
         mkdir ${NOW}
+
         mv chaostoolkit.log ${NOW}/chaostoolkit.log
         mv journal.json ${NOW}/journal.json
+
         git config user.name "${GITHUB_ACTOR}"
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
         git add ${NOW}
-        git commit -s -m "Plan ${{ inputs.plan_id }} [${NOW}]"
+        git commit -s -m "Plan ${{ inputs.plan-id }} [${NOW}]"
         git pull --rebase origin main
         git push
       env:
