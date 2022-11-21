@@ -43,7 +43,7 @@ jobs:
         export NOW=$(date --utc --iso-8601=seconds)
         mkdir ${NOW}
 
-        export EXECUTION_URL=$(cat journal.json | jq -r '.experiment.extensions[] | select(.name=="reliably") | .execution_url)
+        export EXECUTION_URL=$(cat journal.json | jq -r '.experiment.extensions[] | select(.name=="reliably") | .execution_url')
 
         mv chaostoolkit.log ${NOW}/chaostoolkit.log
         mv journal.json ${NOW}/journal.json
