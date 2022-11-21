@@ -1,0 +1,84 @@
+{
+  "chaoslib-version": "1.29.0",
+  "platform": "Linux-5.15.0-1022-azure-x86_64-with-glibc2.35",
+  "node": "fv-az166-922",
+  "experiment": {
+    "title": "A simple hello world experiment",
+    "method": [
+      {
+        "name": "dis-bonjour",
+        "type": "action",
+        "provider": {
+          "path": "echo",
+          "type": "process",
+          "arguments": "${message}"
+        }
+      }
+    ],
+    "version": "1.0.0",
+    "controls": [
+      {
+        "name": "reliably",
+        "provider": {
+          "type": "python",
+          "module": "chaosreliably.controls.experiment",
+          "arguments": {
+            "exp_id": "58397051-3da8-488c-9312-eccf388fe7cf",
+            "org_id": "8f67bb6a-4944-40af-80b0-921023467cdc"
+          }
+        }
+      }
+    ],
+    "description": "n/a",
+    "configuration": {
+      "message": "Bonjour !"
+    },
+    "dry": null,
+    "extensions": [
+      {
+        "name": "reliably",
+        "execution_url": "https://app.reliably.dev/executions/view/?id=a92496fe-2010-44e1-a4dc-2b41bb8e1862&exp=58397051-3da8-488c-9312-eccf388fe7cf",
+        "extra": [
+          {
+            "type": "url",
+            "provider": "github",
+            "value": "https://github.com/Lawouach/ctkgh/blob/refs/heads/main/plans/66dd088e-8b41-4287-9784-0963f77d9c48/"
+          }
+        ]
+      }
+    ]
+  },
+  "start": "2022-11-21T13:46:47.598786",
+  "status": "completed",
+  "deviated": false,
+  "steady_states": {
+    "before": null,
+    "after": null,
+    "during": []
+  },
+  "run": [
+    {
+      "activity": {
+        "name": "dis-bonjour",
+        "type": "action",
+        "provider": {
+          "path": "echo",
+          "type": "process",
+          "arguments": "${message}"
+        }
+      },
+      "output": {
+        "status": 0,
+        "stdout": "Bonjour !\n",
+        "stderr": ""
+      },
+      "status": "succeeded",
+      "start": "2022-11-21T13:46:47.600798",
+      "end": "2022-11-21T13:46:47.603112",
+      "duration": 0.002314
+    }
+  ],
+  "rollbacks": [],
+  "end": "2022-11-21T13:46:47.603834",
+  "duration": 0.0066297054290771484
+}

@@ -1,0 +1,61 @@
+[2022-11-21 13:46:46 DEBUG] [cli:112] ###############################################################################
+[2022-11-21 13:46:46 DEBUG] [cli:113] Running command 'run'
+[2022-11-21 13:46:46 DEBUG] [cli:117] Using settings file '/home/runner/.chaostoolkit/settings.yaml'
+[2022-11-21 13:46:47 DEBUG] [settings:30] The Chaos Toolkit settings file could not be found at '/home/runner/.chaostoolkit/settings.yaml'.
+[2022-11-21 13:46:47 DEBUG] [__init__:399] No controls to apply on 'loader'
+[2022-11-21 13:46:47 DEBUG] [loader:129] Fetched experiment: 
+    {"title":"A simple hello world experiment","method":[{"name":"dis-bonjour","type":"action","provider":{"path":"echo","type":"process","arguments":"${message}"}}],"version":"1.0.0","controls":[{"name":"reliably","provider":{"type":"python","module":"chaosreliably.controls.experiment","arguments":{"exp_id":"58397051-3da8-488c-9312-eccf388fe7cf","org_id":"8f67bb6a-4944-40af-80b0-921023467cdc"}}}],"description":"n/a","configuration":{"message":"Bonjour !"}}
+[2022-11-21 13:46:47 DEBUG] [__init__:399] No controls to apply on 'loader'
+[2022-11-21 13:46:47 DEBUG] [caching:24] Building activity cache...
+[2022-11-21 13:46:47 DEBUG] [caching:35] Cached 1 activities
+[2022-11-21 13:46:47 INFO] [experiment:58] Validating the experiment's syntax
+[2022-11-21 13:46:47 DEBUG] [configuration:63] Loading configuration...
+[2022-11-21 13:46:47 DEBUG] [secret:78] Loading secrets...
+[2022-11-21 13:46:47 DEBUG] [secret:104] Done loading secrets
+[2022-11-21 13:46:47 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2022-11-21 13:46:47 INFO] [experiment:109] Experiment looks valid
+[2022-11-21 13:46:47 DEBUG] [caching:42] Clearing activities cache
+[2022-11-21 13:46:47 DEBUG] [caching:24] Building activity cache...
+[2022-11-21 13:46:47 DEBUG] [caching:35] Cached 1 activities
+[2022-11-21 13:46:47 DEBUG] [configuration:63] Loading configuration...
+[2022-11-21 13:46:47 DEBUG] [secret:78] Loading secrets...
+[2022-11-21 13:46:47 DEBUG] [secret:104] Done loading secrets
+[2022-11-21 13:46:47 DEBUG] [configuration:160] Loading dynamic configuration...
+[2022-11-21 13:46:47 INFO] [run:320] Running experiment: A simple hello world experiment
+[2022-11-21 13:46:47 DEBUG] [__init__:52] Initializing controls
+[2022-11-21 13:46:47 DEBUG] [__init__:61] Initializing control 'reliably'
+[2022-11-21 13:46:47 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'configure_control'
+[2022-11-21 13:46:47 INFO] [run:344] Steady-state strategy: default
+[2022-11-21 13:46:47 INFO] [run:348] Rollbacks strategy: always
+[2022-11-21 13:46:47 INFO] [run:353] No steady state hypothesis defined. That's ok, just exploring.
+[2022-11-21 13:46:47 DEBUG] [__init__:409] Applying before-control 'reliably' on 'experiment'
+[2022-11-21 13:46:47 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_experiment_control'
+[2022-11-21 13:46:47 INFO] [run:607] Playing your experiment's method now...
+[2022-11-21 13:46:47 DEBUG] [__init__:409] Applying before-control 'reliably' on 'method'
+[2022-11-21 13:46:47 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2022-11-21 13:46:47 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-11-21 13:46:47 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-11-21 13:46:47 INFO] [activity:204] Action: dis-bonjour
+[2022-11-21 13:46:47 DEBUG] [process:52] Running: /usr/bin/echo Bonjour !
+[2022-11-21 13:46:47 DEBUG] [activity:221]   => succeeded with '{'status': 0, 'stdout': 'Bonjour !\n', 'stderr': ''}'
+[2022-11-21 13:46:47 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-11-21 13:46:47 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-11-21 13:46:47 DEBUG] [__init__:409] Applying after-control 'reliably' on 'method'
+[2022-11-21 13:46:47 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2022-11-21 13:46:47 WARNING] [run:641] Rollbacks were explicitly requested to be played
+[2022-11-21 13:46:47 INFO] [run:893] Let's rollback...
+[2022-11-21 13:46:47 DEBUG] [__init__:409] Applying before-control 'reliably' on 'rollback'
+[2022-11-21 13:46:47 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2022-11-21 13:46:47 INFO] [rollback:27] No declared rollbacks, let's move on.
+[2022-11-21 13:46:47 DEBUG] [__init__:409] Applying after-control 'reliably' on 'rollback'
+[2022-11-21 13:46:47 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2022-11-21 13:46:47 INFO] [run:458] Experiment ended with status: completed
+[2022-11-21 13:46:47 DEBUG] [__init__:409] Applying after-control 'reliably' on 'experiment'
+[2022-11-21 13:46:47 DEBUG] [python:196] Control 'after_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py'
+[2022-11-21 13:46:47 DEBUG] [__init__:38] Reliably client TLS verification: True
+[2022-11-21 13:46:47 DEBUG] [__init__:39] Reliably client scheme: https
+[2022-11-21 13:46:47 DEBUG] [experiment:77] Response from https://app.reliably.dev/api/v1/organization/8f67bb6a-4944-40af-80b0-921023467cdc/experiments/58397051-3da8-488c-9312-eccf388fe7cf/executions: 201
+[2022-11-21 13:46:47 DEBUG] [__init__:91] Cleaning up controls
+[2022-11-21 13:46:47 DEBUG] [__init__:100] Cleaning up control 'reliably'
+[2022-11-21 13:46:47 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2022-11-21 13:46:47 DEBUG] [caching:42] Clearing activities cache
