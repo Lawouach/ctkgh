@@ -25,6 +25,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: reliablyhq/actions/plan@main
     - name: Execute Reliably Experiment
+      working-directory: ./plans/${{ inputs.plan-id }}
       run: chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
       env:
         CHAOSTOOLKIT_LOADER_AUTH_BEARER_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
@@ -32,17 +33,17 @@ jobs:
         RELIABLY_HOST: ${{ inputs.reliably-host }}
         RELIABLY_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
     - name: Store results
+      working-directory: ./plans/${{ inputs.plan-id }}
       run: |
         export NOW=$(date --utc --iso-8601=seconds)
-        export TARGET_DIR=./plans/${{ inputs.plan-id }}/${NOW}
-        mkdir -p ${NOW}
+        mkdir ${NOW}
 
-        mv chaostoolkit.log ${TARGET_DIR}/chaostoolkit.log
-        mv journal.json ${TARGET_DIR}/journal.json
+        mv chaostoolkit.log ${NOW}/chaostoolkit.log
+        mv journal.json ${NOW}/journal.json
 
         git config user.name "${GITHUB_ACTOR}"
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-        git add ${TARGET_DIR}
+        git add ${NOW}
         git commit -s -m "Plan ${{ inputs.plan-id }} [${NOW}]"
         git pull --rebase origin main
         git push
