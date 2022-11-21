@@ -1,0 +1,78 @@
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.ref }}
+jobs:
+  run-experiment:
+    environment: ${{ inputs.environment-name }}
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: reliablyhq/actions/plan@main
+    - name: Create directory to hold the results
+      run: 'NOW=$(date --utc --iso-8601=seconds)
+
+        mkdir -p ${{ inputs.reliably-plan-dir }}/${{ inputs.plan-id }}/${NOW}
+
+        echo "basedir=${{ inputs.reliably-plan-dir }}/${{ inputs.plan-id }}/${NOW}"
+        >> $GITHUB_ENV
+
+        URL=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/${GITHUB_REF}/${{ inputs.reliably-plan-dir
+        }}/${{ inputs.plan-id }}/${NOW}
+
+        echo "RELIABLY_EXECUTION_EXTRA=[{\"type\": \"url\", \"provider\": \"github\",
+        \"value\": \"${URL}\"}]" >> $GITHUB_ENV
+
+        '
+    - env:
+        CHAOSTOOLKIT_LOADER_AUTH_BEARER_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
+        RELIABLY_HOST: ${{ inputs.reliably-host }}
+        RELIABLY_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+      name: Execute Reliably Experiment
+      run: chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
+      working-directory: ${{ env.basedir }}
+    - env:
+        GITHUB_ACTOR: ${{ github.actor }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      name: Store results
+      run: 'export EXECUTION_URL=$(cat journal.json | jq -r ''.experiment.extensions[]
+        | select(.name=="reliably") | .execution_url'')
+
+
+        git config user.name "${GITHUB_ACTOR}"
+
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+        git add .
+
+        git commit -s -m "Plan ${{ inputs.plan-id }}" -m "Visit ${EXECUTION_URL}"
+
+        git pull --rebase origin main
+
+        git push
+
+        '
+      working-directory: ${{ env.basedir }}
+name: Execute a Reliably Plan
+'on':
+  schedule:
+    cron: '0 * * * * '
+  workflow_dispatch:
+    inputs:
+      environment-name:
+        description: The name of the environment to pass secrets
+        required: false
+      experiment-url:
+        description: The full URL to a Reliably experiment
+        required: true
+      plan-id:
+        description: The identifier of the plan which triggered this workflow
+        required: true
+      reliably-host:
+        default: app.reliably.dev
+        description: Reliably's host domain
+        required: false
+      reliably-plan-dir:
+        default: plans
+        description: The base directory where to store plan results
+        required: false
