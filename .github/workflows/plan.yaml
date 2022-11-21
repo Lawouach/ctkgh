@@ -30,9 +30,11 @@ jobs:
     - uses: reliablyhq/actions/plan@main
     - name: Create directory to hold the results
       run: |
-        export NOW=$(date --utc --iso-8601=seconds)
-        mkdir -p ./plans/${{ inputs.plan-id }}/${NOW}
-        URL=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_REF}/plans/${{ inputs.plan-id }}/${NOW}
+        UTCNOW=$(date --utc --iso-8601=seconds)
+        echo NOW=${NOW} >> $GITHUB_ENV
+
+        mkdir -p ./plans/${{ inputs.plan-id }}/${UTCNOW}
+        URL=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_REF}/plans/${{ inputs.plan-id }}/${UTCNOW}
         echo 'RELIABLY_EXECUTION_EXTRA=[{"type": "url", "provider": "github", "value": "${URL}"}]' >> $GITHUB_ENV
     - name: Execute Reliably Experiment
       working-directory: ./plans/${{ inputs.plan-id }}
