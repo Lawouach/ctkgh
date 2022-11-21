@@ -19,7 +19,7 @@ on:
       reliably-plan-dir:
         description: The base directory where to store plan results
         required: false
-        default: ./plans
+        default: plans
 
 concurrency: 
   group: ${{ github.ref }}
@@ -35,9 +35,9 @@ jobs:
     - name: Create directory to hold the results
       run: |
         NOW=$(date --utc --iso-8601=seconds)
-        mkdir -p ./${{ reliably-plan-dir }}/${{ inputs.plan-id }}/${NOW}
-        echo "basedir=./${{ reliably-plan-dir }}/${{ inputs.plan-id }}/${NOW}" >> $GITHUB_ENV
-        URL=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/${GITHUB_REF}/${{ reliably-plan-dir }}/${{ inputs.plan-id }}/${NOW}
+        mkdir -p ${{ inputs.reliably-plan-dir }}/${{ inputs.plan-id }}/${NOW}
+        echo "basedir=${{ inputs.reliably-plan-dir }}/${{ inputs.plan-id }}/${NOW}" >> $GITHUB_ENV
+        URL=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/${GITHUB_REF}/${{ inputs.reliably-plan-dir }}/${{ inputs.plan-id }}/${NOW}
         echo "RELIABLY_EXECUTION_EXTRA=[{\"type\": \"url\", \"provider\": \"github\", \"value\": \"${URL}\"}]" >> $GITHUB_ENV
     - name: Execute Reliably Experiment
       working-directory: ${{ env.basedir }}
