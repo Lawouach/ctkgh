@@ -34,7 +34,7 @@ jobs:
         mkdir -p ./plans/${{ inputs.plan-id }}/${NOW}
         echo "basedir=./plans/${{ inputs.plan-id }}/${NOW}" >> $GITHUB_ENV
         URL=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_REF}/plans/${{ inputs.plan-id }}/${UTCNOW}
-        echo 'RELIABLY_EXECUTION_EXTRA=[{"type": "url", "provider": "github", "value": "${URL}"}]' >> $GITHUB_ENV
+        echo "RELIABLY_EXECUTION_EXTRA=[{\"type\": \"url\", \"provider\": \"github\", \"value\": \"${URL}\"}]" >> $GITHUB_ENV
     - name: Execute Reliably Experiment
       working-directory: ${{ env.basedir }}
       run: chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
@@ -46,7 +46,6 @@ jobs:
     - name: Store results
       working-directory: ${{ env.basedir }}
       run: |
-        echo $(pwd)
         export EXECUTION_URL=$(cat journal.json | jq -r '.experiment.extensions[] | select(.name=="reliably") | .execution_url')
 
         git config user.name "${GITHUB_ACTOR}"
