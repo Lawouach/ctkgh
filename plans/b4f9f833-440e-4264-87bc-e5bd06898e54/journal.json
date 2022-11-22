@@ -1,0 +1,77 @@
+{
+  "chaoslib-version": "1.29.0",
+  "platform": "Linux-5.15.0-1022-azure-x86_64-with-glibc2.35",
+  "node": "fv-az244-561",
+  "experiment": {
+    "title": "A simple hello world experiment",
+    "method": [
+      {
+        "name": "dis-bonjour",
+        "type": "action",
+        "provider": {
+          "path": "echo",
+          "type": "process",
+          "arguments": "${message}"
+        }
+      }
+    ],
+    "version": "1.0.0",
+    "controls": [
+      {
+        "name": "reliably",
+        "provider": {
+          "type": "python",
+          "module": "chaosreliably.controls.experiment",
+          "arguments": {
+            "exp_id": "58397051-3da8-488c-9312-eccf388fe7cf",
+            "org_id": "8f67bb6a-4944-40af-80b0-921023467cdc"
+          }
+        }
+      }
+    ],
+    "description": "n/a",
+    "configuration": {
+      "message": "Bonjour !"
+    },
+    "dry": null,
+    "extensions": [
+      {
+        "name": "reliably",
+        "execution_url": "https://app.reliably.dev/executions/view/?id=69b028e8-5cf5-4b74-99d2-91ea7770afdc&exp=58397051-3da8-488c-9312-eccf388fe7cf"
+      }
+    ]
+  },
+  "start": "2022-11-22T16:28:39.987675",
+  "status": "completed",
+  "deviated": false,
+  "steady_states": {
+    "before": null,
+    "after": null,
+    "during": []
+  },
+  "run": [
+    {
+      "activity": {
+        "name": "dis-bonjour",
+        "type": "action",
+        "provider": {
+          "path": "echo",
+          "type": "process",
+          "arguments": "${message}"
+        }
+      },
+      "output": {
+        "status": 0,
+        "stdout": "Bonjour !\n",
+        "stderr": ""
+      },
+      "status": "succeeded",
+      "start": "2022-11-22T16:28:39.990113",
+      "end": "2022-11-22T16:28:39.993018",
+      "duration": 0.002905
+    }
+  ],
+  "rollbacks": [],
+  "end": "2022-11-22T16:28:39.994361",
+  "duration": 0.008693695068359375
+}
