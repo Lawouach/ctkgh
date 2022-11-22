@@ -15,14 +15,14 @@ jobs:
     - uses: actions/checkout@v3
     - uses: reliablyhq/actions/plan@main
     - name: Execute Reliably Experiment
-      working-directory: ${{ env.basedir }}
+      working-directory: ${{ env.BASE_DIR }}
       run: chaos run --rollback-strategy=always ${{ env.EXPERIMENT_URL }}
       env:
         CHAOSTOOLKIT_LOADER_AUTH_BEARER_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         RELIABLY_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
     - name: Store results
-      working-directory: ${{ env.basedir }}
+      working-directory: ${{ env.BASE_DIR }}
       run: |
         export EXECUTION_URL=$(cat journal.json | jq -r '.experiment.extensions[] | select(.name=="reliably") | .execution_url')
 
