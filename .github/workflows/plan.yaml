@@ -1,25 +1,6 @@
 name: Execute a Reliably Plan
 
-on:
-  workflow_dispatch:
-    inputs:
-      experiment-url:
-        description: The full URL to a Reliably experiment
-        required: true
-      plan-id:
-        description: The identifier of the plan which triggered this workflow
-        required: true
-      environment-name:
-        description: The name of the environment to pass secrets
-        required: false
-      reliably-host:
-        description: Reliably's host domain
-        required: false
-        default: app.reliably.dev
-      reliably-plan-dir:
-        description: The base directory where to store plan results
-        required: false
-        default: plans
+on: workflow_dispatch
 
 concurrency: 
   group: ${{ github.ref }}
@@ -28,24 +9,15 @@ concurrency:
 jobs:
   run-experiment:
     runs-on: ubuntu-22.04
-    environment: ${{ inputs.environment-name }}
     steps:
     - uses: actions/checkout@v3
     - uses: reliablyhq/actions/plan@main
-    - name: Create directory to hold the results
-      run: |
-        NOW=$(date --utc --iso-8601=seconds)
-        mkdir -p ${{ inputs.reliably-plan-dir }}/${{ inputs.plan-id }}/${NOW}
-        echo "basedir=${{ inputs.reliably-plan-dir }}/${{ inputs.plan-id }}/${NOW}" >> $GITHUB_ENV
-        URL=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/${GITHUB_REF}/${{ inputs.reliably-plan-dir }}/${{ inputs.plan-id }}/${NOW}
-        echo "RELIABLY_EXECUTION_EXTRA=[{\"type\": \"url\", \"provider\": \"github\", \"value\": \"${URL}\"}]" >> $GITHUB_ENV
     - name: Execute Reliably Experiment
       working-directory: ${{ env.basedir }}
-      run: chaos run --rollback-strategy=always ${{ inputs.experiment-url }}
+      run: chaos run --rollback-strategy=always ${{ env.EXPERIMENT_URL }}
       env:
         CHAOSTOOLKIT_LOADER_AUTH_BEARER_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        RELIABLY_HOST: ${{ inputs.reliably-host }}
         RELIABLY_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
     - name: Store results
       working-directory: ${{ env.basedir }}
@@ -55,7 +27,7 @@ jobs:
         git config user.name "${GITHUB_ACTOR}"
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
         git add .
-        git commit -s -m "Plan ${{ inputs.plan-id }}" -m "Visit ${EXECUTION_URL}"
+        git commit -s -m "Plan ${{ env.PLAN_ID }}" -m "Visit ${EXECUTION_URL}"
         git pull --rebase origin main
         git push
       env:
