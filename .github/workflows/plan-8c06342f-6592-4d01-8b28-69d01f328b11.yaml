@@ -1,0 +1,34 @@
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.ref }}
+jobs:
+  run-experiment:
+    environment: myenv
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: reliablyhq/actions/plan@main
+      with:
+        working-dir: plans/8c06342f-6592-4d01-8b28-69d01f328b11
+    - env:
+        CHAOSTOOLKIT_LOADER_AUTH_BEARER_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
+        RELIABLY_TOKEN: ${{ secrets.RELIABLY_AGENT_TOKEN }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+      name: Execute Reliably Experiment
+      run: chaos run --rollback-strategy=always ${{ env.EXPERIMENT_URL }}
+      working-directory: ${{ env.basedir }}
+    - env:
+        GITHUB_ACTOR: ${{ github.actor }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      name: Store results
+      run: "export EXECUTION_URL=$(cat journal.json | jq -r '.experiment.extensions[]\
+        \ | select(.name==\"reliably\") | .execution_url')\n\ngit config user.name\
+        \ \"${GITHUB_ACTOR}\"\ngit config user.email \"${GITHUB_ACTOR}@users.noreply.github.com\"\
+        \ngit add .\ngit commit -s -m \"Plan ${{ env.PLAN_ID }}\" -m \"Visit ${EXECUTION_URL}\"\
+        \ngit pull --rebase origin main\ngit push\n"
+      working-directory: ${{ env.basedir }}
+name: Execute a Reliably Plan
+on:
+  schedule:
+  - cron: '* * * * * '
+  workflow_dispatch: null
