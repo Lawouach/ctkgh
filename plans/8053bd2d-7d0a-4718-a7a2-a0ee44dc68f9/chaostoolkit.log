@@ -3688,3 +3688,126 @@
 [2022-11-23 04:57:59 DEBUG] [__init__:100] Cleaning up control 'reliably'
 [2022-11-23 04:57:59 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
 [2022-11-23 04:57:59 DEBUG] [caching:42] Clearing activities cache
+[2022-11-23 05:21:47 DEBUG] [cli:112] ###############################################################################
+[2022-11-23 05:21:47 DEBUG] [cli:113] Running command 'run'
+[2022-11-23 05:21:47 DEBUG] [cli:117] Using settings file '/home/runner/.chaostoolkit/settings.yaml'
+[2022-11-23 05:21:48 DEBUG] [settings:30] The Chaos Toolkit settings file could not be found at '/home/runner/.chaostoolkit/settings.yaml'.
+[2022-11-23 05:21:48 DEBUG] [__init__:399] No controls to apply on 'loader'
+[2022-11-23 05:21:48 DEBUG] [loader:129] Fetched experiment: 
+    {"title":"A simple hello world experiment","method":[{"name":"dis-bonjour","type":"action","provider":{"path":"echo","type":"process","arguments":"${message}"}}],"version":"1.0.0","controls":[{"name":"reliably","provider":{"type":"python","module":"chaosreliably.controls.experiment","arguments":{"exp_id":"58397051-3da8-488c-9312-eccf388fe7cf","org_id":"8f67bb6a-4944-40af-80b0-921023467cdc"}}}],"description":"n/a","configuration":{"message":"Bonjour !"}}
+[2022-11-23 05:21:48 DEBUG] [__init__:399] No controls to apply on 'loader'
+[2022-11-23 05:21:48 DEBUG] [caching:24] Building activity cache...
+[2022-11-23 05:21:48 DEBUG] [caching:35] Cached 1 activities
+[2022-11-23 05:21:48 INFO] [experiment:58] Validating the experiment's syntax
+[2022-11-23 05:21:48 DEBUG] [configuration:63] Loading configuration...
+[2022-11-23 05:21:48 DEBUG] [secret:78] Loading secrets...
+[2022-11-23 05:21:48 DEBUG] [secret:104] Done loading secrets
+[2022-11-23 05:21:49 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2022-11-23 05:21:49 INFO] [experiment:109] Experiment looks valid
+[2022-11-23 05:21:49 DEBUG] [caching:42] Clearing activities cache
+[2022-11-23 05:21:49 DEBUG] [caching:24] Building activity cache...
+[2022-11-23 05:21:49 DEBUG] [caching:35] Cached 1 activities
+[2022-11-23 05:21:49 DEBUG] [configuration:63] Loading configuration...
+[2022-11-23 05:21:49 DEBUG] [secret:78] Loading secrets...
+[2022-11-23 05:21:49 DEBUG] [secret:104] Done loading secrets
+[2022-11-23 05:21:49 DEBUG] [configuration:160] Loading dynamic configuration...
+[2022-11-23 05:21:49 INFO] [run:320] Running experiment: A simple hello world experiment
+[2022-11-23 05:21:49 DEBUG] [__init__:52] Initializing controls
+[2022-11-23 05:21:49 DEBUG] [__init__:61] Initializing control 'reliably'
+[2022-11-23 05:21:49 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'configure_control'
+[2022-11-23 05:21:49 INFO] [run:344] Steady-state strategy: default
+[2022-11-23 05:21:49 INFO] [run:348] Rollbacks strategy: always
+[2022-11-23 05:21:49 INFO] [run:353] No steady state hypothesis defined. That's ok, just exploring.
+[2022-11-23 05:21:49 DEBUG] [__init__:409] Applying before-control 'reliably' on 'experiment'
+[2022-11-23 05:21:49 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_experiment_control'
+[2022-11-23 05:21:49 INFO] [run:607] Playing your experiment's method now...
+[2022-11-23 05:21:49 DEBUG] [__init__:409] Applying before-control 'reliably' on 'method'
+[2022-11-23 05:21:49 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2022-11-23 05:21:49 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2022-11-23 05:21:49 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2022-11-23 05:21:49 INFO] [activity:204] Action: dis-bonjour
+[2022-11-23 05:21:49 DEBUG] [process:52] Running: /usr/bin/echo Bonjour !
+[2022-11-23 05:21:49 DEBUG] [activity:221]   => succeeded with '{'status': 0, 'stdout': 'Bonjour !\n', 'stderr': ''}'
+[2022-11-23 05:21:49 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2022-11-23 05:21:49 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2022-11-23 05:21:49 DEBUG] [__init__:409] Applying after-control 'reliably' on 'method'
+[2022-11-23 05:21:49 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2022-11-23 05:21:49 WARNING] [run:641] Rollbacks were explicitly requested to be played
+[2022-11-23 05:21:49 INFO] [run:893] Let's rollback...
+[2022-11-23 05:21:49 DEBUG] [__init__:409] Applying before-control 'reliably' on 'rollback'
+[2022-11-23 05:21:49 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2022-11-23 05:21:49 INFO] [rollback:27] No declared rollbacks, let's move on.
+[2022-11-23 05:21:49 DEBUG] [__init__:409] Applying after-control 'reliably' on 'rollback'
+[2022-11-23 05:21:49 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2022-11-23 05:21:49 INFO] [run:458] Experiment ended with status: completed
+[2022-11-23 05:21:49 DEBUG] [__init__:409] Applying after-control 'reliably' on 'experiment'
+[2022-11-23 05:21:49 DEBUG] [python:196] Control 'after_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py'
+[2022-11-23 05:21:49 DEBUG] [__init__:38] Reliably client TLS verification: True
+[2022-11-23 05:21:49 DEBUG] [__init__:39] Reliably client scheme: https
+[2022-11-23 05:21:49 DEBUG] [experiment:51] An error occurred: [Errno -3] Temporary failure in name resolution, while running the after-experiment control, the execution won't be affected.
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpcore/_exceptions.py", line 8, in map_exceptions
+        yield
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpcore/backends/sync.py", line 86, in connect_tcp
+        sock = socket.create_connection(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/socket.py", line 824, in create_connection
+        for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/socket.py", line 955, in getaddrinfo
+        for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+    socket.gaierror: [Errno -3] Temporary failure in name resolution
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+        yield
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+        resp = self._pool.handle_request(req)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 252, in handle_request
+        raise exc
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+        response = connection.handle_request(request)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 86, in handle_request
+        raise exc
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 63, in handle_request
+        stream = self._connect(request)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 111, in _connect
+        stream = self._network_backend.connect_tcp(**kwargs)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpcore/backends/sync.py", line 85, in connect_tcp
+        with map_exceptions(exc_map):
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/contextlib.py", line 153, in __exit__
+        self.gen.throw(typ, value, traceback)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpcore/_exceptions.py", line 12, in map_exceptions
+        raise to_exc(exc)
+    httpcore.ConnectError: [Errno -3] Temporary failure in name resolution
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py", line 32, in after_experiment_control
+        result = complete_run(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py", line 73, in complete_run
+        resp = session.post(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpx/_client.py", line 1136, in post
+        return self.request(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+        return self.send(request, auth=auth, follow_redirects=follow_redirects)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+        response = self._send_handling_auth(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+        response = self._send_handling_redirects(
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+        response = self._send_single_request(request)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+        response = transport.handle_request(request)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+        with map_httpcore_exceptions():
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/contextlib.py", line 153, in __exit__
+        self.gen.throw(typ, value, traceback)
+      File "/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+        raise mapped_exc(message) from exc
+    httpx.ConnectError: [Errno -3] Temporary failure in name resolution
+[2022-11-23 05:21:49 DEBUG] [__init__:91] Cleaning up controls
+[2022-11-23 05:21:49 DEBUG] [__init__:100] Cleaning up control 'reliably'
+[2022-11-23 05:21:49 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2022-11-23 05:21:49 DEBUG] [caching:42] Clearing activities cache
