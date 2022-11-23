@@ -1,0 +1,21 @@
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.ref }}
+jobs:
+  run-experiment:
+    environment: myenv
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - env:
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+      uses: reliablyhq/actions/plan@main
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        reliably-agent-token: ${{ secrets.RELIABLY_AGENT_TOKEN }}
+        working-dir: plans/339c4d24-1b67-49c0-9151-03d837be8f99
+name: Execute a Reliably Plan
+on:
+  schedule:
+  - cron: '* * * * *'
+  workflow_dispatch: null
