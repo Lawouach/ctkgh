@@ -1,7 +1,7 @@
 {
   "chaoslib-version": "1.29.0",
-  "platform": "Linux-5.15.0-1023-azure-x86_64-with-glibc2.35",
-  "node": "fv-az577-70",
+  "platform": "Linux-5.15.0-1022-azure-x86_64-with-glibc2.35",
+  "node": "fv-az174-925",
   "experiment": {
     "title": "A simple hello world experiment",
     "method": [
@@ -35,7 +35,7 @@
     },
     "dry": null
   },
-  "start": "2022-11-23T05:21:49.010851",
+  "start": "2022-11-23T05:36:08.864924",
   "status": "completed",
   "deviated": false,
   "steady_states": {
@@ -60,12 +60,12 @@
         "stderr": ""
       },
       "status": "succeeded",
-      "start": "2022-11-23T05:21:49.011895",
-      "end": "2022-11-23T05:21:49.014302",
-      "duration": 0.002407
+      "start": "2022-11-23T05:36:08.867227",
+      "end": "2022-11-23T05:36:08.870383",
+      "duration": 0.003156
     }
   ],
   "rollbacks": [],
-  "end": "2022-11-23T05:21:49.015034",
-  "duration": 0.005809307098388672
+  "end": "2022-11-23T05:36:08.872131",
+  "duration": 0.009135723114013672
 }
