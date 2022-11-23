@@ -1,7 +1,7 @@
 {
   "chaoslib-version": "1.29.0",
   "platform": "Linux-5.15.0-1022-azure-x86_64-with-glibc2.35",
-  "node": "fv-az305-324",
+  "node": "fv-az411-783",
   "experiment": {
     "title": "A simple hello world experiment",
     "method": [
@@ -37,11 +37,11 @@
     "extensions": [
       {
         "name": "reliably",
-        "execution_url": "https://app.reliably.dev/executions/view/?id=ac6d6f07-b4c3-4c2a-8572-20a8b620f1e1&exp=58397051-3da8-488c-9312-eccf388fe7cf"
+        "execution_url": "https://app.reliably.dev/executions/view/?id=8175a175-c13c-4c0d-a6bc-5eb5a05d538e&exp=58397051-3da8-488c-9312-eccf388fe7cf"
       }
     ]
   },
-  "start": "2022-11-23T06:58:58.899858",
+  "start": "2022-11-23T07:21:54.080238",
   "status": "completed",
   "deviated": false,
   "steady_states": {
@@ -66,12 +66,12 @@
         "stderr": ""
       },
       "status": "succeeded",
-      "start": "2022-11-23T06:58:58.901545",
-      "end": "2022-11-23T06:58:58.903794",
-      "duration": 0.002249
+      "start": "2022-11-23T07:21:54.081930",
+      "end": "2022-11-23T07:21:54.084563",
+      "duration": 0.002633
     }
   ],
   "rollbacks": [],
-  "end": "2022-11-23T06:58:58.904509",
-  "duration": 0.006186246871948242
+  "end": "2022-11-23T07:21:54.085771",
+  "duration": 0.007595062255859375
 }
