@@ -1,0 +1,17 @@
+jobs:
+  run-experiment:
+    environment: myenv
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: reliablyhq/actions/plan@main
+      with:
+        experiment-url: https://https://app.reliably.dev/api/v1/organization/8f67bb6a-4944-40af-80b0-921023467cdc/experiments/58397051-3da8-488c-9312-eccf388fe7cf/raw
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        plan-id: 7be33e08-1e3e-4ed5-b196-447e019dc651
+        reliably-agent-token: ${{ secrets.RELIABLY_AGENT_TOKEN }}
+        reliably-host: https://https://app.reliably.dev
+        working-dir: plans/7be33e08-1e3e-4ed5-b196-447e019dc651
+name: Execute a Reliably Plan
+on:
+  workflow_dispatch: {}
