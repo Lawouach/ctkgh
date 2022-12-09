@@ -1,7 +1,7 @@
 {
   "chaoslib-version": "1.29.0",
   "platform": "Linux-5.15.0-1024-azure-x86_64-with-glibc2.35",
-  "node": "fv-az438-632",
+  "node": "fv-az407-478",
   "experiment": {
     "title": "Latency remains under 200ms",
     "method": [],
@@ -47,7 +47,7 @@
               "module": "chaosreliably.activities.http.tolerances",
               "arguments": {
                 "latency": "${reliably_latency}",
-                "value": 0.178813
+                "value": 0.149322
               }
             }
           }
@@ -58,11 +58,11 @@
     "extensions": [
       {
         "name": "reliably",
-        "execution_url": "https://app.reliably.dev/executions/view/?id=065898e8-96de-42d4-94f6-3602a1bcc500&exp=af794e96-6099-4b1a-b379-5c8f91d91ba0"
+        "execution_url": "https://app.reliably.dev/executions/view/?id=c72d2d52-8137-435a-a570-3f9533580fa2&exp=af794e96-6099-4b1a-b379-5c8f91d91ba0"
       }
     ]
   },
-  "start": "2022-12-09T16:31:42.741097",
+  "start": "2022-12-09T17:08:46.878441",
   "status": "completed",
   "deviated": false,
   "steady_states": {
@@ -90,16 +90,16 @@
                 "module": "chaosreliably.activities.http.tolerances",
                 "arguments": {
                   "latency": "${reliably_latency}",
-                  "value": 0.178813
+                  "value": 0.149322
                 }
               }
             }
           },
-          "output": 0.149519,
+          "output": 0.179233,
           "status": "succeeded",
-          "start": "2022-12-09T16:31:42.742150",
-          "end": "2022-12-09T16:31:42.965954",
-          "duration": 0.223804,
+          "start": "2022-12-09T17:08:46.879876",
+          "end": "2022-12-09T17:08:47.125572",
+          "duration": 0.245696,
           "tolerance_met": true
         }
       ]
@@ -128,16 +128,16 @@
                 "module": "chaosreliably.activities.http.tolerances",
                 "arguments": {
                   "latency": "${reliably_latency}",
-                  "value": 0.178813
+                  "value": 0.149322
                 }
               }
             }
           },
-          "output": 0.178813,
+          "output": 0.149322,
           "status": "succeeded",
-          "start": "2022-12-09T16:31:42.968134",
-          "end": "2022-12-09T16:31:43.220807",
-          "duration": 0.252673,
+          "start": "2022-12-09T17:08:47.128537",
+          "end": "2022-12-09T17:08:47.344452",
+          "duration": 0.215915,
           "tolerance_met": true
         }
       ]
@@ -146,6 +146,6 @@
   },
   "run": [],
   "rollbacks": [],
-  "end": "2022-12-09T16:31:43.221883",
-  "duration": 0.4823157787322998
+  "end": "2022-12-09T17:08:47.346212",
+  "duration": 0.46964144706726074
 }
