@@ -1,0 +1,151 @@
+{
+  "chaoslib-version": "1.29.0",
+  "platform": "Linux-5.15.0-1024-azure-x86_64-with-glibc2.35",
+  "node": "fv-az364-2",
+  "experiment": {
+    "title": "Latency remains under 200ms",
+    "method": [],
+    "version": "1.0.0",
+    "controls": [
+      {
+        "name": "reliably",
+        "provider": {
+          "type": "python",
+          "module": "chaosreliably.controls.experiment",
+          "arguments": {
+            "exp_id": "af794e96-6099-4b1a-b379-5c8f91d91ba0",
+            "org_id": "8f67bb6a-4944-40af-80b0-921023467cdc"
+          }
+        }
+      }
+    ],
+    "description": "Verify that our endpoint responds under a reasonable amount of time",
+    "configuration": {
+      "reliably_url": "https://reliably.com",
+      "reliably_latency": 0.2
+    },
+    "steady-state-hypothesis": {
+      "title": "capture-response-time-and-verify-it",
+      "probes": [
+        {
+          "name": "measure-endpoint-response-time",
+          "type": "probe",
+          "provider": {
+            "func": "measure_response_time",
+            "type": "python",
+            "module": "chaosreliably.activities.http.probes",
+            "arguments": {
+              "url": "${reliably_url}"
+            }
+          },
+          "tolerance": {
+            "name": "validate-response-time",
+            "type": "probe",
+            "provider": {
+              "func": "response_time_must_be_under",
+              "type": "python",
+              "module": "chaosreliably.activities.http.tolerances",
+              "arguments": {
+                "latency": "${reliably_latency}",
+                "value": 0.118523
+              }
+            }
+          }
+        }
+      ]
+    },
+    "dry": null,
+    "extensions": [
+      {
+        "name": "reliably",
+        "execution_url": "https://app.reliably.dev/executions/view/?id=53390057-282d-4c85-a622-223d3afa4979&exp=af794e96-6099-4b1a-b379-5c8f91d91ba0"
+      }
+    ]
+  },
+  "start": "2022-12-19T10:25:48.851249",
+  "status": "completed",
+  "deviated": false,
+  "steady_states": {
+    "before": {
+      "steady_state_met": true,
+      "probes": [
+        {
+          "activity": {
+            "name": "measure-endpoint-response-time",
+            "type": "probe",
+            "provider": {
+              "func": "measure_response_time",
+              "type": "python",
+              "module": "chaosreliably.activities.http.probes",
+              "arguments": {
+                "url": "${reliably_url}"
+              }
+            },
+            "tolerance": {
+              "name": "validate-response-time",
+              "type": "probe",
+              "provider": {
+                "func": "response_time_must_be_under",
+                "type": "python",
+                "module": "chaosreliably.activities.http.tolerances",
+                "arguments": {
+                  "latency": "${reliably_latency}",
+                  "value": 0.118523
+                }
+              }
+            }
+          },
+          "output": 0.190048,
+          "status": "succeeded",
+          "start": "2022-12-19T10:25:48.853610",
+          "end": "2022-12-19T10:25:49.134057",
+          "duration": 0.280447,
+          "tolerance_met": true
+        }
+      ]
+    },
+    "after": {
+      "steady_state_met": true,
+      "probes": [
+        {
+          "activity": {
+            "name": "measure-endpoint-response-time",
+            "type": "probe",
+            "provider": {
+              "func": "measure_response_time",
+              "type": "python",
+              "module": "chaosreliably.activities.http.probes",
+              "arguments": {
+                "url": "${reliably_url}"
+              }
+            },
+            "tolerance": {
+              "name": "validate-response-time",
+              "type": "probe",
+              "provider": {
+                "func": "response_time_must_be_under",
+                "type": "python",
+                "module": "chaosreliably.activities.http.tolerances",
+                "arguments": {
+                  "latency": "${reliably_latency}",
+                  "value": 0.118523
+                }
+              }
+            }
+          },
+          "output": 0.118523,
+          "status": "succeeded",
+          "start": "2022-12-19T10:25:49.136798",
+          "end": "2022-12-19T10:25:49.345581",
+          "duration": 0.208783,
+          "tolerance_met": true
+        }
+      ]
+    },
+    "during": []
+  },
+  "run": [],
+  "rollbacks": [],
+  "end": "2022-12-19T10:25:49.347664",
+  "duration": 0.49851059913635254
+}
