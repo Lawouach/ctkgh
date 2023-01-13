@@ -1,0 +1,17 @@
+jobs:
+  execute-reliably-plan:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: reliablyhq/actions/plan@main
+      with:
+        experiment-url: https://app.reliably.dev/api/v1/organization/8f67bb6a-4944-40af-80b0-921023467cdc/experiments/2893f1ad-d1f1-4caf-a284-0abaf5665a05/raw
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        plan-id: 9cfc996b-c869-48c2-99b4-908d55a73671
+        reliably-agent-token: ${{ secrets.RELIABLY_AGENT_TOKEN }}
+        reliably-experiment-extra: '[{"type":"url","provider":"github","value":"https://github.com/Lawouach/ctkgh/tree/main/plans/9cfc996b-c869-48c2-99b4-908d55a73671"}]'
+        reliably-host: app.reliably.dev
+        working-dir: plans/9cfc996b-c869-48c2-99b4-908d55a73671
+name: Reliably Plan 9cfc996b-c869-48c2-99b4-908d55a73671
+on:
+  workflow_dispatch: {}
