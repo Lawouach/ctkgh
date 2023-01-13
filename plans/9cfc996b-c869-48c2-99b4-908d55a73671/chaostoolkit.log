@@ -1,0 +1,87 @@
+[2023-01-13 13:49:02 DEBUG] [cli:112] ###############################################################################
+[2023-01-13 13:49:02 DEBUG] [cli:113] Running command 'run'
+[2023-01-13 13:49:02 DEBUG] [cli:117] Using settings file '/home/runner/.chaostoolkit/settings.yaml'
+[2023-01-13 13:49:03 DEBUG] [settings:30] The Chaos Toolkit settings file could not be found at '/home/runner/.chaostoolkit/settings.yaml'.
+[2023-01-13 13:49:03 DEBUG] [__init__:399] No controls to apply on 'loader'
+[2023-01-13 13:49:03 DEBUG] [loader:129] Fetched experiment: 
+    {"tags":[],"title":"Certificate is always valid and has not expired","method":[],"version":"1.0.0","controls":[{"name":"reliably","provider":{"type":"python","module":"chaosreliably.controls.experiment","arguments":{"exp_id":"2893f1ad-d1f1-4caf-a284-0abaf5665a05","org_id":"8f67bb6a-4944-40af-80b0-921023467cdc"}}}],"description":"Verify the certificate of a remote endpoint for particular aspects: expiration date, alternative subject names, issuer and fingerprint","configuration":{"reliably_host":"reliably.com","reliably_port":"443","reliably_issuer":"CN=R3,O=Let's Encrypt,C=US","reliably_alt_names":["reliably.com","www.reliably.com"],"reliably_fingerprint":"","reliably_expire_after":"7d"},"contributions":{"quality":"none","security":"high","performance":"none","availability":"high"},"steady-state-hypothesis":{"title":"Capture certificate and perform the checks","probes":[{"name":"capture-certificate","type":"probe","provider":{"func":"get_certificate_info","type":"python","module":"chaosreliably.activities.tls.probes","arguments":{"host":"${reliably_host}","port":"${reliably_port}"}},"tolerance":{"name":"verifiy-tls-certificate","type":"probe","provider":{"func":"verify_tls_cert","type":"python","module":"chaosreliably.activities.tls.tolerances","arguments":{"issuer":"${reliably_issuer}","alt_names":"${reliably_alt_names}","expire_after":"${reliably_expire_after}","fingerprint_sha256":"${reliably_fingerprint}"}}}}]}}
+[2023-01-13 13:49:03 DEBUG] [__init__:399] No controls to apply on 'loader'
+[2023-01-13 13:49:03 DEBUG] [caching:24] Building activity cache...
+[2023-01-13 13:49:03 DEBUG] [caching:35] Cached 1 activities
+[2023-01-13 13:49:03 INFO] [experiment:58] Validating the experiment's syntax
+[2023-01-13 13:49:03 DEBUG] [configuration:63] Loading configuration...
+[2023-01-13 13:49:03 DEBUG] [secret:78] Loading secrets...
+[2023-01-13 13:49:03 DEBUG] [secret:104] Done loading secrets
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2023-01-13 13:49:03 INFO] [experiment:109] Experiment looks valid
+[2023-01-13 13:49:03 DEBUG] [caching:42] Clearing activities cache
+[2023-01-13 13:49:03 DEBUG] [caching:24] Building activity cache...
+[2023-01-13 13:49:03 DEBUG] [caching:35] Cached 1 activities
+[2023-01-13 13:49:03 DEBUG] [configuration:63] Loading configuration...
+[2023-01-13 13:49:03 DEBUG] [secret:78] Loading secrets...
+[2023-01-13 13:49:03 DEBUG] [secret:104] Done loading secrets
+[2023-01-13 13:49:03 DEBUG] [configuration:160] Loading dynamic configuration...
+[2023-01-13 13:49:03 INFO] [run:320] Running experiment: Certificate is always valid and has not expired
+[2023-01-13 13:49:03 DEBUG] [__init__:52] Initializing controls
+[2023-01-13 13:49:03 DEBUG] [__init__:61] Initializing control 'reliably'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'configure_control'
+[2023-01-13 13:49:03 INFO] [run:344] Steady-state strategy: default
+[2023-01-13 13:49:03 INFO] [run:348] Rollbacks strategy: always
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying before-control 'reliably' on 'experiment'
+[2023-01-13 13:49:03 DEBUG] [python:196] Control 'before_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py'
+[2023-01-13 13:49:03 DEBUG] [run:506] Running steady-state hypothesis before the method
+[2023-01-13 13:49:03 INFO] [hypothesis:182] Steady state hypothesis: Capture certificate and perform the checks
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying before-control 'reliably' on 'hypothesis'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_hypothesis_control'
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-01-13 13:49:03 INFO] [activity:204] Probe: capture-certificate
+[2023-01-13 13:49:03 DEBUG] [python:33] Activity 'capture-certificate' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/activities/tls/probes.py'
+[2023-01-13 13:49:03 DEBUG] [activity:221]   => succeeded with '{'conn': {'version': 'TLSv1.3', 'remote_addr': '75.2.60.5:443'}, 'cert': {'fingerprints': {'md5': 'e59467cf30bb7b5d329476212d537d53', 'sha1': '691fa849a0f8884043c7225e7da0f3dd6acedf10', 'sha256': '2403175b9a7cf829939d469cac8fa3c76a32ec1a65d925b66e99d8fde00aa6db'}, 'extensions': {'subjectAltName': ['reliably.com', 'www.reliably.com']}, 'issuer': "CN=R3,O=Let's Encrypt,C=US", 'subject': 'CN=reliably.com', 'serial_int': 356939539863183063419073712670415783752876, 'version': 'v3', 'signature_hash': 'sha256', 'not_valid_before': '2022-11-27T11:00:49', 'not_valid_after': '2023-02-25T11:00:48'}}'
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-01-13 13:49:03 DEBUG] [hypothesis:221] allowed tolerance is {'name': 'verifiy-tls-certificate', 'type': 'probe', 'provider': {'func': 'verify_tls_cert', 'type': 'python', 'module': 'chaosreliably.activities.tls.tolerances', 'arguments': {'issuer': '${reliably_issuer}', 'alt_names': '${reliably_alt_names}', 'expire_after': '${reliably_expire_after}', 'fingerprint_sha256': '${reliably_fingerprint}'}}}
+[2023-01-13 13:49:03 DEBUG] [python:33] Activity 'verifiy-tls-certificate' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/activities/tls/tolerances.py'
+[2023-01-13 13:49:03 DEBUG] [tolerances:29] Cert expires on 2023-02-25T11:00:48
+[2023-01-13 13:49:03 DEBUG] [tolerances:53] Alt names: {'www.reliably.com', 'reliably.com'} / Expected alt names: ['reliably.com', 'www.reliably.com']
+[2023-01-13 13:49:03 INFO] [hypothesis:231] Steady state hypothesis is met!
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying after-control 'reliably' on 'hypothesis'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_hypothesis_control'
+[2023-01-13 13:49:03 INFO] [run:607] Playing your experiment's method now...
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying before-control 'reliably' on 'method'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2023-01-13 13:49:03 INFO] [activity:128] No declared activities, let's move on.
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying after-control 'reliably' on 'method'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2023-01-13 13:49:03 DEBUG] [run:536] Running steady-state hypothesis after the method
+[2023-01-13 13:49:03 INFO] [hypothesis:182] Steady state hypothesis: Capture certificate and perform the checks
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying before-control 'reliably' on 'hypothesis'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_hypothesis_control'
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying before-control 'reliably' on 'activity'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-01-13 13:49:03 INFO] [activity:204] Probe: capture-certificate
+[2023-01-13 13:49:03 DEBUG] [python:33] Activity 'capture-certificate' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/activities/tls/probes.py'
+[2023-01-13 13:49:03 DEBUG] [activity:221]   => succeeded with '{'conn': {'version': 'TLSv1.3', 'remote_addr': '75.2.60.5:443'}, 'cert': {'fingerprints': {'md5': 'e59467cf30bb7b5d329476212d537d53', 'sha1': '691fa849a0f8884043c7225e7da0f3dd6acedf10', 'sha256': '2403175b9a7cf829939d469cac8fa3c76a32ec1a65d925b66e99d8fde00aa6db'}, 'extensions': {'subjectAltName': ['reliably.com', 'www.reliably.com']}, 'issuer': "CN=R3,O=Let's Encrypt,C=US", 'subject': 'CN=reliably.com', 'serial_int': 356939539863183063419073712670415783752876, 'version': 'v3', 'signature_hash': 'sha256', 'not_valid_before': '2022-11-27T11:00:49', 'not_valid_after': '2023-02-25T11:00:48'}}'
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying after-control 'reliably' on 'activity'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-01-13 13:49:03 DEBUG] [hypothesis:221] allowed tolerance is {'name': 'verifiy-tls-certificate', 'type': 'probe', 'provider': {'func': 'verify_tls_cert', 'type': 'python', 'module': 'chaosreliably.activities.tls.tolerances', 'arguments': {'issuer': '${reliably_issuer}', 'alt_names': '${reliably_alt_names}', 'expire_after': '${reliably_expire_after}', 'fingerprint_sha256': '${reliably_fingerprint}', 'value': {'conn': {'version': 'TLSv1.3', 'remote_addr': '75.2.60.5:443'}, 'cert': {'fingerprints': {'md5': 'e59467cf30bb7b5d329476212d537d53', 'sha1': '691fa849a0f8884043c7225e7da0f3dd6acedf10', 'sha256': '2403175b9a7cf829939d469cac8fa3c76a32ec1a65d925b66e99d8fde00aa6db'}, 'extensions': {'subjectAltName': ['reliably.com', 'www.reliably.com']}, 'issuer': "CN=R3,O=Let's Encrypt,C=US", 'subject': 'CN=reliably.com', 'serial_int': 356939539863183063419073712670415783752876, 'version': 'v3', 'signature_hash': 'sha256', 'not_valid_before': '2022-11-27T11:00:49', 'not_valid_after': '2023-02-25T11:00:48'}}}}}
+[2023-01-13 13:49:03 DEBUG] [python:33] Activity 'verifiy-tls-certificate' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/activities/tls/tolerances.py'
+[2023-01-13 13:49:03 DEBUG] [tolerances:29] Cert expires on 2023-02-25T11:00:48
+[2023-01-13 13:49:03 DEBUG] [tolerances:53] Alt names: {'www.reliably.com', 'reliably.com'} / Expected alt names: ['reliably.com', 'www.reliably.com']
+[2023-01-13 13:49:03 INFO] [hypothesis:231] Steady state hypothesis is met!
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying after-control 'reliably' on 'hypothesis'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_hypothesis_control'
+[2023-01-13 13:49:03 WARNING] [run:641] Rollbacks were explicitly requested to be played
+[2023-01-13 13:49:03 INFO] [run:893] Let's rollback...
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying before-control 'reliably' on 'rollback'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2023-01-13 13:49:03 INFO] [rollback:27] No declared rollbacks, let's move on.
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying after-control 'reliably' on 'rollback'
+[2023-01-13 13:49:03 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2023-01-13 13:49:03 INFO] [run:458] Experiment ended with status: completed
+[2023-01-13 13:49:03 DEBUG] [__init__:409] Applying after-control 'reliably' on 'experiment'
+[2023-01-13 13:49:03 DEBUG] [python:196] Control 'after_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py'
+[2023-01-13 13:49:04 DEBUG] [__init__:91] Cleaning up controls
+[2023-01-13 13:49:04 DEBUG] [__init__:100] Cleaning up control 'reliably'
+[2023-01-13 13:49:04 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2023-01-13 13:49:04 DEBUG] [caching:42] Clearing activities cache
