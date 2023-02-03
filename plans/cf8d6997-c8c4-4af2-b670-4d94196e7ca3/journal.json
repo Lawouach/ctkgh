@@ -1,0 +1,212 @@
+{
+  "chaoslib-version": "1.33.1",
+  "platform": "Linux-5.15.0-1031-azure-x86_64-with-glibc2.35",
+  "node": "fv-az573-436",
+  "experiment": {
+    "tags": [],
+    "title": "Certificate is always valid and has not expired",
+    "method": [],
+    "version": "1.0.0",
+    "controls": [
+      {
+        "name": "reliably",
+        "provider": {
+          "type": "python",
+          "module": "chaosreliably.controls.experiment",
+          "arguments": {
+            "exp_id": "9430b107-ae8f-4d96-a71f-a44160090eeb",
+            "org_id": "8f67bb6a-4944-40af-80b0-921023467cdc"
+          }
+        }
+      }
+    ],
+    "description": "Verify the certificate of a remote endpoint for particular aspects: expiration date, alternative subject names, issuer and fingerprint",
+    "configuration": {
+      "reliably_host": "reliably.com",
+      "reliably_port": "443",
+      "reliably_issuer": "",
+      "reliably_alt_names": [
+        ""
+      ],
+      "reliably_fingerprint": "",
+      "reliably_expire_after": "7d"
+    },
+    "contributions": {
+      "quality": "none",
+      "security": "high",
+      "performance": "none",
+      "availability": "high"
+    },
+    "steady-state-hypothesis": {
+      "title": "Capture certificate and perform the checks",
+      "probes": [
+        {
+          "name": "capture-certificate",
+          "type": "probe",
+          "provider": {
+            "func": "get_certificate_info",
+            "type": "python",
+            "module": "chaosreliably.activities.tls.probes",
+            "arguments": {
+              "host": "${reliably_host}",
+              "port": "${reliably_port}"
+            }
+          },
+          "tolerance": {
+            "name": "verifiy-tls-certificate",
+            "type": "probe",
+            "provider": {
+              "func": "verify_tls_cert",
+              "type": "python",
+              "module": "chaosreliably.activities.tls.tolerances",
+              "arguments": {
+                "issuer": "${reliably_issuer}",
+                "alt_names": "${reliably_alt_names}",
+                "expire_after": "${reliably_expire_after}",
+                "fingerprint_sha256": "${reliably_fingerprint}",
+                "value": {
+                  "conn": {
+                    "version": "TLSv1.3",
+                    "remote_addr": "75.2.60.5:443"
+                  },
+                  "cert": {
+                    "fingerprints": {
+                      "md5": "0c3464044639adcbc8b94772979f3778",
+                      "sha1": "939f0c65e3e7e3121c1524abfa679facd7806d9f",
+                      "sha256": "0bd6e86c696cfaed1ac97d5f6849a5792c18620c3c8389d0bd98b6fe618e8135"
+                    },
+                    "extensions": {
+                      "subjectAltName": [
+                        "reliably.com",
+                        "www.reliably.com"
+                      ]
+                    },
+                    "issuer": "CN=R3,O=Let's Encrypt,C=US",
+                    "subject": "CN=reliably.com",
+                    "serial_int": 262672396126344892037722005403494505859647,
+                    "version": "v3",
+                    "signature_hash": "sha256",
+                    "not_valid_before": "2023-01-26T10:10:15",
+                    "not_valid_after": "2023-04-26T10:10:14"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "dry": null,
+    "extensions": [
+      {
+        "name": "reliably",
+        "pauses": [],
+        "termination": null,
+        "execution_url": "https://app.reliably.dev/executions/view/?id=744e7f35-588a-4f3f-aada-baf0c47e9b62&exp=9430b107-ae8f-4d96-a71f-a44160090eeb"
+      }
+    ]
+  },
+  "start": "2023-02-03T11:27:38.584063",
+  "status": "failed",
+  "deviated": false,
+  "steady_states": {
+    "before": {
+      "steady_state_met": false,
+      "probes": [
+        {
+          "activity": {
+            "name": "capture-certificate",
+            "type": "probe",
+            "provider": {
+              "func": "get_certificate_info",
+              "type": "python",
+              "module": "chaosreliably.activities.tls.probes",
+              "arguments": {
+                "host": "${reliably_host}",
+                "port": "${reliably_port}"
+              }
+            },
+            "tolerance": {
+              "name": "verifiy-tls-certificate",
+              "type": "probe",
+              "provider": {
+                "func": "verify_tls_cert",
+                "type": "python",
+                "module": "chaosreliably.activities.tls.tolerances",
+                "arguments": {
+                  "issuer": "${reliably_issuer}",
+                  "alt_names": "${reliably_alt_names}",
+                  "expire_after": "${reliably_expire_after}",
+                  "fingerprint_sha256": "${reliably_fingerprint}",
+                  "value": {
+                    "conn": {
+                      "version": "TLSv1.3",
+                      "remote_addr": "75.2.60.5:443"
+                    },
+                    "cert": {
+                      "fingerprints": {
+                        "md5": "0c3464044639adcbc8b94772979f3778",
+                        "sha1": "939f0c65e3e7e3121c1524abfa679facd7806d9f",
+                        "sha256": "0bd6e86c696cfaed1ac97d5f6849a5792c18620c3c8389d0bd98b6fe618e8135"
+                      },
+                      "extensions": {
+                        "subjectAltName": [
+                          "reliably.com",
+                          "www.reliably.com"
+                        ]
+                      },
+                      "issuer": "CN=R3,O=Let's Encrypt,C=US",
+                      "subject": "CN=reliably.com",
+                      "serial_int": 262672396126344892037722005403494505859647,
+                      "version": "v3",
+                      "signature_hash": "sha256",
+                      "not_valid_before": "2023-01-26T10:10:15",
+                      "not_valid_after": "2023-04-26T10:10:14"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "output": {
+            "conn": {
+              "version": "TLSv1.3",
+              "remote_addr": "75.2.60.5:443"
+            },
+            "cert": {
+              "fingerprints": {
+                "md5": "0c3464044639adcbc8b94772979f3778",
+                "sha1": "939f0c65e3e7e3121c1524abfa679facd7806d9f",
+                "sha256": "0bd6e86c696cfaed1ac97d5f6849a5792c18620c3c8389d0bd98b6fe618e8135"
+              },
+              "extensions": {
+                "subjectAltName": [
+                  "reliably.com",
+                  "www.reliably.com"
+                ]
+              },
+              "issuer": "CN=R3,O=Let's Encrypt,C=US",
+              "subject": "CN=reliably.com",
+              "serial_int": 262672396126344892037722005403494505859647,
+              "version": "v3",
+              "signature_hash": "sha256",
+              "not_valid_before": "2023-01-26T10:10:15",
+              "not_valid_after": "2023-04-26T10:10:14"
+            }
+          },
+          "start": "2023-02-03T11:27:39.127237",
+          "status": "succeeded",
+          "end": "2023-02-03T11:27:39.638158",
+          "duration": 0.510921,
+          "tolerance_met": false
+        }
+      ]
+    },
+    "after": null,
+    "during": []
+  },
+  "run": [],
+  "rollbacks": [],
+  "end": "2023-02-03T11:27:39.938355",
+  "duration": 1.3559904098510742
+}
