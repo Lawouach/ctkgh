@@ -22,4 +22,4 @@ jobs:
       env:
         SLACK_CHANNEL: ${{ vars.SLACK_CHANNEL }}
         OTEL_VENDOR: ${{ vars.OTEL_VENDOR }}
-        SLACK_BOT_TOKEN: ${{ vars.SLACK_BOT_TOKEN }}
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
