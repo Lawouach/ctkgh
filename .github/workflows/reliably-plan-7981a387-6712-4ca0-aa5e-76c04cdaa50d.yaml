@@ -1,0 +1,29 @@
+jobs:
+  run-experiment:
+    environment: myenv
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - id: auth
+      name: Set up GCP Authentication
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: ${{ secrets.GCP_SA_KEY }}
+        export_environment_variables: true
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+    - name: Execute Reliably Plan
+      uses: reliablyhq/actions/plan@main
+      with:
+        env_vars: SLACK_CHANNEL=${{ env.SLACK_CHANNEL }} OTEL_VENDOR=${{ env.OTEL_VENDOR
+          }}
+        experiment-url: https://app.reliably.dev/api/v1/organization/8f67bb6a-4944-40af-80b0-921023467cdc/experiments/4556a14b-e776-4cd1-a6b1-c320e06bde2c/raw
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        org-id: 8f67bb6a-4944-40af-80b0-921023467cdc
+        plan-id: 7981a387-6712-4ca0-aa5e-76c04cdaa50d
+        reliably-experiment-extra: '[{"type":"url","provider":"github","value":"https://github.com/Lawouach/ctkgh/tree/main/plans/7981a387-6712-4ca0-aa5e-76c04cdaa50d"}]'
+        reliably-host: app.reliably.dev
+        reliably-service-token: ${{ secrets.RELIABLY_SERVICE_TOKEN }}
+        working-dir: plans/7981a387-6712-4ca0-aa5e-76c04cdaa50d
+name: Reliably Plan 7981a387-6712-4ca0-aa5e-76c04cdaa50d
+on:
+  workflow_dispatch: null
