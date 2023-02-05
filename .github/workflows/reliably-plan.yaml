@@ -19,6 +19,6 @@ jobs:
       uses: reliablyhq/actions/plan@main
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        env_vars:
-          SLACK_CHANNEL=${{ env.SLACK_CHANNEL }}
-          OTEL_VENDOR=${{ env.OTEL_VENDOR }}
+        env_vars: |
+          SLACK_CHANNEL=${{ vars.SLACK_CHANNEL }}
+          OTEL_VENDOR=${{ vars.OTEL_VENDOR }}
