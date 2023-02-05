@@ -18,7 +18,6 @@ jobs:
     - name: Execute Reliably Plan
       uses: reliablyhq/actions/plan@main
       with:
-        reliably-version: 0.2.4
         github-token: ${{ secrets.GITHUB_TOKEN }}
         env_vars:
           SLACK_CHANNEL=${{ env.SLACK_CHANNEL }}
