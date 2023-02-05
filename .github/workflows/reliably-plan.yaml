@@ -15,8 +15,8 @@ jobs:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         credentials_json: ${{ secrets.GCP_SA_KEY }}
         export_environment_variables: true
-    - name: Run Reliably CLI
-      uses: reliablyhq/actions/agent@main
+    - name: Execute Reliably Plan
+      uses: reliablyhq/actions/plan@main
       with:
         reliably-version: 0.2.4
         github-token: ${{ secrets.GITHUB_TOKEN }}
