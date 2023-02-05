@@ -1,0 +1,180 @@
+[2023-02-05 17:04:33 DEBUG] [cli:115] ###############################################################################
+[2023-02-05 17:04:33 DEBUG] [cli:116] Running command 'run'
+[2023-02-05 17:04:33 DEBUG] [cli:120] Using settings file '/home/runner/.config/reliably/plans/4c9fc5e8-4028-4f4e-b4eb-6c839f75f170/ctk.yaml'
+[2023-02-05 17:04:33 DEBUG] [__init__:243] Loading global control 'reliably-integration-slack' from /home/runner/.config/reliably/plans/4c9fc5e8-4028-4f4e-b4eb-6c839f75f170/controls/f5647a66-9c5b-4bef-a801-821864c2e8e1.json
+[2023-02-05 17:04:33 DEBUG] [__init__:243] Loading global control 'reliably-integration-opentelemetry' from /home/runner/.config/reliably/plans/4c9fc5e8-4028-4f4e-b4eb-6c839f75f170/controls/b9df4af2-0719-405a-b732-41b7496b1de7.json
+[2023-02-05 17:04:33 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'loader'
+[2023-02-05 17:04:33 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'before_loading_experiment_control'
+[2023-02-05 17:04:33 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'loader'
+[2023-02-05 17:04:33 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'before_loading_experiment_control'
+[2023-02-05 17:04:34 DEBUG] [loader:129] Fetched experiment: 
+    {"title":"List cloud run instances","method":[{"name":"list-cloudrun-instances","type":"probe","provider":{"func":"list_services","type":"python","module":"chaosgcp.cloudrun.probes","arguments":{"parent":"projects/reliably-staging-project/locations/europe-west1"}}}],"version":"1.0.0","controls":[{"name":"reliably","provider":{"type":"python","module":"chaosreliably.controls.experiment","arguments":{"exp_id":"4556a14b-e776-4cd1-a6b1-c320e06bde2c","org_id":"8f67bb6a-4944-40af-80b0-921023467cdc"}}}],"description":"n/a","contributions":{"security":"none","performance":"none","availability":"none"}}
+[2023-02-05 17:04:34 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'loader'
+[2023-02-05 17:04:34 DEBUG] [python:196] Control 'after_loading_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-05 17:04:34 DEBUG] [__init__:484] After-control 'reliably-integration-slack' failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/__init__.py", line 465, in apply_controls
+        apply_python_control(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/python.py", line 179, in apply_python_control
+        func(context=context, **arguments)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 41, in after_loading_experiment_control
+        send(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 299, in send
+        raise InvalidActivity("missing slack channel name")
+    chaoslib.exceptions.InvalidActivity: missing slack channel name
+[2023-02-05 17:04:34 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'loader'
+[2023-02-05 17:04:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'after_loading_experiment_control'
+[2023-02-05 17:04:34 DEBUG] [caching:24] Building activity cache...
+[2023-02-05 17:04:34 DEBUG] [caching:35] Cached 1 activities
+[2023-02-05 17:04:34 INFO] [experiment:58] Validating the experiment's syntax
+[2023-02-05 17:04:34 DEBUG] [configuration:63] Loading configuration...
+[2023-02-05 17:04:34 DEBUG] [secret:78] Loading secrets...
+[2023-02-05 17:04:34 DEBUG] [secret:104] Done loading secrets
+[2023-02-05 17:04:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2023-02-05 17:04:34 INFO] [experiment:109] Experiment looks valid
+[2023-02-05 17:04:34 DEBUG] [caching:42] Clearing activities cache
+[2023-02-05 17:04:34 DEBUG] [cli:314] Runtime strategies: hypothesis - default / rollbacks - always
+[2023-02-05 17:04:34 DEBUG] [caching:24] Building activity cache...
+[2023-02-05 17:04:34 DEBUG] [caching:35] Cached 1 activities
+[2023-02-05 17:04:34 DEBUG] [configuration:63] Loading configuration...
+[2023-02-05 17:04:34 DEBUG] [secret:78] Loading secrets...
+[2023-02-05 17:04:34 DEBUG] [secret:104] Done loading secrets
+[2023-02-05 17:04:34 DEBUG] [configuration:160] Loading dynamic configuration...
+[2023-02-05 17:04:34 INFO] [run:370] Running experiment: List cloud run instances
+[2023-02-05 17:04:34 DEBUG] [__init__:171] Initializing global control 'reliably-integration-slack'
+[2023-02-05 17:04:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'configure_control'
+[2023-02-05 17:04:34 DEBUG] [__init__:171] Initializing global control 'reliably-integration-opentelemetry'
+[2023-02-05 17:04:34 DEBUG] [python:196] Control 'configure_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-05 17:04:34 INFO] [oltp:365] Chaos Toolkit Open Telemetry tracer created
+[2023-02-05 17:04:34 DEBUG] [__init__:64] Initializing controls
+[2023-02-05 17:04:34 DEBUG] [__init__:73] Initializing control 'reliably'
+[2023-02-05 17:04:34 DEBUG] [python:196] Control 'configure_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py'
+[2023-02-05 17:04:34 DEBUG] [experiment:402] Configure Reliably's experiment control
+[2023-02-05 17:04:34 INFO] [experiment:188] Reliably execution: 8c9625ec-dce2-4c1b-998a-b53def2e7163
+[2023-02-05 17:04:34 DEBUG] [experiment:74] Starting Reliably state checker now
+[2023-02-05 17:04:34 INFO] [run:397] Steady-state strategy: default
+[2023-02-05 17:04:34 INFO] [run:401] Rollbacks strategy: always
+[2023-02-05 17:04:34 INFO] [run:406] No steady state hypothesis defined. That's ok, just exploring.
+[2023-02-05 17:04:34 DEBUG] [__init__:459] Applying before-control 'reliably' on 'experiment'
+[2023-02-05 17:04:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_experiment_control'
+[2023-02-05 17:04:34 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'experiment'
+[2023-02-05 17:04:34 DEBUG] [python:196] Control 'before_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-05 17:04:34 DEBUG] [__init__:484] Before-control 'reliably-integration-slack' failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/__init__.py", line 465, in apply_controls
+        apply_python_control(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/python.py", line 179, in apply_python_control
+        func(context=context, **arguments)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 59, in before_experiment_control
+        send(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 299, in send
+        raise InvalidActivity("missing slack channel name")
+    chaoslib.exceptions.InvalidActivity: missing slack channel name
+[2023-02-05 17:04:34 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'experiment'
+[2023-02-05 17:04:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'before_experiment_control'
+[2023-02-05 17:04:34 INFO] [run:664] Playing your experiment's method now...
+[2023-02-05 17:04:34 DEBUG] [__init__:459] Applying before-control 'reliably' on 'method'
+[2023-02-05 17:04:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2023-02-05 17:04:34 DEBUG] [__init__:459] Applying before-control 'reliably' on 'activity'
+[2023-02-05 17:04:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-02-05 17:04:34 DEBUG] [__init__:459] Applying before-control 'reliably' on 'activity'
+[2023-02-05 17:04:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-02-05 17:04:34 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'activity'
+[2023-02-05 17:04:34 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-05 17:04:34 DEBUG] [__init__:484] Before-control 'reliably-integration-slack' failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/__init__.py", line 465, in apply_controls
+        apply_python_control(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/python.py", line 179, in apply_python_control
+        func(context=context, **arguments)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 218, in before_activity_control
+        send(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 299, in send
+        raise InvalidActivity("missing slack channel name")
+    chaoslib.exceptions.InvalidActivity: missing slack channel name
+[2023-02-05 17:04:34 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'activity'
+[2023-02-05 17:04:34 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-05 17:04:34 INFO] [activity:215] Probe: list-cloudrun-instances
+[2023-02-05 17:04:35 DEBUG] [python:33] Activity 'list-cloudrun-instances' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosgcp/cloudrun/probes.py'
+[2023-02-05 17:04:35 DEBUG] [activity:292] Activity failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosgcp/cloudrun/probes.py", line 52, in list_services
+        credentials = load_credentials(secrets)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosgcp/__init__.py", line 190, in load_credentials
+        raise FailedActivity(
+    chaoslib.exceptions.ActivityFailed: missing GCP credentials settings in secrets of this activity
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/activity.py", line 285, in run_activity
+        result = run_python_activity(activity, configuration, secrets)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 58, in run_python_activity
+        raise ActivityFailed(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosgcp/cloudrun/probes.py", line 52, in list_services
+        credentials = load_credentials(secrets)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosgcp/__init__.py", line 190, in load_credentials
+        raise FailedActivity(
+    chaoslib.exceptions.ActivityFailed: chaoslib.exceptions.ActivityFailed: missing GCP credentials settings in secrets of this activity
+[2023-02-05 17:04:35 ERROR] [activity:243]   => failed: chaoslib.exceptions.ActivityFailed: missing GCP credentials settings in secrets of this activity
+[2023-02-05 17:04:35 DEBUG] [__init__:459] Applying after-control 'reliably' on 'activity'
+[2023-02-05 17:04:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-02-05 17:04:35 DEBUG] [__init__:459] Applying after-control 'reliably' on 'activity'
+[2023-02-05 17:04:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-02-05 17:04:35 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'activity'
+[2023-02-05 17:04:35 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-05 17:04:35 DEBUG] [__init__:484] After-control 'reliably-integration-slack' failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/__init__.py", line 465, in apply_controls
+        apply_python_control(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/python.py", line 179, in apply_python_control
+        func(context=context, **arguments)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 237, in after_activity_control
+        send(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 299, in send
+        raise InvalidActivity("missing slack channel name")
+    chaoslib.exceptions.InvalidActivity: missing slack channel name
+[2023-02-05 17:04:35 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'activity'
+[2023-02-05 17:04:35 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-05 17:04:35 DEBUG] [__init__:459] Applying after-control 'reliably' on 'method'
+[2023-02-05 17:04:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2023-02-05 17:04:35 WARNING] [run:707] Rollbacks were explicitly requested to be played
+[2023-02-05 17:04:35 INFO] [run:944] Let's rollback...
+[2023-02-05 17:04:35 DEBUG] [__init__:459] Applying before-control 'reliably' on 'rollback'
+[2023-02-05 17:04:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2023-02-05 17:04:35 INFO] [rollback:31] No declared rollbacks, let's move on.
+[2023-02-05 17:04:35 DEBUG] [__init__:459] Applying after-control 'reliably' on 'rollback'
+[2023-02-05 17:04:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2023-02-05 17:04:35 INFO] [run:511] Experiment ended with status: completed
+[2023-02-05 17:04:35 DEBUG] [__init__:459] Applying after-control 'reliably' on 'experiment'
+[2023-02-05 17:04:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_experiment_control'
+[2023-02-05 17:04:35 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'experiment'
+[2023-02-05 17:04:35 DEBUG] [python:196] Control 'after_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-05 17:04:35 DEBUG] [__init__:484] After-control 'reliably-integration-slack' failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/__init__.py", line 465, in apply_controls
+        apply_python_control(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/python.py", line 179, in apply_python_control
+        func(context=context, **arguments)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 77, in after_experiment_control
+        send(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 299, in send
+        raise InvalidActivity("missing slack channel name")
+    chaoslib.exceptions.InvalidActivity: missing slack channel name
+[2023-02-05 17:04:35 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'experiment'
+[2023-02-05 17:04:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'after_experiment_control'
+[2023-02-05 17:04:35 DEBUG] [__init__:103] Cleaning up controls
+[2023-02-05 17:04:35 DEBUG] [__init__:112] Cleaning up control 'reliably'
+[2023-02-05 17:04:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2023-02-05 17:04:35 DEBUG] [__init__:265] Cleaning up global control 'reliably-integration-slack'
+[2023-02-05 17:04:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'cleanup_control'
+[2023-02-05 17:04:35 DEBUG] [__init__:265] Cleaning up global control 'reliably-integration-opentelemetry'
+[2023-02-05 17:04:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'cleanup_control'
+[2023-02-05 17:04:35 INFO] [experiment:236] Finishing Reliably execution...
+[2023-02-05 17:04:35 DEBUG] [experiment:156] Stopping Reliably state checker now
+[2023-02-05 17:04:36 INFO] [experiment:289] Finished Reliably execution. Bye!
+[2023-02-05 17:04:36 DEBUG] [caching:42] Clearing activities cache
