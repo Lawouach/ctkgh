@@ -1,0 +1,115 @@
+[2023-02-06 09:26:17 DEBUG] [cli:115] ###############################################################################
+[2023-02-06 09:26:17 DEBUG] [cli:116] Running command 'run'
+[2023-02-06 09:26:17 DEBUG] [cli:120] Using settings file '/home/runner/.config/reliably/plans/d6b52af8-285e-434e-89b4-b1fcc112ccab/ctk.yaml'
+[2023-02-06 09:26:17 DEBUG] [__init__:243] Loading global control 'reliably-integration-slack' from /home/runner/.config/reliably/plans/d6b52af8-285e-434e-89b4-b1fcc112ccab/controls/f5647a66-9c5b-4bef-a801-821864c2e8e1.json
+[2023-02-06 09:26:17 DEBUG] [__init__:243] Loading global control 'reliably-integration-opentelemetry' from /home/runner/.config/reliably/plans/d6b52af8-285e-434e-89b4-b1fcc112ccab/controls/b9df4af2-0719-405a-b732-41b7496b1de7.json
+[2023-02-06 09:26:17 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'loader'
+[2023-02-06 09:26:17 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'before_loading_experiment_control'
+[2023-02-06 09:26:17 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'loader'
+[2023-02-06 09:26:17 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'before_loading_experiment_control'
+[2023-02-06 09:26:17 DEBUG] [loader:129] Fetched experiment: 
+    {"title":"List cloud run instances","method":[{"name":"list-cloudrun-instances","type":"probe","provider":{"func":"list_services","type":"python","module":"chaosgcp.cloudrun.probes","arguments":{"parent":"projects/reliably-staging-project/locations/europe-west1"}}}],"version":"1.0.0","controls":[{"name":"reliably","provider":{"type":"python","module":"chaosreliably.controls.experiment","arguments":{"exp_id":"4556a14b-e776-4cd1-a6b1-c320e06bde2c","org_id":"8f67bb6a-4944-40af-80b0-921023467cdc"}}}],"description":"n/a","contributions":{"security":"none","performance":"none","availability":"none"}}
+[2023-02-06 09:26:17 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'loader'
+[2023-02-06 09:26:17 DEBUG] [python:196] Control 'after_loading_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-06 09:26:17 DEBUG] [__init__:484] After-control 'reliably-integration-slack' failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/__init__.py", line 465, in apply_controls
+        apply_python_control(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/python.py", line 179, in apply_python_control
+        func(context=context, **arguments)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 41, in after_loading_experiment_control
+        send(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 306, in send
+        attachments=attachments(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 366, in attachments
+        "text": f"*{experiment['title']}*",
+    TypeError: string indices must be integers
+[2023-02-06 09:26:17 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'loader'
+[2023-02-06 09:26:17 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'after_loading_experiment_control'
+[2023-02-06 09:26:17 DEBUG] [caching:24] Building activity cache...
+[2023-02-06 09:26:17 DEBUG] [caching:35] Cached 1 activities
+[2023-02-06 09:26:17 INFO] [experiment:58] Validating the experiment's syntax
+[2023-02-06 09:26:17 DEBUG] [configuration:63] Loading configuration...
+[2023-02-06 09:26:17 DEBUG] [secret:78] Loading secrets...
+[2023-02-06 09:26:17 DEBUG] [secret:104] Done loading secrets
+[2023-02-06 09:26:17 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2023-02-06 09:26:17 INFO] [experiment:109] Experiment looks valid
+[2023-02-06 09:26:17 DEBUG] [caching:42] Clearing activities cache
+[2023-02-06 09:26:17 DEBUG] [cli:314] Runtime strategies: hypothesis - default / rollbacks - always
+[2023-02-06 09:26:17 DEBUG] [caching:24] Building activity cache...
+[2023-02-06 09:26:17 DEBUG] [caching:35] Cached 1 activities
+[2023-02-06 09:26:17 DEBUG] [configuration:63] Loading configuration...
+[2023-02-06 09:26:17 DEBUG] [secret:78] Loading secrets...
+[2023-02-06 09:26:17 DEBUG] [secret:104] Done loading secrets
+[2023-02-06 09:26:17 DEBUG] [configuration:160] Loading dynamic configuration...
+[2023-02-06 09:26:17 INFO] [run:370] Running experiment: List cloud run instances
+[2023-02-06 09:26:17 DEBUG] [__init__:171] Initializing global control 'reliably-integration-slack'
+[2023-02-06 09:26:17 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'configure_control'
+[2023-02-06 09:26:17 DEBUG] [__init__:171] Initializing global control 'reliably-integration-opentelemetry'
+[2023-02-06 09:26:17 DEBUG] [python:196] Control 'configure_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-06 09:26:17 INFO] [oltp:365] Chaos Toolkit Open Telemetry tracer created
+[2023-02-06 09:26:17 DEBUG] [__init__:64] Initializing controls
+[2023-02-06 09:26:17 DEBUG] [__init__:73] Initializing control 'reliably'
+[2023-02-06 09:26:17 DEBUG] [python:196] Control 'configure_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py'
+[2023-02-06 09:26:17 DEBUG] [experiment:402] Configure Reliably's experiment control
+[2023-02-06 09:26:18 INFO] [experiment:188] Reliably execution: becc8a90-b45f-45a3-8276-e149c730d234
+[2023-02-06 09:26:18 DEBUG] [experiment:74] Starting Reliably state checker now
+[2023-02-06 09:26:18 INFO] [run:397] Steady-state strategy: default
+[2023-02-06 09:26:18 INFO] [run:401] Rollbacks strategy: always
+[2023-02-06 09:26:18 INFO] [run:406] No steady state hypothesis defined. That's ok, just exploring.
+[2023-02-06 09:26:18 DEBUG] [__init__:459] Applying before-control 'reliably' on 'experiment'
+[2023-02-06 09:26:18 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_experiment_control'
+[2023-02-06 09:26:18 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'experiment'
+[2023-02-06 09:26:18 DEBUG] [python:196] Control 'before_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-06 09:26:18 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'experiment'
+[2023-02-06 09:26:18 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'before_experiment_control'
+[2023-02-06 09:26:18 INFO] [run:664] Playing your experiment's method now...
+[2023-02-06 09:26:18 DEBUG] [__init__:459] Applying before-control 'reliably' on 'method'
+[2023-02-06 09:26:18 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2023-02-06 09:26:18 DEBUG] [__init__:459] Applying before-control 'reliably' on 'activity'
+[2023-02-06 09:26:18 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-02-06 09:26:18 DEBUG] [__init__:459] Applying before-control 'reliably' on 'activity'
+[2023-02-06 09:26:18 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-02-06 09:26:18 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'activity'
+[2023-02-06 09:26:18 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-06 09:26:19 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'activity'
+[2023-02-06 09:26:19 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-06 09:26:19 INFO] [activity:215] Probe: list-cloudrun-instances
+[2023-02-06 09:26:19 DEBUG] [python:33] Activity 'list-cloudrun-instances' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosgcp/cloudrun/probes.py'
+[2023-02-06 09:26:19 DEBUG] [__init__:178] Using GCP credentials from file: /home/runner/work/ctkgh/ctkgh/gha-creds-08fbff2cd163e1a9.json
+[2023-02-06 09:26:19 DEBUG] [activity:235]   => succeeded with '[{'name': 'projects/reliably-staging-project/locations/europe-west1/services/reliably-backend', 'uid': '711e0d51-c464-4f7d-b16d-10cd8857260f', 'generation': '342', 'create_time': '2022-11-29T19:48:05.711672Z', 'update_time': '2023-02-05T19:35:08.190300Z', 'creator': 'reliably-terraform-projects@chaosiq-devops.iam.gserviceaccount.com', 'last_modifier': 'reliably-terraform-projects@chaosiq-devops.iam.gserviceaccount.com', 'client': 'terraform', 'ingress': 3, 'launch_stage': 4, 'template': {'scaling': {'max_instance_count': 30, 'min_instance_count': 0}, 'vpc_access': {'connector': 'projects/reliably-staging-project/locations/europe-west1/connectors/api', 'egress': 2}, 'timeout': '60s', 'service_account': 'backend-service-omndo3xz@880773053342.iam.gserviceaccount.com', 'containers': [{'image': 'europe-docker.pkg.dev/reliably-staging-project/eu-reliably/backend:9bdb32f20e71fe4f00475ca3ae642651d7ece271', 'env': [{'name': 'DATABASE_URL', 'value_source': {'secret_key_ref': {'secret': 'psql_uri', 'version': 'latest'}}}, {'name': 'HOSTNAME', 'value': 'https://app.reliably.dev'}, {'name': 'OTEL_EXPORTER_OTLP_ENDPOINT', 'value_source': {'secret_key_ref': {'secret': 'otel_endpoint', 'version': 'latest'}}}, {'name': 'OTEL_ENABLED', 'value': '1'}, {'name': 'DATABASE_SSL_CLIENT_KEY_FILE', 'value_source': {'secret_key_ref': {'secret': 'psql_client_ssl_key', 'version': 'latest'}}}, {'name': 'PROJECT_NAME', 'value': 'reliably-staging-project'}, {'name': 'OAUTH_GITHUB_ENABLED', 'value': '1'}, {'name': 'CRYPTO_PROVIDER', 'value': 'gcloud-kms'}, {'name': 'LOG_FORMAT', 'value': 'json'}, {'name': 'DATABASE_WITH_SSL', 'value': '1'}, {'name': 'CRYPTO_GCLOUD_KMS_KEY_NAME', 'value': 'projects/reliably-staging-project/locations/global/keyRings/verification/cryptoKeys/environment'}, {'name': 'OAUTH_GITHUB_CLIENT_SECRET', 'value_source': {'secret_key_ref': {'secret': 'oauth_github_client_secret', 'version': 'latest'}}}, {'name': 'TEAM_PLAN_PRICE_ID', 'value': 'price_1LmFFbJI6ggorXL1zC4qiu4t'}, {'name': 'OTEL_EXPORTER_OTLP_HEADERS', 'value_source': {'secret_key_ref': {'secret': 'otel_api_key', 'version': 'latest'}}}, {'name': 'OAUTH_GITHUB_CLIENT_ID', 'value_source': {'secret_key_ref': {'secret': 'oauth_github_client_id', 'version': 'latest'}}}, {'name': 'STRIPE_API_KEY', 'value_source': {'secret_key_ref': {'secret': 'stripe_api_key', 'version': 'latest'}}}, {'name': 'CLOUDRUN_JOB_SA', 'value': 'plan-job@reliably-staging-project.iam.gserviceaccount.com'}, {'name': 'DATABASE_SSL_SERVER_CA_FILE', 'value_source': {'secret_key_ref': {'secret': 'psql_server_ssl_cert', 'version': 'latest'}}}, {'name': 'PLAN_SCHEDULER_SA', 'value': 'plan-scheduler@reliably-staging-project.iam.gserviceaccount.com'}, {'name': 'DATABASE_SSL_CLIENT_CERT_FILE', 'value_source': {'secret_key_ref': {'secret': 'psql_client_ssl_cert', 'version': 'latest'}}}, {'name': 'SESSION_SECRET_KEY', 'value_source': {'secret_key_ref': {'secret': 'session_key', 'version': 'latest'}}}, {'name': 'OTEL_GCP_EXPORTER', 'value': 'true'}], 'resources': {'limits': {'cpu': '1.0', 'memory': '512Mi'}, 'cpu_idle': True}, 'ports': [{'name': 'http1', 'container_port': 15550}], 'volume_mounts': [{'name': 'cloudsql', 'mount_path': '/cloudsql'}], 'name': '', 'command': [], 'args': [], 'working_dir': ''}], 'volumes': [{'name': 'cloudsql', 'cloud_sql_instance': {'instances': ['reliably-staging-project:europe-west1:terraform-20220913163709282800000001']}}], 'max_instance_request_concurrency': 80, 'revision': '', 'labels': {}, 'annotations': {}, 'execution_environment': 0, 'encryption_key': ''}, 'traffic': [{'type_': 1, 'percent': 100, 'revision': '', 'tag': ''}], 'observed_generation': '342', 'terminal_condition': {'type_': 'Ready', 'state': 4, 'last_transition_time': '2023-02-05T19:35:39.324196Z', 'message': '', 'severity': 0}, 'conditions': [{'type_': 'RoutesReady', 'state': 4, 'last_transition_time': '2023-02-05T19:35:39.457028Z', 'message': '', 'severity': 0}, {'type_': 'ConfigurationsReady', 'state': 4, 'last_transition_time': '2023-02-05T19:35:34.615881Z', 'message': '', 'severity': 0}], 'latest_ready_revision': 'projects/reliably-staging-project/locations/europe-west1/services/reliably-backend/revisions/reliably-backend-xllbc', 'latest_created_revision': 'projects/reliably-staging-project/locations/europe-west1/services/reliably-backend/revisions/reliably-backend-xllbc', 'traffic_statuses': [{'type_': 1, 'percent': 100, 'revision': '', 'tag': '', 'uri': ''}], 'uri': 'https://reliably-backend-k4cfvar3aa-ew.a.run.app', 'etag': '"COyJgJ8GEOD-3lo/cHJvamVjdHMvcmVsaWFibHktc3RhZ2luZy1wcm9qZWN0L2xvY2F0aW9ucy9ldXJvcGUtd2VzdDEvc2VydmljZXMvcmVsaWFibHktYmFja2VuZA"', 'description': '', 'labels': {}, 'annotations': {}, 'client_version': '', 'reconciling': False}, {'name': 'projects/reliably-staging-project/locations/europe-west1/services/reliably-frontend', 'uid': '13cc95fc-336a-4a5b-86e8-eef7dfc0bc0d', 'generation': '506', 'create_time': '2022-09-16T20:41:47.058789Z', 'update_time': '2023-02-05T19:34:41.230134Z', 'creator': 'reliably-terraform-projects@chaosiq-devops.iam.gserviceaccount.com', 'last_modifier': 'reliably-terraform-projects@chaosiq-devops.iam.gserviceaccount.com', 'client': 'terraform', 'ingress': 3, 'launch_stage': 4, 'template': {'scaling': {'max_instance_count': 30, 'min_instance_count': 0}, 'vpc_access': {'connector': 'projects/reliably-staging-project/locations/europe-west1/connectors/api', 'egress': 2}, 'timeout': '60s', 'service_account': '880773053342-compute@developer.gserviceaccount.com', 'containers': [{'image': 'europe-docker.pkg.dev/reliably-staging-project/eu-reliably/frontend:9bdb32f20e71fe4f00475ca3ae642651d7ece271', 'resources': {'limits': {'cpu': '1.0', 'memory': '256Mi'}, 'cpu_idle': True}, 'ports': [{'name': 'http1', 'container_port': 8080}], 'name': '', 'command': [], 'args': [], 'env': [], 'volume_mounts': [], 'working_dir': ''}], 'max_instance_request_concurrency': 80, 'revision': '', 'labels': {}, 'annotations': {}, 'volumes': [], 'execution_environment': 0, 'encryption_key': ''}, 'traffic': [{'type_': 2, 'percent': 100, 'revision': '', 'tag': ''}], 'observed_generation': '506', 'terminal_condition': {'type_': 'Ready', 'state': 4, 'last_transition_time': '2023-02-05T19:34:56.667776Z', 'message': '', 'severity': 0}, 'conditions': [{'type_': 'RoutesReady', 'state': 4, 'last_transition_time': '2023-02-05T19:34:56.744181Z', 'message': '', 'severity': 0}, {'type_': 'ConfigurationsReady', 'state': 4, 'last_transition_time': '2023-02-05T19:34:51.724325Z', 'message': '', 'severity': 0}], 'latest_ready_revision': 'projects/reliably-staging-project/locations/europe-west1/services/reliably-frontend/revisions/reliably-frontend-2kx48', 'latest_created_revision': 'projects/reliably-staging-project/locations/europe-west1/services/reliably-frontend/revisions/reliably-frontend-2kx48', 'traffic_statuses': [{'type_': 1, 'percent': 100, 'revision': '', 'tag': '', 'uri': ''}], 'uri': 'https://reliably-frontend-k4cfvar3aa-ew.a.run.app', 'etag': '"CNGJgJ8GEPCh3m0/cHJvamVjdHMvcmVsaWFibHktc3RhZ2luZy1wcm9qZWN0L2xvY2F0aW9ucy9ldXJvcGUtd2VzdDEvc2VydmljZXMvcmVsaWFibHktZnJvbnRlbmQ"', 'description': '', 'labels': {}, 'annotations': {}, 'client_version': '', 'reconciling': False}]'
+[2023-02-06 09:26:20 DEBUG] [__init__:459] Applying after-control 'reliably' on 'activity'
+[2023-02-06 09:26:20 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-02-06 09:26:20 DEBUG] [__init__:459] Applying after-control 'reliably' on 'activity'
+[2023-02-06 09:26:20 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-02-06 09:26:20 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'activity'
+[2023-02-06 09:26:20 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-06 09:26:20 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'activity'
+[2023-02-06 09:26:20 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-06 09:26:20 DEBUG] [__init__:459] Applying after-control 'reliably' on 'method'
+[2023-02-06 09:26:20 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2023-02-06 09:26:20 WARNING] [run:707] Rollbacks were explicitly requested to be played
+[2023-02-06 09:26:20 INFO] [run:944] Let's rollback...
+[2023-02-06 09:26:20 DEBUG] [__init__:459] Applying before-control 'reliably' on 'rollback'
+[2023-02-06 09:26:20 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2023-02-06 09:26:20 INFO] [rollback:31] No declared rollbacks, let's move on.
+[2023-02-06 09:26:20 DEBUG] [__init__:459] Applying after-control 'reliably' on 'rollback'
+[2023-02-06 09:26:20 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2023-02-06 09:26:20 INFO] [run:511] Experiment ended with status: completed
+[2023-02-06 09:26:20 DEBUG] [__init__:459] Applying after-control 'reliably' on 'experiment'
+[2023-02-06 09:26:20 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_experiment_control'
+[2023-02-06 09:26:20 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'experiment'
+[2023-02-06 09:26:20 DEBUG] [python:196] Control 'after_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-06 09:26:20 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'experiment'
+[2023-02-06 09:26:20 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'after_experiment_control'
+[2023-02-06 09:26:20 DEBUG] [__init__:103] Cleaning up controls
+[2023-02-06 09:26:20 DEBUG] [__init__:112] Cleaning up control 'reliably'
+[2023-02-06 09:26:20 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2023-02-06 09:26:20 DEBUG] [__init__:265] Cleaning up global control 'reliably-integration-slack'
+[2023-02-06 09:26:20 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'cleanup_control'
+[2023-02-06 09:26:20 DEBUG] [__init__:265] Cleaning up global control 'reliably-integration-opentelemetry'
+[2023-02-06 09:26:20 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'cleanup_control'
+[2023-02-06 09:26:20 INFO] [experiment:236] Finishing Reliably execution...
+[2023-02-06 09:26:21 DEBUG] [experiment:156] Stopping Reliably state checker now
+[2023-02-06 09:26:21 INFO] [experiment:289] Finished Reliably execution. Bye!
+[2023-02-06 09:26:21 DEBUG] [caching:42] Clearing activities cache
