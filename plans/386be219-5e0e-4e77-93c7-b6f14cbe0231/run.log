@@ -1,0 +1,161 @@
+[2023-02-08 12:57:29 DEBUG] [cli:115] ###############################################################################
+[2023-02-08 12:57:29 DEBUG] [cli:116] Running command 'run'
+[2023-02-08 12:57:29 DEBUG] [cli:120] Using settings file '/home/runner/.config/reliably/plans/386be219-5e0e-4e77-93c7-b6f14cbe0231/ctk.yaml'
+[2023-02-08 12:57:29 DEBUG] [__init__:243] Loading global control 'reliably-integration-slack' from /home/runner/.config/reliably/plans/386be219-5e0e-4e77-93c7-b6f14cbe0231/controls/f5647a66-9c5b-4bef-a801-821864c2e8e1.json
+[2023-02-08 12:57:30 DEBUG] [__init__:243] Loading global control 'reliably-integration-opentelemetry' from /home/runner/.config/reliably/plans/386be219-5e0e-4e77-93c7-b6f14cbe0231/controls/b9df4af2-0719-405a-b732-41b7496b1de7.json
+[2023-02-08 12:57:30 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'loader'
+[2023-02-08 12:57:30 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'before_loading_experiment_control'
+[2023-02-08 12:57:30 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'loader'
+[2023-02-08 12:57:30 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'before_loading_experiment_control'
+[2023-02-08 12:57:30 DEBUG] [loader:129] Fetched experiment: 
+    {"title":"SLO error-count-3h / Error budget 5%","method":[],"runtime":{"hypothesis":{"strategy":"after-method-only"}},"version":"1.0.0","controls":[{"name":"reliably","provider":{"type":"python","module":"chaosreliably.controls.experiment","arguments":{"exp_id":"11c4ee0f-16ef-44e5-826e-e2644bf4d426","org_id":"8f67bb6a-4944-40af-80b0-921023467cdc"}}}],"description":"Monitor the health of our demo service from our users perspective and ensure they have a high-quality experience","contributions":{"quality":"low","security":"none","performance":"medium","availability":"high"},"steady-state-hypothesis":{"title":"Compute SLO and validate its Error Budget with our target","probes":[{"name":"get-slo","type":"probe","provider":{"func":"compute_slo","type":"python","module":"chaosreliably.activities.slo.probes","arguments":{"slo":{"kind":"ServiceLevelObjective","spec":{"goal":0.95,"method":"good_bad_ratio","backend":"cloud_monitoring_mql","exporters":[],"description":"Availability of Cloud Run service","service_level_indicator":{"filter_good":"fetch cloud_run_revision | metric 'run.googleapis.com/request_count' | filter resource.project_id == '${CLOUDRUN_PROJECT_ID}' | filter resource.service_name == '${CLOUDRUN_SERVICE_NAME}' | filter metric.response_code_class == '2xx'","filter_valid":"fetch cloud_run_revision | metric 'run.googleapis.com/request_count' | filter resource.project_id == '${CLOUDRUN_PROJECT_ID}' | filter resource.service_name == '${CLOUDRUN_SERVICE_NAME}'"}},"metadata":{"name":"cloudrun-service-availability","labels":{"slo_name":"availability","feature_name":"service","service_name":"cloudrun"}},"apiVersion":"sre.google.com/v2"},"config":{"backends":{"cloud_monitoring_mql":{"project_id":"${STACKDRIVER_HOST_PROJECT_ID}"}},"error_budget_policies":{"default":{"steps":[{"name":"3 hours","alert":false,"window":10800,"message_ok":"Last 3 hours on track","message_alert":"Page the SRE team to defend the SLO","burn_rate_threshold":9}]}}}}},"tolerance":{"name":"there-should-be-error-budget-left","type":"probe","provider":{"func":"has_error_budget_left","type":"python","module":"chaosreliably.activities.slo.tolerances","arguments":{"name":"cloudrun-service-availability"}}}}]}}
+[2023-02-08 12:57:30 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'loader'
+[2023-02-08 12:57:30 DEBUG] [python:196] Control 'after_loading_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-08 12:57:30 DEBUG] [__init__:484] After-control 'reliably-integration-slack' failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/__init__.py", line 465, in apply_controls
+        apply_python_control(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/control/python.py", line 179, in apply_python_control
+        func(context=context, **arguments)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 41, in after_loading_experiment_control
+        send(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 306, in send
+        attachments=attachments(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py", line 366, in attachments
+        "text": f"*{experiment['title']}*",
+    TypeError: string indices must be integers
+[2023-02-08 12:57:30 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'loader'
+[2023-02-08 12:57:30 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'after_loading_experiment_control'
+[2023-02-08 12:57:30 DEBUG] [caching:24] Building activity cache...
+[2023-02-08 12:57:30 DEBUG] [caching:35] Cached 1 activities
+[2023-02-08 12:57:30 INFO] [experiment:58] Validating the experiment's syntax
+[2023-02-08 12:57:30 DEBUG] [configuration:63] Loading configuration...
+[2023-02-08 12:57:30 DEBUG] [secret:78] Loading secrets...
+[2023-02-08 12:57:30 DEBUG] [secret:104] Done loading secrets
+[2023-02-08 12:57:31 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2023-02-08 12:57:31 INFO] [experiment:109] Experiment looks valid
+[2023-02-08 12:57:31 DEBUG] [caching:42] Clearing activities cache
+[2023-02-08 12:57:31 DEBUG] [cli:314] Runtime strategies: hypothesis - after-method-only / rollbacks - default
+[2023-02-08 12:57:31 DEBUG] [caching:24] Building activity cache...
+[2023-02-08 12:57:31 DEBUG] [caching:35] Cached 1 activities
+[2023-02-08 12:57:31 DEBUG] [configuration:63] Loading configuration...
+[2023-02-08 12:57:31 DEBUG] [secret:78] Loading secrets...
+[2023-02-08 12:57:31 DEBUG] [secret:104] Done loading secrets
+[2023-02-08 12:57:31 DEBUG] [configuration:160] Loading dynamic configuration...
+[2023-02-08 12:57:31 INFO] [run:370] Running experiment: SLO error-count-3h / Error budget 5%
+[2023-02-08 12:57:31 DEBUG] [__init__:171] Initializing global control 'reliably-integration-slack'
+[2023-02-08 12:57:31 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'configure_control'
+[2023-02-08 12:57:31 DEBUG] [__init__:171] Initializing global control 'reliably-integration-opentelemetry'
+[2023-02-08 12:57:31 DEBUG] [python:196] Control 'configure_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-08 12:57:31 INFO] [oltp:365] Chaos Toolkit Open Telemetry tracer created
+[2023-02-08 12:57:31 DEBUG] [__init__:64] Initializing controls
+[2023-02-08 12:57:31 DEBUG] [__init__:73] Initializing control 'reliably'
+[2023-02-08 12:57:31 DEBUG] [python:196] Control 'configure_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py'
+[2023-02-08 12:57:31 DEBUG] [experiment:402] Configure Reliably's experiment control
+[2023-02-08 12:57:31 INFO] [experiment:188] Reliably execution: ffc48890-cc17-4315-8d4e-bed3e78c5206
+[2023-02-08 12:57:32 DEBUG] [experiment:74] Starting Reliably state checker now
+[2023-02-08 12:57:32 INFO] [run:397] Steady-state strategy: after-method-only
+[2023-02-08 12:57:32 INFO] [run:401] Rollbacks strategy: default
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying before-control 'reliably' on 'experiment'
+[2023-02-08 12:57:32 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_experiment_control'
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'experiment'
+[2023-02-08 12:57:32 DEBUG] [python:196] Control 'before_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'experiment'
+[2023-02-08 12:57:32 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'before_experiment_control'
+[2023-02-08 12:57:32 INFO] [run:664] Playing your experiment's method now...
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying before-control 'reliably' on 'method'
+[2023-02-08 12:57:32 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2023-02-08 12:57:32 INFO] [activity:133] No declared activities, let's move on.
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying after-control 'reliably' on 'method'
+[2023-02-08 12:57:32 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2023-02-08 12:57:32 DEBUG] [run:591] Running steady-state hypothesis after the method
+[2023-02-08 12:57:32 INFO] [hypothesis:186] Steady state hypothesis: Compute SLO and validate its Error Budget with our target
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying before-control 'reliably' on 'hypothesis'
+[2023-02-08 12:57:32 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_hypothesis_control'
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying before-control 'reliably' on 'hypothesis'
+[2023-02-08 12:57:32 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_hypothesis_control'
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'hypothesis'
+[2023-02-08 12:57:32 DEBUG] [python:196] Control 'before_hypothesis_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'hypothesis'
+[2023-02-08 12:57:32 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'before_hypothesis_control'
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying before-control 'reliably' on 'activity'
+[2023-02-08 12:57:32 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying before-control 'reliably' on 'activity'
+[2023-02-08 12:57:32 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-02-08 12:57:32 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'activity'
+[2023-02-08 12:57:32 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-08 12:57:33 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'activity'
+[2023-02-08 12:57:33 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-08 12:57:33 INFO] [activity:215] Probe: get-slo
+[2023-02-08 12:57:33 DEBUG] [python:33] Activity 'get-slo' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/activities/slo/probes.py'
+[2023-02-08 12:57:33 DEBUG] [activity:292] Activity failed
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/activities/slo/probes.py", line 67, in replace_vars
+        full_value = full_value.replace(f"${{{var}}}", ctx[var])
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/os.py", line 680, in __getitem__
+        raise KeyError(key) from None
+    KeyError: 'CLOUDRUN_PROJECT_ID'
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/activities/slo/probes.py", line 31, in compute_slo
+        s_config = replace_vars(slo)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/activities/slo/probes.py", line 69, in replace_vars
+        raise ActivityFailed(
+    chaoslib.exceptions.ActivityFailed: Environment variable "CLOUDRUN_PROJECT_ID" should be set.
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/activity.py", line 285, in run_activity
+        result = run_python_activity(activity, configuration, secrets)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 58, in run_python_activity
+        raise ActivityFailed(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/activities/slo/probes.py", line 31, in compute_slo
+        s_config = replace_vars(slo)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/activities/slo/probes.py", line 69, in replace_vars
+        raise ActivityFailed(
+    chaoslib.exceptions.ActivityFailed: chaoslib.exceptions.ActivityFailed: Environment variable "CLOUDRUN_PROJECT_ID" should be set.
+[2023-02-08 12:57:33 ERROR] [activity:243]   => failed: chaoslib.exceptions.ActivityFailed: Environment variable "CLOUDRUN_PROJECT_ID" should be set.
+[2023-02-08 12:57:33 DEBUG] [__init__:459] Applying after-control 'reliably' on 'activity'
+[2023-02-08 12:57:33 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-02-08 12:57:33 DEBUG] [__init__:459] Applying after-control 'reliably' on 'activity'
+[2023-02-08 12:57:33 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-02-08 12:57:33 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'activity'
+[2023-02-08 12:57:33 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-08 12:57:34 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'activity'
+[2023-02-08 12:57:34 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-08 12:57:34 WARNING] [hypothesis:213] Probe terminated unexpectedly, so its tolerance could not be validated
+[2023-02-08 12:57:34 DEBUG] [__init__:459] Applying after-control 'reliably' on 'hypothesis'
+[2023-02-08 12:57:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_hypothesis_control'
+[2023-02-08 12:57:34 DEBUG] [__init__:459] Applying after-control 'reliably' on 'hypothesis'
+[2023-02-08 12:57:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_hypothesis_control'
+[2023-02-08 12:57:34 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'hypothesis'
+[2023-02-08 12:57:34 DEBUG] [python:196] Control 'after_hypothesis_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-08 12:57:34 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'hypothesis'
+[2023-02-08 12:57:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'after_hypothesis_control'
+[2023-02-08 12:57:34 CRITICAL] [run:602] Steady state probe 'get-slo' is not in the given tolerance so failing this experiment
+[2023-02-08 12:57:34 INFO] [run:511] Experiment ended with status: deviated
+[2023-02-08 12:57:34 INFO] [run:513] The steady-state has deviated, a weakness may have been discovered
+[2023-02-08 12:57:34 DEBUG] [__init__:459] Applying after-control 'reliably' on 'experiment'
+[2023-02-08 12:57:34 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_experiment_control'
+[2023-02-08 12:57:34 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'experiment'
+[2023-02-08 12:57:34 DEBUG] [python:196] Control 'after_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-08 12:57:35 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'experiment'
+[2023-02-08 12:57:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'after_experiment_control'
+[2023-02-08 12:57:35 DEBUG] [__init__:103] Cleaning up controls
+[2023-02-08 12:57:35 DEBUG] [__init__:112] Cleaning up control 'reliably'
+[2023-02-08 12:57:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2023-02-08 12:57:35 DEBUG] [__init__:265] Cleaning up global control 'reliably-integration-slack'
+[2023-02-08 12:57:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'cleanup_control'
+[2023-02-08 12:57:35 DEBUG] [__init__:265] Cleaning up global control 'reliably-integration-opentelemetry'
+[2023-02-08 12:57:35 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'cleanup_control'
+[2023-02-08 12:57:35 INFO] [experiment:236] Finishing Reliably execution...
+[2023-02-08 12:57:35 DEBUG] [experiment:156] Stopping Reliably state checker now
+[2023-02-08 12:57:36 INFO] [experiment:289] Finished Reliably execution. Bye!
+[2023-02-08 12:57:36 DEBUG] [caching:42] Clearing activities cache
