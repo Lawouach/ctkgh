@@ -1,7 +1,7 @@
 {
   "chaoslib-version": "1.33.1",
   "platform": "Linux-5.15.0-1031-azure-x86_64-with-glibc2.35",
-  "node": "fv-az193-634",
+  "node": "fv-az566-316",
   "experiment": {
     "title": "SLO error-count-3h / Error budget 5%",
     "method": [],
@@ -41,7 +41,7 @@
         "name": "reliably",
         "pauses": [],
         "termination": null,
-        "execution_url": "https://app.reliably.dev/executions/view/?id=84519b79-6711-4e24-b33f-e3878edba9b2&exp=11c4ee0f-16ef-44e5-826e-e2644bf4d426",
+        "execution_url": "https://app.reliably.dev/executions/view/?id=a99fe4fb-0dce-44ef-86c2-6f63c6377fc8&exp=11c4ee0f-16ef-44e5-826e-e2644bf4d426",
         "extra": [
           {
             "type": "url",
@@ -59,13 +59,13 @@
             "type": "url",
             "provider": "github",
             "topic": "run",
-            "value": "https://github.com/Lawouach/ctkgh/actions/runs/4124705267"
+            "value": "https://github.com/Lawouach/ctkgh/actions/runs/4124807200"
           }
         ]
       }
     ]
   },
-  "start": "2023-02-08T13:41:00.616237",
+  "start": "2023-02-08T13:53:47.526326",
   "status": "failed",
   "deviated": true,
   "steady_states": {
@@ -143,27 +143,27 @@
                       "description": "Availability of Cloud Run service",
                       "goal": 0.95,
                       "backend": "cloud_monitoring_mql",
-                      "gap": -0.04146099999999997,
+                      "gap": -0.04614999999999991,
                       "error_budget_policy_step_name": "3 hours",
                       "error_budget_target": 0.050000000000000044,
-                      "error_budget_measurement": 0.09146100000000001,
-                      "error_budget_burn_rate": 1.8,
+                      "error_budget_measurement": 0.09614999999999996,
+                      "error_budget_burn_rate": 1.9,
                       "error_budget_burn_rate_threshold": 9.0,
                       "error_budget_minutes": 9.000000000000007,
-                      "error_budget_remaining_minutes": -7.4629799999999955,
-                      "error_minutes": 16.46298,
+                      "error_budget_remaining_minutes": -8.306999999999984,
+                      "error_minutes": 17.306999999999995,
                       "valid": true,
-                      "timestamp": 1675863663,
-                      "timestamp_human": "2023-02-08T13:41:03.183196+00:00",
+                      "timestamp": 1675864429,
+                      "timestamp_human": "2023-02-08T13:53:49.245501+00:00",
                       "window": 10800,
                       "alert": false,
                       "consequence_message": "Missed for this measurement window, but not enough to alert",
                       "exporters": [],
                       "error_budget_policy": "default",
-                      "sli_measurement": 0.908539,
-                      "events_count": 16969,
-                      "bad_events_count": 1552,
-                      "good_events_count": 15417,
+                      "sli_measurement": 0.90385,
+                      "events_count": 16131,
+                      "bad_events_count": 1551,
+                      "good_events_count": 14580,
                       "metadata": {
                         "name": "cloudrun-service-availability",
                         "labels": {
@@ -178,7 +178,7 @@
                 }
               }
             },
-            "_id": "6d1095c8c6fb"
+            "_id": "ed15904f8872"
           },
           "output": [
             {
@@ -186,27 +186,27 @@
               "description": "Availability of Cloud Run service",
               "goal": 0.95,
               "backend": "cloud_monitoring_mql",
-              "gap": -0.04146099999999997,
+              "gap": -0.04614999999999991,
               "error_budget_policy_step_name": "3 hours",
               "error_budget_target": 0.050000000000000044,
-              "error_budget_measurement": 0.09146100000000001,
-              "error_budget_burn_rate": 1.8,
+              "error_budget_measurement": 0.09614999999999996,
+              "error_budget_burn_rate": 1.9,
               "error_budget_burn_rate_threshold": 9.0,
               "error_budget_minutes": 9.000000000000007,
-              "error_budget_remaining_minutes": -7.4629799999999955,
-              "error_minutes": 16.46298,
+              "error_budget_remaining_minutes": -8.306999999999984,
+              "error_minutes": 17.306999999999995,
               "valid": true,
-              "timestamp": 1675863663,
-              "timestamp_human": "2023-02-08T13:41:03.183196+00:00",
+              "timestamp": 1675864429,
+              "timestamp_human": "2023-02-08T13:53:49.245501+00:00",
               "window": 10800,
               "alert": false,
               "consequence_message": "Missed for this measurement window, but not enough to alert",
               "exporters": [],
               "error_budget_policy": "default",
-              "sli_measurement": 0.908539,
-              "events_count": 16969,
-              "bad_events_count": 1552,
-              "good_events_count": 15417,
+              "sli_measurement": 0.90385,
+              "events_count": 16131,
+              "bad_events_count": 1551,
+              "good_events_count": 14580,
               "metadata": {
                 "name": "cloudrun-service-availability",
                 "labels": {
@@ -218,10 +218,10 @@
               "errors": []
             }
           ],
-          "start": "2023-02-08T13:41:02.812639",
+          "start": "2023-02-08T13:53:48.989414",
           "status": "succeeded",
-          "end": "2023-02-08T13:41:04.144372",
-          "duration": 1.331733,
+          "end": "2023-02-08T13:53:50.167014",
+          "duration": 1.1776,
           "tolerance_met": false
         }
       ]
@@ -230,6 +230,6 @@
   },
   "run": [],
   "rollbacks": [],
-  "end": "2023-02-08T13:41:05.263498",
-  "duration": 4.6495277881622314
+  "end": "2023-02-08T13:53:51.372413",
+  "duration": 3.84887957572937
 }
