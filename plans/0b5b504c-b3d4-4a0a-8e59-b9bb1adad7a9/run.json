@@ -1,0 +1,235 @@
+{
+  "chaoslib-version": "1.33.1",
+  "platform": "Linux-5.15.0-1031-azure-x86_64-with-glibc2.35",
+  "node": "fv-az193-634",
+  "experiment": {
+    "title": "SLO error-count-3h / Error budget 5%",
+    "method": [],
+    "runtime": {
+      "hypothesis": {
+        "strategy": "after-method-only"
+      }
+    },
+    "version": "1.0.0",
+    "controls": [
+      {
+        "name": "reliably",
+        "provider": {
+          "type": "python",
+          "module": "chaosreliably.controls.experiment",
+          "arguments": {
+            "exp_id": "11c4ee0f-16ef-44e5-826e-e2644bf4d426",
+            "org_id": "8f67bb6a-4944-40af-80b0-921023467cdc"
+          }
+        }
+      }
+    ],
+    "description": "Monitor the health of our demo service from our users perspective and ensure they have a high-quality experience",
+    "contributions": {
+      "quality": "low",
+      "security": "none",
+      "performance": "medium",
+      "availability": "high"
+    },
+    "steady-state-hypothesis": {
+      "title": "Compute SLO and validate its Error Budget with our target",
+      "probes": []
+    },
+    "dry": null,
+    "extensions": [
+      {
+        "name": "reliably",
+        "pauses": [],
+        "termination": null,
+        "execution_url": "https://app.reliably.dev/executions/view/?id=84519b79-6711-4e24-b33f-e3878edba9b2&exp=11c4ee0f-16ef-44e5-826e-e2644bf4d426",
+        "extra": [
+          {
+            "type": "url",
+            "provider": "github",
+            "topic": "commit",
+            "value": "https://github.com/Lawouach/ctkgh/tree/main/plans/0b5b504c-b3d4-4a0a-8e59-b9bb1adad7a9"
+          },
+          {
+            "type": "url",
+            "provider": "github",
+            "topic": "repo",
+            "value": "https://github.com/Lawouach/ctkgh"
+          },
+          {
+            "type": "url",
+            "provider": "github",
+            "topic": "run",
+            "value": "https://github.com/Lawouach/ctkgh/actions/runs/4124705267"
+          }
+        ]
+      }
+    ]
+  },
+  "start": "2023-02-08T13:41:00.616237",
+  "status": "failed",
+  "deviated": true,
+  "steady_states": {
+    "before": null,
+    "after": {
+      "steady_state_met": false,
+      "probes": [
+        {
+          "activity": {
+            "name": "get-slo",
+            "type": "probe",
+            "provider": {
+              "func": "compute_slo",
+              "type": "python",
+              "module": "chaosreliably.activities.slo.probes",
+              "arguments": {
+                "slo": {
+                  "kind": "ServiceLevelObjective",
+                  "spec": {
+                    "goal": 0.95,
+                    "method": "good_bad_ratio",
+                    "backend": "cloud_monitoring_mql",
+                    "exporters": [],
+                    "description": "Availability of Cloud Run service",
+                    "service_level_indicator": {
+                      "filter_good": "fetch cloud_run_revision | metric 'run.googleapis.com/request_count' | filter resource.project_id == '${CLOUDRUN_PROJECT_ID}' | filter resource.service_name == '${CLOUDRUN_SERVICE_NAME}' | filter metric.response_code_class == '2xx'",
+                      "filter_valid": "fetch cloud_run_revision | metric 'run.googleapis.com/request_count' | filter resource.project_id == '${CLOUDRUN_PROJECT_ID}' | filter resource.service_name == '${CLOUDRUN_SERVICE_NAME}'"
+                    }
+                  },
+                  "metadata": {
+                    "name": "cloudrun-service-availability",
+                    "labels": {
+                      "slo_name": "availability",
+                      "feature_name": "service",
+                      "service_name": "cloudrun"
+                    }
+                  },
+                  "apiVersion": "sre.google.com/v2"
+                },
+                "config": {
+                  "backends": {
+                    "cloud_monitoring_mql": {
+                      "project_id": "${STACKDRIVER_HOST_PROJECT_ID}"
+                    }
+                  },
+                  "error_budget_policies": {
+                    "default": {
+                      "steps": [
+                        {
+                          "name": "3 hours",
+                          "alert": false,
+                          "window": 10800,
+                          "message_ok": "Last 3 hours on track",
+                          "message_alert": "Page the SRE team to defend the SLO",
+                          "burn_rate_threshold": 9
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "tolerance": {
+              "name": "there-should-be-error-budget-left",
+              "type": "probe",
+              "provider": {
+                "func": "has_error_budget_left",
+                "type": "python",
+                "module": "chaosreliably.activities.slo.tolerances",
+                "arguments": {
+                  "name": "cloudrun-service-availability",
+                  "value": [
+                    {
+                      "name": "cloudrun-service-availability",
+                      "description": "Availability of Cloud Run service",
+                      "goal": 0.95,
+                      "backend": "cloud_monitoring_mql",
+                      "gap": -0.04146099999999997,
+                      "error_budget_policy_step_name": "3 hours",
+                      "error_budget_target": 0.050000000000000044,
+                      "error_budget_measurement": 0.09146100000000001,
+                      "error_budget_burn_rate": 1.8,
+                      "error_budget_burn_rate_threshold": 9.0,
+                      "error_budget_minutes": 9.000000000000007,
+                      "error_budget_remaining_minutes": -7.4629799999999955,
+                      "error_minutes": 16.46298,
+                      "valid": true,
+                      "timestamp": 1675863663,
+                      "timestamp_human": "2023-02-08T13:41:03.183196+00:00",
+                      "window": 10800,
+                      "alert": false,
+                      "consequence_message": "Missed for this measurement window, but not enough to alert",
+                      "exporters": [],
+                      "error_budget_policy": "default",
+                      "sli_measurement": 0.908539,
+                      "events_count": 16969,
+                      "bad_events_count": 1552,
+                      "good_events_count": 15417,
+                      "metadata": {
+                        "name": "cloudrun-service-availability",
+                        "labels": {
+                          "slo_name": "availability",
+                          "feature_name": "service",
+                          "service_name": "cloudrun"
+                        }
+                      },
+                      "errors": []
+                    }
+                  ]
+                }
+              }
+            },
+            "_id": "6d1095c8c6fb"
+          },
+          "output": [
+            {
+              "name": "cloudrun-service-availability",
+              "description": "Availability of Cloud Run service",
+              "goal": 0.95,
+              "backend": "cloud_monitoring_mql",
+              "gap": -0.04146099999999997,
+              "error_budget_policy_step_name": "3 hours",
+              "error_budget_target": 0.050000000000000044,
+              "error_budget_measurement": 0.09146100000000001,
+              "error_budget_burn_rate": 1.8,
+              "error_budget_burn_rate_threshold": 9.0,
+              "error_budget_minutes": 9.000000000000007,
+              "error_budget_remaining_minutes": -7.4629799999999955,
+              "error_minutes": 16.46298,
+              "valid": true,
+              "timestamp": 1675863663,
+              "timestamp_human": "2023-02-08T13:41:03.183196+00:00",
+              "window": 10800,
+              "alert": false,
+              "consequence_message": "Missed for this measurement window, but not enough to alert",
+              "exporters": [],
+              "error_budget_policy": "default",
+              "sli_measurement": 0.908539,
+              "events_count": 16969,
+              "bad_events_count": 1552,
+              "good_events_count": 15417,
+              "metadata": {
+                "name": "cloudrun-service-availability",
+                "labels": {
+                  "slo_name": "availability",
+                  "feature_name": "service",
+                  "service_name": "cloudrun"
+                }
+              },
+              "errors": []
+            }
+          ],
+          "start": "2023-02-08T13:41:02.812639",
+          "status": "succeeded",
+          "end": "2023-02-08T13:41:04.144372",
+          "duration": 1.331733,
+          "tolerance_met": false
+        }
+      ]
+    },
+    "during": []
+  },
+  "run": [],
+  "rollbacks": [],
+  "end": "2023-02-08T13:41:05.263498",
+  "duration": 4.6495277881622314
+}
