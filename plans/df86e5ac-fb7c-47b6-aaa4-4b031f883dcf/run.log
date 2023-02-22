@@ -1,0 +1,1047 @@
+[2023-02-22 07:39:23 DEBUG] [cli:115] ###############################################################################
+[2023-02-22 07:39:23 DEBUG] [cli:116] Running command 'run'
+[2023-02-22 07:39:23 DEBUG] [cli:120] Using settings file '/home/runner/.config/reliably/plans/df86e5ac-fb7c-47b6-aaa4-4b031f883dcf/ctk.yaml'
+[2023-02-22 07:39:23 DEBUG] [__init__:243] Loading global control 'reliably-integration-opentelemetry' from /home/runner/.config/reliably/plans/df86e5ac-fb7c-47b6-aaa4-4b031f883dcf/controls/c9484817-1c40-49d4-bc5d-e26fef76d9d0.json
+[2023-02-22 07:39:24 DEBUG] [__init__:243] Loading global control 'reliably-integration-slack' from /home/runner/.config/reliably/plans/df86e5ac-fb7c-47b6-aaa4-4b031f883dcf/controls/d13ef5f0-3aef-418c-874d-920266243ebd.json
+[2023-02-22 07:39:24 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'loader'
+[2023-02-22 07:39:24 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'before_loading_experiment_control'
+[2023-02-22 07:39:24 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'loader'
+[2023-02-22 07:39:24 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'before_loading_experiment_control'
+[2023-02-22 07:39:24 DEBUG] [loader:129] Fetched experiment: 
+    {"title":"Inject mild load into the demo app","method":[{"name":"inject-traffic-into-endpoint","type":"action","provider":{"func":"inject_gradual_traffic_into_endpoint","type":"python","module":"chaosreliably.activities.load.actions","arguments":{"endpoint":"http://demo.reliably.com/users","step_duration":30,"test_duration":300,"step_additional_vu":3,"vu_per_second_rate":1,"results_json_filepath":"./load-test-results.json"}},"background":true}],"version":"1.0.0","controls":[{"name":"reliably","provider":{"type":"python","module":"chaosreliably.controls.experiment","arguments":{"exp_id":"ad1958bb-18c2-45c6-81b5-2badb9da3d5e","org_id":"fe391f5a-c73e-4244-91bc-ac72e1c3cc39"}}}],"description":"Ensure there is always a bit of traffic in our application","contributions":{"quality":"none","security":"none","performance":"high","availability":"low"}}
+[2023-02-22 07:39:24 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'loader'
+[2023-02-22 07:39:24 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'after_loading_experiment_control'
+[2023-02-22 07:39:24 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'loader'
+[2023-02-22 07:39:24 DEBUG] [python:196] Control 'after_loading_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-22 07:39:25 DEBUG] [caching:24] Building activity cache...
+[2023-02-22 07:39:25 DEBUG] [caching:35] Cached 1 activities
+[2023-02-22 07:39:25 INFO] [experiment:58] Validating the experiment's syntax
+[2023-02-22 07:39:25 DEBUG] [configuration:63] Loading configuration...
+[2023-02-22 07:39:25 DEBUG] [secret:78] Loading secrets...
+[2023-02-22 07:39:25 DEBUG] [secret:104] Done loading secrets
+[2023-02-22 07:39:25 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2023-02-22 07:39:25 INFO] [experiment:109] Experiment looks valid
+[2023-02-22 07:39:25 DEBUG] [caching:42] Clearing activities cache
+[2023-02-22 07:39:25 DEBUG] [cli:314] Runtime strategies: hypothesis - default / rollbacks - always
+[2023-02-22 07:39:25 DEBUG] [caching:24] Building activity cache...
+[2023-02-22 07:39:25 DEBUG] [caching:35] Cached 1 activities
+[2023-02-22 07:39:25 DEBUG] [configuration:63] Loading configuration...
+[2023-02-22 07:39:25 DEBUG] [secret:78] Loading secrets...
+[2023-02-22 07:39:25 DEBUG] [secret:104] Done loading secrets
+[2023-02-22 07:39:25 DEBUG] [configuration:160] Loading dynamic configuration...
+[2023-02-22 07:39:25 INFO] [run:370] Running experiment: Inject mild load into the demo app
+[2023-02-22 07:39:25 DEBUG] [run:780] 1 activities will be run in the background
+[2023-02-22 07:39:25 DEBUG] [__init__:171] Initializing global control 'reliably-integration-opentelemetry'
+[2023-02-22 07:39:25 DEBUG] [python:196] Control 'configure_control' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-22 07:39:25 INFO] [oltp:392] Chaos Toolkit Open Telemetry tracer created
+[2023-02-22 07:39:25 DEBUG] [__init__:171] Initializing global control 'reliably-integration-slack'
+[2023-02-22 07:39:25 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'configure_control'
+[2023-02-22 07:39:25 DEBUG] [__init__:64] Initializing controls
+[2023-02-22 07:39:25 DEBUG] [__init__:73] Initializing control 'reliably'
+[2023-02-22 07:39:25 DEBUG] [python:196] Control 'configure_control' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py'
+[2023-02-22 07:39:25 DEBUG] [experiment:402] Configure Reliably's experiment control
+[2023-02-22 07:39:25 INFO] [experiment:188] Reliably execution: 50cfc821-a784-4ac4-bf6e-4c8636c2ae87
+[2023-02-22 07:39:26 DEBUG] [experiment:74] Starting Reliably state checker now
+[2023-02-22 07:39:26 INFO] [run:397] Steady-state strategy: default
+[2023-02-22 07:39:26 INFO] [run:401] Rollbacks strategy: always
+[2023-02-22 07:39:26 INFO] [run:406] No steady state hypothesis defined. That's ok, just exploring.
+[2023-02-22 07:39:26 DEBUG] [__init__:459] Applying before-control 'reliably' on 'experiment'
+[2023-02-22 07:39:26 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_experiment_control'
+[2023-02-22 07:39:26 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'experiment'
+[2023-02-22 07:39:26 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'before_experiment_control'
+[2023-02-22 07:39:26 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'experiment'
+[2023-02-22 07:39:26 DEBUG] [python:196] Control 'before_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-22 07:39:26 INFO] [run:664] Playing your experiment's method now...
+[2023-02-22 07:39:26 DEBUG] [__init__:459] Applying before-control 'reliably' on 'method'
+[2023-02-22 07:39:26 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2023-02-22 07:39:26 DEBUG] [activity:137] activity will run in the background
+[2023-02-22 07:39:26 DEBUG] [__init__:459] Applying before-control 'reliably' on 'activity'
+[2023-02-22 07:39:26 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-02-22 07:39:26 DEBUG] [run:917] Waiting for background activities to complete
+[2023-02-22 07:39:26 DEBUG] [__init__:459] Applying before-control 'reliably' on 'activity'
+[2023-02-22 07:39:26 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-02-22 07:39:26 DEBUG] [__init__:459] Applying before-control 'reliably-integration-opentelemetry' on 'activity'
+[2023-02-22 07:39:26 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-22 07:39:26 DEBUG] [__init__:459] Applying before-control 'reliably-integration-slack' on 'activity'
+[2023-02-22 07:39:26 DEBUG] [python:196] Control 'before_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-22 07:39:27 INFO] [activity:209] Action: inject-traffic-into-endpoint [in background]
+[2023-02-22 07:39:27 DEBUG] [python:33] Activity 'inject-traffic-into-endpoint' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/activities/load/actions.py'
+[2023-02-22 07:44:28 DEBUG] [actions:104] locust exit code: 0
+[2023-02-22 07:44:28 DEBUG] [actions:105] locust stderr: [2023-02-22 07:39:28,209] fv-az454-862/INFO/locust.runners: Shape test starting. User count and spawn rate are ignored for this type of load test
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                         0     0(0.00%) |      0       0       0      0 |    0.00        0.00
+    
+    [2023-02-22 07:39:28,210] fv-az454-862/INFO/locust.runners: Shape worker starting
+    [2023-02-22 07:39:28,210] fv-az454-862/INFO/locust.runners: Shape test updating to 3 users at 1.00 spawn rate
+    [2023-02-22 07:39:28,210] fv-az454-862/INFO/locust.runners: Ramping to 3 users at a rate of 1.00 per second
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                             2   2(100.00%) |     97      79     115     79 |    0.00        0.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                         2   2(100.00%) |     97      79     115     79 |    0.00        0.00
+    
+    [2023-02-22 07:39:30,214] fv-az454-862/INFO/locust.runners: All users spawned: {"WebsiteUser": 3} (3 total users)
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                             4   4(100.00%) |     86      70     115     79 |    1.00        1.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                         4   4(100.00%) |     86      70     115     79 |    1.00        1.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                             4   4(100.00%) |     86      70     115     79 |    1.00        1.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                         4   4(100.00%) |     86      70     115     79 |    1.00        1.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                             5   5(100.00%) |     70       7     115     79 |    1.00        1.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                         5   5(100.00%) |     70       7     115     79 |    1.00        1.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                             6   6(100.00%) |     60       7     115     70 |    0.67        0.67
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                         6   6(100.00%) |     60       7     115     70 |    0.67        0.67
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            10  10(100.00%) |     71       7     133     79 |    0.60        0.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        10  10(100.00%) |     71       7     133     79 |    0.60        0.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            10  10(100.00%) |     71       7     133     79 |    0.60        0.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        10  10(100.00%) |     71       7     133     79 |    0.60        0.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            11  11(100.00%) |     74       7     133     80 |    0.70        0.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        11  11(100.00%) |     74       7     133     80 |    0.70        0.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            13  13(100.00%) |     73       7     133     80 |    0.70        0.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        13  13(100.00%) |     73       7     133     80 |    0.70        0.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            15  15(100.00%) |     65       7     133     79 |    0.80        0.80
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        15  15(100.00%) |     65       7     133     79 |    0.80        0.80
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            15  15(100.00%) |     65       7     133     79 |    0.80        0.80
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        15  15(100.00%) |     65       7     133     79 |    0.80        0.80
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            15  15(100.00%) |     65       7     133     79 |    0.80        0.80
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        15  15(100.00%) |     65       7     133     79 |    0.80        0.80
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            16  16(100.00%) |     66       7     133     79 |    0.50        0.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        16  16(100.00%) |     66       7     133     79 |    0.50        0.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            20  20(100.00%) |     54       7     133     15 |    0.40        0.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        20  20(100.00%) |     54       7     133     15 |    0.40        0.40
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            20  20(100.00%) |     54       7     133     15 |    0.40        0.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        20  20(100.00%) |     54       7     133     15 |    0.40        0.40
+    
+    [2023-02-22 07:39:58,236] fv-az454-862/INFO/locust.runners: Shape test updating to 6 users at 1.00 spawn rate
+    [2023-02-22 07:39:58,236] fv-az454-862/INFO/locust.runners: Ramping to 6 users at a rate of 1.00 per second
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            23  23(100.00%) |     48       7     133     11 |    0.60        0.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        23  23(100.00%) |     48       7     133     11 |    0.60        0.60
+    
+    [2023-02-22 07:40:00,239] fv-az454-862/INFO/locust.runners: All users spawned: {"WebsiteUser": 6} (6 total users)
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            25  25(100.00%) |     45       7     133      9 |    0.60        0.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        25  25(100.00%) |     45       7     133      9 |    0.60        0.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            27  27(100.00%) |     42       7     133      9 |    0.90        0.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        27  27(100.00%) |     42       7     133      9 |    0.90        0.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            29  29(100.00%) |     40       7     133      9 |    1.10        1.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        29  29(100.00%) |     40       7     133      9 |    1.10        1.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            31  31(100.00%) |     38       7     133      9 |    1.10        1.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        31  31(100.00%) |     38       7     133      9 |    1.10        1.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            33  33(100.00%) |     36       7     133      9 |    1.00        1.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        33  33(100.00%) |     36       7     133      9 |    1.00        1.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            35  35(100.00%) |     35       7     133      9 |    1.10        1.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        35  35(100.00%) |     35       7     133      9 |    1.10        1.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            36  36(100.00%) |     34       7     133      9 |    1.10        1.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        36  36(100.00%) |     34       7     133      9 |    1.10        1.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            39  39(100.00%) |     32       7     133      9 |    1.00        1.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        39  39(100.00%) |     32       7     133      9 |    1.00        1.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            43  43(100.00%) |     30       7     133      9 |    0.80        0.80
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        43  43(100.00%) |     30       7     133      9 |    0.80        0.80
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            45  45(100.00%) |     29       6     133      9 |    1.10        1.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        45  45(100.00%) |     29       6     133      9 |    1.10        1.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            49  49(100.00%) |     27       6     133      9 |    1.30        1.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        49  49(100.00%) |     27       6     133      9 |    1.30        1.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            51  51(100.00%) |     27       6     133      9 |    1.20        1.20
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        51  51(100.00%) |     27       6     133      9 |    1.20        1.20
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            54  54(100.00%) |     26       6     133      9 |    1.50        1.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        54  54(100.00%) |     26       6     133      9 |    1.50        1.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            55  55(100.00%) |     25       6     133      9 |    1.60        1.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        55  55(100.00%) |     25       6     133      9 |    1.60        1.60
+    
+    [2023-02-22 07:40:28,263] fv-az454-862/INFO/locust.runners: Shape test updating to 9 users at 1.00 spawn rate
+    [2023-02-22 07:40:28,263] fv-az454-862/INFO/locust.runners: Ramping to 9 users at a rate of 1.00 per second
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            59  59(100.00%) |     24       6     133      9 |    1.40        1.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        59  59(100.00%) |     24       6     133      9 |    1.40        1.40
+    
+    [2023-02-22 07:40:30,265] fv-az454-862/INFO/locust.runners: All users spawned: {"WebsiteUser": 9} (9 total users)
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            66  66(100.00%) |     22       6     133      9 |    1.40        1.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        66  66(100.00%) |     22       6     133      9 |    1.40        1.40
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            66  66(100.00%) |     22       6     133      9 |    1.40        1.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        66  66(100.00%) |     22       6     133      9 |    1.40        1.40
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            70  70(100.00%) |     22       6     133      9 |    1.50        1.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        70  70(100.00%) |     22       6     133      9 |    1.50        1.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            73  73(100.00%) |     21       6     133      9 |    1.70        1.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        73  73(100.00%) |     21       6     133      9 |    1.70        1.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            74  74(100.00%) |     21       6     133      9 |    1.70        1.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        74  74(100.00%) |     21       6     133      9 |    1.70        1.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            76  76(100.00%) |     21       6     133      9 |    1.70        1.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        76  76(100.00%) |     21       6     133      9 |    1.70        1.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            83  83(100.00%) |     20       6     133      9 |    1.10        1.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        83  83(100.00%) |     20       6     133      9 |    1.10        1.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            85  85(100.00%) |     19       6     133      9 |    1.40        1.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        85  85(100.00%) |     19       6     133      9 |    1.40        1.40
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            86  86(100.00%) |     19       6     133      9 |    1.60        1.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        86  86(100.00%) |     19       6     133      9 |    1.60        1.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            89  89(100.00%) |     19       6     133      9 |    1.60        1.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        89  89(100.00%) |     19       6     133      9 |    1.60        1.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            91  91(100.00%) |     19       6     133      9 |    1.30        1.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        91  91(100.00%) |     19       6     133      9 |    1.30        1.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                            96  96(100.00%) |     18       6     133      9 |    1.50        1.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                        96  96(100.00%) |     18       6     133      9 |    1.50        1.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           101 101(100.00%) |     18       6     133      9 |    1.30        1.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       101 101(100.00%) |     18       6     133      9 |    1.30        1.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           105 105(100.00%) |     17       6     133      9 |    1.60        1.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       105 105(100.00%) |     17       6     133      9 |    1.60        1.60
+    
+    [2023-02-22 07:40:58,291] fv-az454-862/INFO/locust.runners: Shape test updating to 12 users at 1.00 spawn rate
+    [2023-02-22 07:40:58,291] fv-az454-862/INFO/locust.runners: Ramping to 12 users at a rate of 1.00 per second
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           108 108(100.00%) |     17       6     133      9 |    1.50        1.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       108 108(100.00%) |     17       6     133      9 |    1.50        1.50
+    
+    [2023-02-22 07:41:00,294] fv-az454-862/INFO/locust.runners: All users spawned: {"WebsiteUser": 12} (12 total users)
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           114 114(100.00%) |     16       6     133      9 |    1.90        1.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       114 114(100.00%) |     16       6     133      9 |    1.90        1.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           117 117(100.00%) |     16       6     133      9 |    2.10        2.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       117 117(100.00%) |     16       6     133      9 |    2.10        2.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           121 121(100.00%) |     16       6     133      9 |    2.10        2.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       121 121(100.00%) |     16       6     133      9 |    2.10        2.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           125 125(100.00%) |     16       6     133      9 |    2.20        2.20
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       125 125(100.00%) |     16       6     133      9 |    2.20        2.20
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           131 131(100.00%) |     15       6     133      9 |    2.20        2.20
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       131 131(100.00%) |     15       6     133      9 |    2.20        2.20
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           135 135(100.00%) |     15       6     133      9 |    2.30        2.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       135 135(100.00%) |     15       6     133      9 |    2.30        2.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           137 137(100.00%) |     15       6     133      9 |    2.20        2.20
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       137 137(100.00%) |     15       6     133      9 |    2.20        2.20
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           142 142(100.00%) |     15       6     133      8 |    2.00        2.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       142 142(100.00%) |     15       6     133      8 |    2.00        2.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           146 146(100.00%) |     15       6     133      8 |    2.00        2.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       146 146(100.00%) |     15       6     133      8 |    2.00        2.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           149 149(100.00%) |     15       6     133      8 |    2.10        2.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       149 149(100.00%) |     15       6     133      8 |    2.10        2.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           154 154(100.00%) |     14       6     133      8 |    1.70        1.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       154 154(100.00%) |     14       6     133      8 |    1.70        1.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           159 159(100.00%) |     14       6     133      8 |    1.90        1.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       159 159(100.00%) |     14       6     133      8 |    1.90        1.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           165 165(100.00%) |     14       6     133      8 |    2.00        2.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       165 165(100.00%) |     14       6     133      8 |    2.00        2.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           170 170(100.00%) |     14       6     133      8 |    2.10        2.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       170 170(100.00%) |     14       6     133      8 |    2.10        2.10
+    
+    [2023-02-22 07:41:28,315] fv-az454-862/INFO/locust.runners: Shape test updating to 15 users at 1.00 spawn rate
+    [2023-02-22 07:41:28,316] fv-az454-862/INFO/locust.runners: Ramping to 15 users at a rate of 1.00 per second
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           175 175(100.00%) |     14       6     133      8 |    2.40        2.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       175 175(100.00%) |     14       6     133      8 |    2.40        2.40
+    
+    [2023-02-22 07:41:30,318] fv-az454-862/INFO/locust.runners: All users spawned: {"WebsiteUser": 15} (15 total users)
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           178 178(100.00%) |     13       6     133      8 |    2.40        2.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       178 178(100.00%) |     13       6     133      8 |    2.40        2.40
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           186 186(100.00%) |     13       6     133      8 |    2.50        2.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       186 186(100.00%) |     13       6     133      8 |    2.50        2.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           193 193(100.00%) |     13       6     133      8 |    2.80        2.80
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       193 193(100.00%) |     13       6     133      8 |    2.80        2.80
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           198 198(100.00%) |     13       6     133      8 |    2.60        2.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       198 198(100.00%) |     13       6     133      8 |    2.60        2.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           205 205(100.00%) |     13       6     133      8 |    2.80        2.80
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       205 205(100.00%) |     13       6     133      8 |    2.80        2.80
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           211 211(100.00%) |     13       6     133      8 |    2.80        2.80
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       211 211(100.00%) |     13       6     133      8 |    2.80        2.80
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           219 219(100.00%) |     12       6     133      8 |    3.30        3.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       219 219(100.00%) |     12       6     133      8 |    3.30        3.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           224 224(100.00%) |     12       6     133      8 |    3.30        3.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       224 224(100.00%) |     12       6     133      8 |    3.30        3.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           229 229(100.00%) |     12       6     133      8 |    3.30        3.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       229 229(100.00%) |     12       6     133      8 |    3.30        3.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           234 234(100.00%) |     12       6     133      8 |    2.90        2.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       234 234(100.00%) |     12       6     133      8 |    2.90        2.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           238 238(100.00%) |     12       6     133      8 |    2.90        2.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       238 238(100.00%) |     12       6     133      8 |    2.90        2.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           243 243(100.00%) |     12       6     133      8 |    3.00        3.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       243 243(100.00%) |     12       6     133      8 |    3.00        3.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           248 248(100.00%) |     12       6     133      8 |    2.60        2.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       248 248(100.00%) |     12       6     133      8 |    2.60        2.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           258 258(100.00%) |     12       6     133      8 |    2.40        2.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       258 258(100.00%) |     12       6     133      8 |    2.40        2.40
+    
+    [2023-02-22 07:41:58,343] fv-az454-862/INFO/locust.runners: Shape test updating to 18 users at 1.00 spawn rate
+    [2023-02-22 07:41:58,343] fv-az454-862/INFO/locust.runners: Ramping to 18 users at a rate of 1.00 per second
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           265 265(100.00%) |     12       6     133      8 |    3.00        3.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       265 265(100.00%) |     12       6     133      8 |    3.00        3.00
+    
+    [2023-02-22 07:42:00,346] fv-az454-862/INFO/locust.runners: All users spawned: {"WebsiteUser": 18} (18 total users)
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           271 271(100.00%) |     12       6     133      8 |    3.00        3.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       271 271(100.00%) |     12       6     133      8 |    3.00        3.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           275 275(100.00%) |     12       6     133      8 |    3.20        3.20
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       275 275(100.00%) |     12       6     133      8 |    3.20        3.20
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           283 283(100.00%) |     12       6     133      8 |    3.10        3.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       283 283(100.00%) |     12       6     133      8 |    3.10        3.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           291 291(100.00%) |     11       6     133      8 |    3.20        3.20
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       291 291(100.00%) |     11       6     133      8 |    3.20        3.20
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           299 299(100.00%) |     11       6     133      8 |    3.40        3.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       299 299(100.00%) |     11       6     133      8 |    3.40        3.40
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           306 306(100.00%) |     11       6     133      8 |    3.30        3.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       306 306(100.00%) |     11       6     133      8 |    3.30        3.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           314 314(100.00%) |     11       6     133      8 |    3.50        3.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       314 314(100.00%) |     11       6     133      8 |    3.50        3.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           319 319(100.00%) |     11       6     133      8 |    3.90        3.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       319 319(100.00%) |     11       6     133      8 |    3.90        3.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           330 330(100.00%) |     11       6     133      8 |    3.60        3.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       330 330(100.00%) |     11       6     133      8 |    3.60        3.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           334 334(100.00%) |     11       6     133      8 |    3.70        3.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       334 334(100.00%) |     11       6     133      8 |    3.70        3.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           339 339(100.00%) |     11       6     133      8 |    3.60        3.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       339 339(100.00%) |     11       6     133      8 |    3.60        3.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           346 346(100.00%) |     11       6     133      8 |    3.20        3.20
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       346 346(100.00%) |     11       6     133      8 |    3.20        3.20
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           353 353(100.00%) |     11       6     133      8 |    3.10        3.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       353 353(100.00%) |     11       6     133      8 |    3.10        3.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           360 360(100.00%) |     11       6     133      8 |    3.10        3.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       360 360(100.00%) |     11       6     133      8 |    3.10        3.10
+    
+    [2023-02-22 07:42:28,368] fv-az454-862/INFO/locust.runners: Shape test updating to 21 users at 1.00 spawn rate
+    [2023-02-22 07:42:28,368] fv-az454-862/INFO/locust.runners: Ramping to 21 users at a rate of 1.00 per second
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           367 367(100.00%) |     11       6     133      8 |    3.20        3.20
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       367 367(100.00%) |     11       6     133      8 |    3.20        3.20
+    
+    [2023-02-22 07:42:30,370] fv-az454-862/INFO/locust.runners: All users spawned: {"WebsiteUser": 21} (21 total users)
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           376 376(100.00%) |     11       6     133      8 |    3.30        3.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       376 376(100.00%) |     11       6     133      8 |    3.30        3.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           386 386(100.00%) |     11       6     133      8 |    3.80        3.80
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       386 386(100.00%) |     11       6     133      8 |    3.80        3.80
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           392 392(100.00%) |     11       6     133      8 |    4.00        4.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       392 392(100.00%) |     11       6     133      8 |    4.00        4.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           399 399(100.00%) |     11       6     133      8 |    4.00        4.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       399 399(100.00%) |     11       6     133      8 |    4.00        4.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           406 406(100.00%) |     11       6     133      8 |    3.90        3.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       406 406(100.00%) |     11       6     133      8 |    3.90        3.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           412 412(100.00%) |     11       6     133      8 |    3.80        3.80
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       412 412(100.00%) |     11       6     133      8 |    3.80        3.80
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           425 425(100.00%) |     11       6     133      8 |    3.50        3.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       425 425(100.00%) |     11       6     133      8 |    3.50        3.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           431 431(100.00%) |     10       6     133      8 |    4.00        4.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       431 431(100.00%) |     10       6     133      8 |    4.00        4.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           436 436(100.00%) |     10       6     133      8 |    4.00        4.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       436 436(100.00%) |     10       6     133      8 |    4.00        4.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           444 444(100.00%) |     10       6     133      8 |    3.60        3.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       444 444(100.00%) |     10       6     133      8 |    3.60        3.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           452 452(100.00%) |     10       6     133      8 |    3.90        3.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       452 452(100.00%) |     10       6     133      8 |    3.90        3.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           461 461(100.00%) |     10       6     133      8 |    4.10        4.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       461 461(100.00%) |     10       6     133      8 |    4.10        4.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           468 468(100.00%) |     10       6     133      8 |    3.50        3.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       468 468(100.00%) |     10       6     133      8 |    3.50        3.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           475 475(100.00%) |     10       6     133      8 |    3.60        3.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       475 475(100.00%) |     10       6     133      8 |    3.60        3.60
+    
+    [2023-02-22 07:42:58,389] fv-az454-862/INFO/locust.runners: Shape test updating to 24 users at 1.00 spawn rate
+    [2023-02-22 07:42:58,389] fv-az454-862/INFO/locust.runners: Ramping to 24 users at a rate of 1.00 per second
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           485 485(100.00%) |     10       6     133      8 |    3.90        3.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       485 485(100.00%) |     10       6     133      8 |    3.90        3.90
+    
+    [2023-02-22 07:43:00,391] fv-az454-862/INFO/locust.runners: All users spawned: {"WebsiteUser": 24} (24 total users)
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           495 495(100.00%) |     10       6     133      8 |    4.10        4.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       495 495(100.00%) |     10       6     133      8 |    4.10        4.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           503 503(100.00%) |     10       6     133      8 |    4.20        4.20
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       503 503(100.00%) |     10       6     133      8 |    4.20        4.20
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           506 506(100.00%) |     10       6     133      8 |    4.30        4.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       506 506(100.00%) |     10       6     133      8 |    4.30        4.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           515 515(100.00%) |     10       6     133      8 |    3.90        3.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       515 515(100.00%) |     10       6     133      8 |    3.90        3.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           523 523(100.00%) |     10       6     133      8 |    4.00        4.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       523 523(100.00%) |     10       6     133      8 |    4.00        4.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           534 534(100.00%) |     10       6     133      8 |    3.70        3.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       534 534(100.00%) |     10       6     133      8 |    3.70        3.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           543 543(100.00%) |     10       6     133      8 |    4.00        4.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       543 543(100.00%) |     10       6     133      8 |    4.00        4.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           558 558(100.00%) |     10       6     133      8 |    4.00        4.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       558 558(100.00%) |     10       6     133      8 |    4.00        4.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           566 566(100.00%) |     10       6     133      8 |    5.10        5.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       566 566(100.00%) |     10       6     133      8 |    5.10        5.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           573 573(100.00%) |     10       6     133      8 |    5.00        5.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       573 573(100.00%) |     10       6     133      8 |    5.00        5.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           581 581(100.00%) |     10       6     133      8 |    5.10        5.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       581 581(100.00%) |     10       6     133      8 |    5.10        5.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           590 590(100.00%) |     10       6     133      8 |    4.60        4.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       590 590(100.00%) |     10       6     133      8 |    4.60        4.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           598 598(100.00%) |     10       6     133      8 |    4.50        4.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       598 598(100.00%) |     10       6     133      8 |    4.50        4.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           608 608(100.00%) |     10       6     133      8 |    4.00        4.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       608 608(100.00%) |     10       6     133      8 |    4.00        4.00
+    
+    [2023-02-22 07:43:28,412] fv-az454-862/INFO/locust.runners: Shape test updating to 27 users at 1.00 spawn rate
+    [2023-02-22 07:43:28,413] fv-az454-862/INFO/locust.runners: Ramping to 27 users at a rate of 1.00 per second
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           620 620(100.00%) |     10       6     133      8 |    4.30        4.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       620 620(100.00%) |     10       6     133      8 |    4.30        4.30
+    
+    [2023-02-22 07:43:30,414] fv-az454-862/INFO/locust.runners: All users spawned: {"WebsiteUser": 27} (27 total users)
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           631 631(100.00%) |     10       6     133      8 |    4.50        4.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       631 631(100.00%) |     10       6     133      8 |    4.50        4.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           640 640(100.00%) |     10       6     133      8 |    4.70        4.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       640 640(100.00%) |     10       6     133      8 |    4.70        4.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           650 650(100.00%) |     10       6     133      8 |    5.30        5.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       650 650(100.00%) |     10       6     133      8 |    5.30        5.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           661 661(100.00%) |     10       6     133      8 |    5.30        5.30
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       661 661(100.00%) |     10       6     133      8 |    5.30        5.30
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           669 669(100.00%) |     10       6     133      8 |    5.40        5.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       669 669(100.00%) |     10       6     133      8 |    5.40        5.40
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           678 678(100.00%) |     10       6     133      8 |    5.00        5.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       678 678(100.00%) |     10       6     133      8 |    5.00        5.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           688 688(100.00%) |     10       6     133      8 |    4.90        4.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       688 688(100.00%) |     10       6     133      8 |    4.90        4.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           697 697(100.00%) |     10       6     133      8 |    4.50        4.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       697 697(100.00%) |     10       6     133      8 |    4.50        4.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           709 709(100.00%) |     10       6     133      8 |    4.70        4.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       709 709(100.00%) |     10       6     133      8 |    4.70        4.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           715 715(100.00%) |     10       6     133      8 |    4.70        4.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       715 715(100.00%) |     10       6     133      8 |    4.70        4.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           725 725(100.00%) |     10       6     133      8 |    4.60        4.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       725 725(100.00%) |     10       6     133      8 |    4.60        4.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           732 732(100.00%) |     10       6     133      8 |    4.50        4.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       732 732(100.00%) |     10       6     133      8 |    4.50        4.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           742 742(100.00%) |     10       6     133      8 |    4.50        4.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       742 742(100.00%) |     10       6     133      8 |    4.50        4.50
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           749 749(100.00%) |     10       6     133      8 |    4.50        4.50
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       749 749(100.00%) |     10       6     133      8 |    4.50        4.50
+    
+    [2023-02-22 07:43:58,434] fv-az454-862/INFO/locust.runners: Shape test updating to 30 users at 1.00 spawn rate
+    [2023-02-22 07:43:58,435] fv-az454-862/INFO/locust.runners: Ramping to 30 users at a rate of 1.00 per second
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           764 764(100.00%) |     10       6     133      8 |    3.90        3.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       764 764(100.00%) |     10       6     133      8 |    3.90        3.90
+    
+    [2023-02-22 07:44:00,436] fv-az454-862/INFO/locust.runners: All users spawned: {"WebsiteUser": 30} (30 total users)
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           778 778(100.00%) |     10       6     133      8 |    4.90        4.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       778 778(100.00%) |     10       6     133      8 |    4.90        4.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           784 784(100.00%) |     10       6     133      8 |    5.10        5.10
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       784 784(100.00%) |     10       6     133      8 |    5.10        5.10
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           800 800(100.00%) |      9       6     133      8 |    5.40        5.40
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       800 800(100.00%) |      9       6     133      8 |    5.40        5.40
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           806 806(100.00%) |      9       6     133      8 |    5.90        5.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       806 806(100.00%) |      9       6     133      8 |    5.90        5.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           819 819(100.00%) |      9       6     133      8 |    5.80        5.80
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       819 819(100.00%) |      9       6     133      8 |    5.80        5.80
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           827 827(100.00%) |      9       6     133      8 |    5.60        5.60
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       827 827(100.00%) |      9       6     133      8 |    5.60        5.60
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           838 838(100.00%) |      9       6     133      8 |    5.00        5.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       838 838(100.00%) |      9       6     133      8 |    5.00        5.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           850 850(100.00%) |      9       6     133      8 |    5.20        5.20
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       850 850(100.00%) |      9       6     133      8 |    5.20        5.20
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           862 862(100.00%) |      9       6     133      8 |    5.00        5.00
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       862 862(100.00%) |      9       6     133      8 |    5.00        5.00
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           867 867(100.00%) |      9       6     133      8 |    5.20        5.20
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       867 867(100.00%) |      9       6     133      8 |    5.20        5.20
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           884 884(100.00%) |      9       6     133      8 |    4.90        4.90
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       884 884(100.00%) |      9       6     133      8 |    4.90        4.90
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           894 894(100.00%) |      9       6     133      8 |    5.70        5.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       894 894(100.00%) |      9       6     133      8 |    5.70        5.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           906 906(100.00%) |      9       6     133      8 |    5.70        5.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       906 906(100.00%) |      9       6     133      8 |    5.70        5.70
+    
+    Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+    GET      /users                                                                           911 911(100.00%) |      9       6     133      8 |    5.70        5.70
+    --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+             Aggregated                                                                       911 911(100.00%) |      9       6     133      8 |    5.70        5.70
+    
+    [2023-02-22 07:44:28,455] fv-az454-862/INFO/locust.runners: Shape test stopping
+    [2023-02-22 07:44:28,458] fv-az454-862/INFO/locust.main: --run-time limit reached, shutting down
+    [2023-02-22 07:44:28,458] fv-az454-862/INFO/locust.main: Starting Locust 2.14.2
+    [2023-02-22 07:44:28,458] fv-az454-862/INFO/locust.main: Shutting down (exit code 0)
+    
+[2023-02-22 07:44:28 DEBUG] [activity:235]   => succeeded with '[{'name': '/users', 'method': 'GET', 'last_request_timestamp': 1677051867.7314231, 'start_time': 1677051568.3274941, 'num_requests': 911, 'num_none_requests': 0, 'num_failures': 911, 'total_response_time': 8950.684309000502, 'max_response_time': 133.5228120000238, 'min_response_time': 6.053942999983519, 'total_content_length': 0, 'response_times': {'120.0': 1, '79': 1, '80': 1, '70': 1, '8': 430, '90': 1, '110.0': 2, '130.0': 2, '15': 15, '9': 292, '85': 1, '11': 13, '10': 48, '14': 19, '12': 12, '7': 59, '18': 1, '16': 1, '17': 1, '19': 1, '13': 6, '6': 1, '27': 1, '20': 1}, 'num_reqs_per_sec': {'1677051568': 1, '1677051569': 1, '1677051570': 1, '1677051571': 1, '1677051574': 1, '1677051576': 1, '1677051578': 1, '1677051579': 2, '1677051580': 1, '1677051582': 1, '1677051585': 2, '1677051586': 1, '1677051588': 1, '1677051593': 1, '1677051594': 1, '1677051595': 3, '1677051598': 1, '1677051599': 2, '1677051600': 1, '1677051601': 1, '1677051603': 2, '1677051604': 1, '1677051606': 2, '1677051607': 1, '1677051608': 1, '1677051609': 1, '1677051610': 2, '1677051613': 1, '1677051615': 3, '1677051616': 1, '1677051617': 3, '1677051618': 2, '1677051620': 1, '1677051621': 3, '1677051622': 2, '1677051624': 1, '1677051625': 1, '1677051626': 1, '1677051627': 1, '1677051628': 2, '1677051629': 2, '1677051630': 1, '1677051631': 5, '1677051632': 1, '1677051634': 2, '1677051635': 2, '1677051637': 2, '1677051638': 2, '1677051640': 1, '1677051641': 1, '1677051642': 4, '1677051643': 2, '1677051644': 2, '1677051645': 1, '1677051646': 1, '1677051648': 1, '1677051649': 2, '1677051650': 1, '1677051651': 1, '1677051652': 2, '1677051653': 1, '1677051654': 4, '1677051655': 3, '1677051657': 3, '1677051658': 3, '1677051659': 1, '1677051660': 2, '1677051661': 2, '1677051662': 2, '1677051663': 2, '1677051664': 4, '1677051665': 1, '1677051666': 2, '1677051667': 2, '1677051668': 3, '1677051669': 3, '1677051670': 1, '1677051671': 2, '1677051672': 2, '1677051674': 4, '1677051675': 1, '1677051676': 3, '1677051677': 2, '1677051678': 1, '1677051679': 1, '1677051680': 3, '1677051681': 2, '1677051682': 2, '1677051683': 1, '1677051684': 5, '1677051685': 3, '1677051686': 4, '1677051687': 2, '1677051688': 3, '1677051689': 2, '1677051690': 3, '1677051692': 3, '1677051693': 3, '1677051694': 3, '1677051695': 3, '1677051696': 6, '1677051697': 1, '1677051698': 4, '1677051699': 4, '1677051700': 2, '1677051701': 4, '1677051702': 1, '1677051703': 5, '1677051704': 2, '1677051705': 4, '1677051706': 2, '1677051707': 2, '1677051708': 3, '1677051709': 4, '1677051710': 3, '1677051711': 1, '1677051713': 5, '1677051714': 2, '1677051715': 2, '1677051716': 5, '1677051717': 5, '1677051718': 4, '1677051719': 3, '1677051720': 4, '1677051721': 2, '1677051722': 2, '1677051723': 2, '1677051724': 3, '1677051725': 5, '1677051726': 6, '1677051727': 3, '1677051728': 3, '1677051729': 3, '1677051730': 2, '1677051731': 6, '1677051732': 5, '1677051733': 3, '1677051734': 3, '1677051735': 2, '1677051736': 5, '1677051737': 5, '1677051738': 3, '1677051739': 2, '1677051740': 3, '1677051741': 1, '1677051742': 4, '1677051743': 3, '1677051744': 3, '1677051745': 6, '1677051746': 5, '1677051747': 2, '1677051748': 3, '1677051749': 3, '1677051750': 3, '1677051751': 6, '1677051752': 1, '1677051753': 8, '1677051754': 3, '1677051755': 3, '1677051756': 5, '1677051757': 4, '1677051758': 1, '1677051759': 4, '1677051760': 3, '1677051761': 3, '1677051762': 6, '1677051763': 8, '1677051764': 1, '1677051765': 5, '1677051766': 3, '1677051767': 2, '1677051768': 3, '1677051769': 5, '1677051770': 5, '1677051771': 3, '1677051772': 5, '1677051773': 3, '1677051774': 4, '1677051775': 3, '1677051776': 4, '1677051777': 4, '1677051778': 5, '1677051779': 5, '1677051780': 5, '1677051781': 4, '1677051782': 4, '1677051783': 5, '1677051784': 1, '1677051785': 2, '1677051786': 5, '1677051787': 4, '1677051788': 3, '1677051789': 4, '1677051790': 5, '1677051791': 7, '1677051792': 5, '1677051793': 4, '1677051794': 3, '1677051795': 11, '1677051796': 6, '1677051797': 2, '1677051798': 5, '1677051799': 3, '1677051800': 4, '1677051801': 3, '1677051802': 4, '1677051803': 4, '1677051804': 5, '1677051805': 4, '1677051806': 6, '1677051807': 5, '1677051808': 4, '1677051809': 6, '1677051810': 6, '1677051811': 5, '1677051812': 5, '1677051813': 7, '1677051814': 5, '1677051815': 3, '1677051816': 7, '1677051817': 6, '1677051818': 2, '1677051819': 4, '1677051820': 4, '1677051821': 6, '1677051822': 2, '1677051823': 6, '1677051824': 5, '1677051825': 5, '1677051826': 7, '1677051827': 6, '1677051828': 3, '1677051829': 2, '1677051830': 4, '1677051831': 5, '1677051832': 3, '1677051833': 5, '1677051834': 5, '1677051835': 5, '1677051836': 3, '1677051837': 4, '1677051838': 7, '1677051839': 8, '1677051840': 6, '1677051841': 6, '1677051842': 7, '1677051843': 3, '1677051844': 8, '1677051845': 7, '1677051846': 2, '1677051847': 4, '1677051848': 6, '1677051849': 7, '1677051850': 4, '1677051851': 2, '1677051852': 9, '1677051853': 3, '1677051854': 5, '1677051855': 8, '1677051856': 4, '1677051857': 8, '1677051858': 3, '1677051859': 3, '1677051860': 5, '1677051861': 9, '1677051862': 7, '1677051863': 5, '1677051864': 5, '1677051865': 6, '1677051866': 3, '1677051867': 4}, 'num_fail_per_sec': {'1677051568': 1, '1677051569': 1, '1677051570': 1, '1677051571': 1, '1677051574': 1, '1677051576': 1, '1677051578': 1, '1677051579': 2, '1677051580': 1, '1677051582': 1, '1677051585': 2, '1677051586': 1, '1677051588': 1, '1677051593': 1, '1677051594': 1, '1677051595': 3, '1677051598': 1, '1677051599': 2, '1677051600': 1, '1677051601': 1, '1677051603': 2, '1677051604': 1, '1677051606': 2, '1677051607': 1, '1677051608': 1, '1677051609': 1, '1677051610': 2, '1677051613': 1, '1677051615': 3, '1677051616': 1, '1677051617': 3, '1677051618': 2, '1677051620': 1, '1677051621': 3, '1677051622': 2, '1677051624': 1, '1677051625': 1, '1677051626': 1, '1677051627': 1, '1677051628': 2, '1677051629': 2, '1677051630': 1, '1677051631': 5, '1677051632': 1, '1677051634': 2, '1677051635': 2, '1677051637': 2, '1677051638': 2, '1677051640': 1, '1677051641': 1, '1677051642': 4, '1677051643': 2, '1677051644': 2, '1677051645': 1, '1677051646': 1, '1677051648': 1, '1677051649': 2, '1677051650': 1, '1677051651': 1, '1677051652': 2, '1677051653': 1, '1677051654': 4, '1677051655': 3, '1677051657': 3, '1677051658': 3, '1677051659': 1, '1677051660': 2, '1677051661': 2, '1677051662': 2, '1677051663': 2, '1677051664': 4, '1677051665': 1, '1677051666': 2, '1677051667': 2, '1677051668': 3, '1677051669': 3, '1677051670': 1, '1677051671': 2, '1677051672': 2, '1677051674': 4, '1677051675': 1, '1677051676': 3, '1677051677': 2, '1677051678': 1, '1677051679': 1, '1677051680': 3, '1677051681': 2, '1677051682': 2, '1677051683': 1, '1677051684': 5, '1677051685': 3, '1677051686': 4, '1677051687': 2, '1677051688': 3, '1677051689': 2, '1677051690': 3, '1677051692': 3, '1677051693': 3, '1677051694': 3, '1677051695': 3, '1677051696': 6, '1677051697': 1, '1677051698': 4, '1677051699': 4, '1677051700': 2, '1677051701': 4, '1677051702': 1, '1677051703': 5, '1677051704': 2, '1677051705': 4, '1677051706': 2, '1677051707': 2, '1677051708': 3, '1677051709': 4, '1677051710': 3, '1677051711': 1, '1677051713': 5, '1677051714': 2, '1677051715': 2, '1677051716': 5, '1677051717': 5, '1677051718': 4, '1677051719': 3, '1677051720': 4, '1677051721': 2, '1677051722': 2, '1677051723': 2, '1677051724': 3, '1677051725': 5, '1677051726': 6, '1677051727': 3, '1677051728': 3, '1677051729': 3, '1677051730': 2, '1677051731': 6, '1677051732': 5, '1677051733': 3, '1677051734': 3, '1677051735': 2, '1677051736': 5, '1677051737': 5, '1677051738': 3, '1677051739': 2, '1677051740': 3, '1677051741': 1, '1677051742': 4, '1677051743': 3, '1677051744': 3, '1677051745': 6, '1677051746': 5, '1677051747': 2, '1677051748': 3, '1677051749': 3, '1677051750': 3, '1677051751': 6, '1677051752': 1, '1677051753': 8, '1677051754': 3, '1677051755': 3, '1677051756': 5, '1677051757': 4, '1677051758': 1, '1677051759': 4, '1677051760': 3, '1677051761': 3, '1677051762': 6, '1677051763': 8, '1677051764': 1, '1677051765': 5, '1677051766': 3, '1677051767': 2, '1677051768': 3, '1677051769': 5, '1677051770': 5, '1677051771': 3, '1677051772': 5, '1677051773': 3, '1677051774': 4, '1677051775': 3, '1677051776': 4, '1677051777': 4, '1677051778': 5, '1677051779': 5, '1677051780': 5, '1677051781': 4, '1677051782': 4, '1677051783': 5, '1677051784': 1, '1677051785': 2, '1677051786': 5, '1677051787': 4, '1677051788': 3, '1677051789': 4, '1677051790': 5, '1677051791': 7, '1677051792': 5, '1677051793': 4, '1677051794': 3, '1677051795': 11, '1677051796': 6, '1677051797': 2, '1677051798': 5, '1677051799': 3, '1677051800': 4, '1677051801': 3, '1677051802': 4, '1677051803': 4, '1677051804': 5, '1677051805': 4, '1677051806': 6, '1677051807': 5, '1677051808': 4, '1677051809': 6, '1677051810': 6, '1677051811': 5, '1677051812': 5, '1677051813': 7, '1677051814': 5, '1677051815': 3, '1677051816': 7, '1677051817': 6, '1677051818': 2, '1677051819': 4, '1677051820': 4, '1677051821': 6, '1677051822': 2, '1677051823': 6, '1677051824': 5, '1677051825': 5, '1677051826': 7, '1677051827': 6, '1677051828': 3, '1677051829': 2, '1677051830': 4, '1677051831': 5, '1677051832': 3, '1677051833': 5, '1677051834': 5, '1677051835': 5, '1677051836': 3, '1677051837': 4, '1677051838': 7, '1677051839': 8, '1677051840': 6, '1677051841': 6, '1677051842': 7, '1677051843': 3, '1677051844': 8, '1677051845': 7, '1677051846': 2, '1677051847': 4, '1677051848': 6, '1677051849': 7, '1677051850': 4, '1677051851': 2, '1677051852': 9, '1677051853': 3, '1677051854': 5, '1677051855': 8, '1677051856': 4, '1677051857': 8, '1677051858': 3, '1677051859': 3, '1677051860': 5, '1677051861': 9, '1677051862': 7, '1677051863': 5, '1677051864': 5, '1677051865': 6, '1677051866': 3, '1677051867': 4}}]'
+[2023-02-22 07:44:28 DEBUG] [__init__:459] Applying after-control 'reliably' on 'activity'
+[2023-02-22 07:44:28 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-02-22 07:44:28 DEBUG] [__init__:459] Applying after-control 'reliably' on 'activity'
+[2023-02-22 07:44:28 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-02-22 07:44:28 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'activity'
+[2023-02-22 07:44:28 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaostracing/oltp.py'
+[2023-02-22 07:44:28 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'activity'
+[2023-02-22 07:44:28 DEBUG] [python:196] Control 'after_activity_control' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-22 07:44:29 DEBUG] [__init__:459] Applying after-control 'reliably' on 'method'
+[2023-02-22 07:44:29 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2023-02-22 07:44:29 WARNING] [run:707] Rollbacks were explicitly requested to be played
+[2023-02-22 07:44:29 INFO] [run:944] Let's rollback...
+[2023-02-22 07:44:29 DEBUG] [__init__:459] Applying before-control 'reliably' on 'rollback'
+[2023-02-22 07:44:29 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2023-02-22 07:44:29 INFO] [rollback:31] No declared rollbacks, let's move on.
+[2023-02-22 07:44:29 DEBUG] [__init__:459] Applying after-control 'reliably' on 'rollback'
+[2023-02-22 07:44:29 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2023-02-22 07:44:29 INFO] [run:511] Experiment ended with status: completed
+[2023-02-22 07:44:29 DEBUG] [__init__:459] Applying after-control 'reliably' on 'experiment'
+[2023-02-22 07:44:29 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_experiment_control'
+[2023-02-22 07:44:29 DEBUG] [__init__:459] Applying after-control 'reliably-integration-opentelemetry' on 'experiment'
+[2023-02-22 07:44:29 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'after_experiment_control'
+[2023-02-22 07:44:29 DEBUG] [__init__:459] Applying after-control 'reliably-integration-slack' on 'experiment'
+[2023-02-22 07:44:29 DEBUG] [python:196] Control 'after_experiment_control' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosslack/control.py'
+[2023-02-22 07:44:30 DEBUG] [__init__:103] Cleaning up controls
+[2023-02-22 07:44:30 DEBUG] [__init__:112] Cleaning up control 'reliably'
+[2023-02-22 07:44:30 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2023-02-22 07:44:30 DEBUG] [__init__:265] Cleaning up global control 'reliably-integration-opentelemetry'
+[2023-02-22 07:44:30 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaostracing/oltp.py' does not declare 'cleanup_control'
+[2023-02-22 07:44:30 DEBUG] [__init__:265] Cleaning up global control 'reliably-integration-slack'
+[2023-02-22 07:44:30 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosslack/control.py' does not declare 'cleanup_control'
+[2023-02-22 07:44:30 INFO] [experiment:236] Finishing Reliably execution...
+[2023-02-22 07:44:30 DEBUG] [experiment:156] Stopping Reliably state checker now
+[2023-02-22 07:44:31 INFO] [experiment:289] Finished Reliably execution. Bye!
+[2023-02-22 07:44:31 DEBUG] [caching:42] Clearing activities cache
