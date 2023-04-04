@@ -1,0 +1,70 @@
+[2023-04-04T20:20:48.941129+00:00 INFO] [plan:194] ################################################################################
+[2023-04-04T20:20:48.941263+00:00 INFO] [plan:195] Starting Reliably experiment: https://app.reliably.dev/api/v1/organization/53c4af8a-6385-4a6a-891d-4286fb3cb8d8/experiments/c71acf34-63ac-46e3-bcc7-d5f2a556a43c/raw
+[2023-04-04T20:20:49.202847+00:00 DEBUG] [caching:24] Building activity cache...
+[2023-04-04T20:20:49.202985+00:00 DEBUG] [caching:35] Cached 1 activities
+[2023-04-04T20:20:49.203098+00:00 INFO] [experiment:58] Validating the experiment's syntax
+[2023-04-04T20:20:49.203150+00:00 DEBUG] [configuration:63] Loading configuration...
+[2023-04-04T20:20:49.203190+00:00 DEBUG] [secret:78] Loading secrets...
+[2023-04-04T20:20:49.203224+00:00 DEBUG] [secret:103] Done loading secrets
+[2023-04-04T20:20:49.215227+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2023-04-04T20:20:49.215311+00:00 INFO] [experiment:109] Experiment looks valid
+[2023-04-04T20:20:49.215348+00:00 DEBUG] [caching:42] Clearing activities cache
+[2023-04-04T20:20:49.215394+00:00 DEBUG] [caching:24] Building activity cache...
+[2023-04-04T20:20:49.215426+00:00 DEBUG] [caching:35] Cached 1 activities
+[2023-04-04T20:20:49.215519+00:00 DEBUG] [configuration:63] Loading configuration...
+[2023-04-04T20:20:49.215556+00:00 DEBUG] [secret:78] Loading secrets...
+[2023-04-04T20:20:49.215586+00:00 DEBUG] [secret:103] Done loading secrets
+[2023-04-04T20:20:49.215619+00:00 DEBUG] [configuration:160] Loading dynamic configuration...
+[2023-04-04T20:20:49.215703+00:00 INFO] [run:369] Running experiment: Latency remains under 200ms
+[2023-04-04T20:20:49.217726+00:00 DEBUG] [__init__:64] Initializing controls
+[2023-04-04T20:20:49.217796+00:00 DEBUG] [__init__:73] Initializing control 'reliably'
+[2023-04-04T20:20:49.217865+00:00 DEBUG] [python:196] Control 'configure_control' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py'
+[2023-04-04T20:20:49.217966+00:00 DEBUG] [experiment:410] Configure Reliably's experiment control
+[2023-04-04T20:20:49.559680+00:00 INFO] [experiment:192] Reliably execution: 93b03b42-2f32-436e-9fff-5fa518593820
+[2023-04-04T20:20:49.866291+00:00 DEBUG] [experiment:552] Sending plan 'ee16a298-e364-49fb-abcc-8bef149e74f1' status: running
+[2023-04-04T20:20:50.402807+00:00 DEBUG] [experiment:78] Starting Reliably state checker now
+[2023-04-04T20:20:50.403005+00:00 INFO] [run:396] Steady-state strategy: after-method-only
+[2023-04-04T20:20:50.403559+00:00 INFO] [run:400] Rollbacks strategy: always
+[2023-04-04T20:20:50.403652+00:00 DEBUG] [__init__:459] Applying before-control 'reliably' on 'experiment'
+[2023-04-04T20:20:50.403758+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_experiment_control'
+[2023-04-04T20:20:50.403824+00:00 INFO] [run:663] Playing your experiment's method now...
+[2023-04-04T20:20:50.403924+00:00 DEBUG] [__init__:459] Applying before-control 'reliably' on 'method'
+[2023-04-04T20:20:50.404002+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2023-04-04T20:20:50.404058+00:00 INFO] [activity:133] No declared activities, let's move on.
+[2023-04-04T20:20:50.404130+00:00 DEBUG] [__init__:459] Applying after-control 'reliably' on 'method'
+[2023-04-04T20:20:50.404204+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2023-04-04T20:20:50.404271+00:00 DEBUG] [run:590] Running steady-state hypothesis after the method
+[2023-04-04T20:20:50.404327+00:00 INFO] [hypothesis:186] Steady state hypothesis: capture-response-time-and-verify-it
+[2023-04-04T20:20:50.404418+00:00 DEBUG] [__init__:459] Applying before-control 'reliably' on 'hypothesis'
+[2023-04-04T20:20:50.404492+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_hypothesis_control'
+[2023-04-04T20:20:50.404570+00:00 DEBUG] [__init__:459] Applying before-control 'reliably' on 'activity'
+[2023-04-04T20:20:50.404644+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-04-04T20:20:50.404718+00:00 INFO] [activity:215] Probe: measure-endpoint-response-time
+[2023-04-04T20:20:50.813517+00:00 DEBUG] [python:33] Activity 'measure-endpoint-response-time' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/activities/http/probes.py'
+[2023-04-04T20:20:50.992209+00:00 DEBUG] [activity:235]   => succeeded with '0.110159'
+[2023-04-04T20:20:51.274257+00:00 DEBUG] [__init__:459] Applying after-control 'reliably' on 'activity'
+[2023-04-04T20:20:51.274507+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-04-04T20:20:51.274591+00:00 DEBUG] [hypothesis:226] allowed tolerance is {'name': 'validate-response-time', 'type': 'probe', 'provider': {'func': 'response_time_must_be_under', 'type': 'python', 'module': 'chaosreliably.activities.http.tolerances', 'arguments': {'latency': '${reliably_latency}'}}}
+[2023-04-04T20:20:51.274742+00:00 DEBUG] [python:33] Activity 'validate-response-time' loaded from '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/activities/http/tolerances.py'
+[2023-04-04T20:20:51.274904+00:00 DEBUG] [tolerances:13] Verify that response time is under: 0.2
+[2023-04-04T20:20:51.274966+00:00 INFO] [hypothesis:236] Steady state hypothesis is met!
+[2023-04-04T20:20:51.275046+00:00 DEBUG] [__init__:459] Applying after-control 'reliably' on 'hypothesis'
+[2023-04-04T20:20:51.275124+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_hypothesis_control'
+[2023-04-04T20:20:51.275206+00:00 WARNING] [run:706] Rollbacks were explicitly requested to be played
+[2023-04-04T20:20:51.275267+00:00 INFO] [run:943] Let's rollback...
+[2023-04-04T20:20:51.275344+00:00 DEBUG] [__init__:459] Applying before-control 'reliably' on 'rollback'
+[2023-04-04T20:20:51.275418+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2023-04-04T20:20:51.275470+00:00 INFO] [rollback:31] No declared rollbacks, let's move on.
+[2023-04-04T20:20:51.275539+00:00 DEBUG] [__init__:459] Applying after-control 'reliably' on 'rollback'
+[2023-04-04T20:20:51.275609+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2023-04-04T20:20:51.275670+00:00 INFO] [run:510] Experiment ended with status: completed
+[2023-04-04T20:20:51.275725+00:00 DEBUG] [__init__:459] Applying after-control 'reliably' on 'experiment'
+[2023-04-04T20:20:51.275798+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_experiment_control'
+[2023-04-04T20:20:51.275847+00:00 DEBUG] [__init__:103] Cleaning up controls
+[2023-04-04T20:20:51.275896+00:00 DEBUG] [__init__:112] Cleaning up control 'reliably'
+[2023-04-04T20:20:51.275964+00:00 DEBUG] [python:192] Control module '/opt/hostedtoolcache/Python/3.10.10/x64/lib/python3.10/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2023-04-04T20:20:51.276029+00:00 INFO] [experiment:245] Finishing Reliably execution...
+[2023-04-04T20:20:51.310672+00:00 DEBUG] [experiment:160] Stopping Reliably state checker now
+[2023-04-04T20:20:51.585361+00:00 DEBUG] [experiment:552] Sending plan 'ee16a298-e364-49fb-abcc-8bef149e74f1' status: completed
+[2023-04-04T20:20:52.413671+00:00 INFO] [experiment:298] Finished Reliably execution. Bye!
+[2023-04-04T20:20:52.413884+00:00 DEBUG] [caching:42] Clearing activities cache
