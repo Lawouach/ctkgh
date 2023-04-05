@@ -1,0 +1,105 @@
+[2023-04-05T11:32:06.577756+00:00 INFO] [plan:194] ################################################################################
+[2023-04-05T11:32:06.577924+00:00 INFO] [plan:195] Starting Reliably experiment: https://app.reliably.dev/api/v1/organization/53c4af8a-6385-4a6a-891d-4286fb3cb8d8/experiments/c71acf34-63ac-46e3-bcc7-d5f2a556a43c/raw
+[2023-04-05T11:32:06.578032+00:00 DEBUG] [__init__:206] Loading global control 'reliably-integration-prechecks-4d497aaa6e50b0318434e7e30728f92b'
+[2023-04-05T11:32:06.905473+00:00 DEBUG] [caching:24] Building activity cache...
+[2023-04-05T11:32:06.905647+00:00 DEBUG] [caching:35] Cached 1 activities
+[2023-04-05T11:32:06.905777+00:00 INFO] [experiment:58] Validating the experiment's syntax
+[2023-04-05T11:32:06.905835+00:00 DEBUG] [configuration:63] Loading configuration...
+[2023-04-05T11:32:06.905891+00:00 DEBUG] [secret:78] Loading secrets...
+[2023-04-05T11:32:06.905950+00:00 DEBUG] [secret:103] Done loading secrets
+[2023-04-05T11:32:06.928141+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2023-04-05T11:32:06.928249+00:00 INFO] [experiment:109] Experiment looks valid
+[2023-04-05T11:32:06.928293+00:00 DEBUG] [caching:42] Clearing activities cache
+[2023-04-05T11:32:06.928346+00:00 DEBUG] [caching:24] Building activity cache...
+[2023-04-05T11:32:06.928385+00:00 DEBUG] [caching:35] Cached 1 activities
+[2023-04-05T11:32:06.928478+00:00 DEBUG] [configuration:63] Loading configuration...
+[2023-04-05T11:32:06.928523+00:00 DEBUG] [secret:78] Loading secrets...
+[2023-04-05T11:32:06.928558+00:00 DEBUG] [secret:103] Done loading secrets
+[2023-04-05T11:32:06.928598+00:00 DEBUG] [configuration:160] Loading dynamic configuration...
+[2023-04-05T11:32:06.928689+00:00 INFO] [run:369] Running experiment: Latency remains under 200ms
+[2023-04-05T11:32:06.930625+00:00 DEBUG] [__init__:171] Initializing global control 'reliably-integration-prechecks-4d497aaa6e50b0318434e7e30728f92b'
+[2023-04-05T11:32:06.930740+00:00 DEBUG] [python:196] Control 'configure_control' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/prechecks.py'
+[2023-04-05T11:32:06.930888+00:00 DEBUG] [__init__:43] Missing URL for safeguard/precheck call
+[2023-04-05T11:32:06.930950+00:00 DEBUG] [__init__:64] Initializing controls
+[2023-04-05T11:32:06.930998+00:00 DEBUG] [__init__:73] Initializing control 'reliably'
+[2023-04-05T11:32:06.931048+00:00 DEBUG] [python:196] Control 'configure_control' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py'
+[2023-04-05T11:32:06.931137+00:00 DEBUG] [experiment:410] Configure Reliably's experiment control
+[2023-04-05T11:32:07.228620+00:00 INFO] [experiment:192] Reliably execution: 9cbe18d0-c194-4cdc-9120-aa81c1920809
+[2023-04-05T11:32:07.463913+00:00 DEBUG] [experiment:552] Sending plan '937093e7-04cd-4118-a370-0401f41ba94c' status: running
+[2023-04-05T11:32:08.021586+00:00 DEBUG] [experiment:78] Starting Reliably state checker now
+[2023-04-05T11:32:08.021742+00:00 INFO] [run:396] Steady-state strategy: after-method-only
+[2023-04-05T11:32:08.023016+00:00 INFO] [run:400] Rollbacks strategy: always
+[2023-04-05T11:32:08.023498+00:00 DEBUG] [__init__:459] Applying before-control 'reliably' on 'experiment'
+[2023-04-05T11:32:08.024136+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_experiment_control'
+[2023-04-05T11:32:08.024666+00:00 DEBUG] [__init__:459] Applying before-control 'reliably-integration-prechecks-4d497aaa6e50b0318434e7e30728f92b' on 'experiment'
+[2023-04-05T11:32:08.025110+00:00 DEBUG] [python:196] Control 'before_experiment_control' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/prechecks.py'
+[2023-04-05T11:32:08.025678+00:00 DEBUG] [__init__:484] Before-control 'reliably-integration-prechecks-4d497aaa6e50b0318434e7e30728f92b' failed
+Traceback (most recent call last):
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaoslib/control/__init__.py", line 465, in apply_controls
+    apply_python_control(
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaoslib/control/python.py", line 179, in apply_python_control
+    func(context=context, **arguments)
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/prechecks.py", line 29, in before_experiment_control
+    run_all(context, configuration, secrets)
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/__init__.py", line 193, in run_all
+    (handler or proxy).start_all(experiment, configuration, secrets)
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/__init__.py", line 142, in start_all
+    g.start(experiment, configuration, secrets)
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/__init__.py", line 77, in start
+    self.probes,
+    ^^^^^^^^^^^
+AttributeError: 'ReliablySafeguardGuardian' object has no attribute 'probes'
+[2023-04-05T11:32:08.028947+00:00 INFO] [run:663] Playing your experiment's method now...
+[2023-04-05T11:32:08.029071+00:00 DEBUG] [__init__:459] Applying before-control 'reliably' on 'method'
+[2023-04-05T11:32:08.029136+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2023-04-05T11:32:08.029187+00:00 INFO] [activity:133] No declared activities, let's move on.
+[2023-04-05T11:32:08.029251+00:00 DEBUG] [__init__:459] Applying after-control 'reliably' on 'method'
+[2023-04-05T11:32:08.029304+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2023-04-05T11:32:08.029365+00:00 DEBUG] [run:590] Running steady-state hypothesis after the method
+[2023-04-05T11:32:08.029421+00:00 INFO] [hypothesis:186] Steady state hypothesis: capture-response-time-and-verify-it
+[2023-04-05T11:32:08.029491+00:00 DEBUG] [__init__:459] Applying before-control 'reliably' on 'hypothesis'
+[2023-04-05T11:32:08.029546+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_hypothesis_control'
+[2023-04-05T11:32:08.029591+00:00 DEBUG] [__init__:459] Applying before-control 'reliably-integration-prechecks-4d497aaa6e50b0318434e7e30728f92b' on 'hypothesis'
+[2023-04-05T11:32:08.029639+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/prechecks.py' does not declare 'before_hypothesis_control'
+[2023-04-05T11:32:08.029705+00:00 DEBUG] [__init__:459] Applying before-control 'reliably' on 'activity'
+[2023-04-05T11:32:08.029755+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-04-05T11:32:08.029797+00:00 DEBUG] [__init__:459] Applying before-control 'reliably-integration-prechecks-4d497aaa6e50b0318434e7e30728f92b' on 'activity'
+[2023-04-05T11:32:08.029844+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/prechecks.py' does not declare 'before_activity_control'
+[2023-04-05T11:32:08.029898+00:00 INFO] [activity:215] Probe: measure-endpoint-response-time
+[2023-04-05T11:32:08.471691+00:00 DEBUG] [python:33] Activity 'measure-endpoint-response-time' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/activities/http/probes.py'
+[2023-04-05T11:32:08.860578+00:00 DEBUG] [activity:235]   => succeeded with '0.320741'
+[2023-04-05T11:32:09.156655+00:00 DEBUG] [__init__:459] Applying after-control 'reliably' on 'activity'
+[2023-04-05T11:32:09.156905+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-04-05T11:32:09.156980+00:00 DEBUG] [__init__:459] Applying after-control 'reliably-integration-prechecks-4d497aaa6e50b0318434e7e30728f92b' on 'activity'
+[2023-04-05T11:32:09.157045+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/prechecks.py' does not declare 'after_activity_control'
+[2023-04-05T11:32:09.157122+00:00 DEBUG] [hypothesis:226] allowed tolerance is {'name': 'validate-response-time', 'type': 'probe', 'provider': {'func': 'response_time_must_be_under', 'type': 'python', 'module': 'chaosreliably.activities.http.tolerances', 'arguments': {'latency': '${reliably_latency}'}}}
+[2023-04-05T11:32:09.157220+00:00 DEBUG] [python:33] Activity 'validate-response-time' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/activities/http/tolerances.py'
+[2023-04-05T11:32:09.157362+00:00 DEBUG] [tolerances:13] Verify that response time is under: 0.2
+[2023-04-05T11:32:09.157452+00:00 DEBUG] [__init__:459] Applying after-control 'reliably' on 'hypothesis'
+[2023-04-05T11:32:09.157515+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_hypothesis_control'
+[2023-04-05T11:32:09.157568+00:00 DEBUG] [__init__:459] Applying after-control 'reliably-integration-prechecks-4d497aaa6e50b0318434e7e30728f92b' on 'hypothesis'
+[2023-04-05T11:32:09.157624+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/prechecks.py' does not declare 'after_hypothesis_control'
+[2023-04-05T11:32:09.157701+00:00 CRITICAL] [run:601] Steady state probe 'measure-endpoint-response-time' is not in the given tolerance so failing this experiment
+[2023-04-05T11:32:09.157771+00:00 WARNING] [run:706] Rollbacks were explicitly requested to be played
+[2023-04-05T11:32:09.157829+00:00 INFO] [run:943] Let's rollback...
+[2023-04-05T11:32:09.157904+00:00 DEBUG] [__init__:459] Applying before-control 'reliably' on 'rollback'
+[2023-04-05T11:32:09.157964+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2023-04-05T11:32:09.158019+00:00 INFO] [rollback:31] No declared rollbacks, let's move on.
+[2023-04-05T11:32:09.158223+00:00 DEBUG] [__init__:459] Applying after-control 'reliably' on 'rollback'
+[2023-04-05T11:32:09.158282+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2023-04-05T11:32:09.158775+00:00 INFO] [run:510] Experiment ended with status: deviated
+[2023-04-05T11:32:09.158871+00:00 INFO] [run:512] The steady-state has deviated, a weakness may have been discovered
+[2023-04-05T11:32:09.158936+00:00 DEBUG] [__init__:459] Applying after-control 'reliably' on 'experiment'
+[2023-04-05T11:32:09.159003+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_experiment_control'
+[2023-04-05T11:32:09.159057+00:00 DEBUG] [__init__:459] Applying after-control 'reliably-integration-prechecks-4d497aaa6e50b0318434e7e30728f92b' on 'experiment'
+[2023-04-05T11:32:09.159116+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/prechecks.py' does not declare 'after_experiment_control'
+[2023-04-05T11:32:09.159170+00:00 DEBUG] [__init__:103] Cleaning up controls
+[2023-04-05T11:32:09.159230+00:00 DEBUG] [__init__:112] Cleaning up control 'reliably'
+[2023-04-05T11:32:09.159302+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2023-04-05T11:32:09.159358+00:00 DEBUG] [__init__:265] Cleaning up global control 'reliably-integration-prechecks-4d497aaa6e50b0318434e7e30728f92b'
+[2023-04-05T11:32:09.159413+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/prechecks.py' does not declare 'cleanup_control'
+[2023-04-05T11:32:09.159478+00:00 INFO] [experiment:245] Finishing Reliably execution...
+[2023-04-05T11:32:09.459778+00:00 DEBUG] [experiment:160] Stopping Reliably state checker now
+[2023-04-05T11:32:09.864848+00:00 DEBUG] [experiment:552] Sending plan '937093e7-04cd-4118-a370-0401f41ba94c' status: completed
+[2023-04-05T11:32:10.581481+00:00 INFO] [experiment:298] Finished Reliably execution. Bye!
+[2023-04-05T11:32:10.581728+00:00 DEBUG] [caching:42] Clearing activities cache
