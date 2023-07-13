@@ -1,0 +1,126 @@
+{
+  "chaoslib-version": "1.36.3",
+  "platform": "Linux-5.15.0-1041-azure-x86_64-with-glibc2.35",
+  "node": "fv-az167-406",
+  "experiment": {
+    "tags": [
+      "AWS",
+      "EKS"
+    ],
+    "title": "Describe an EKS cluster",
+    "method": [
+      {
+        "name": "describe-cluster",
+        "type": "probe",
+        "provider": {
+          "func": "describe_cluster",
+          "type": "python",
+          "module": "chaosaws.eks.probes",
+          "arguments": {
+            "name": "${name}"
+          }
+        }
+      }
+    ],
+    "version": "1.0.0",
+    "controls": [
+      {
+        "name": "reliably",
+        "provider": {
+          "type": "python",
+          "module": "chaosreliably.controls.experiment",
+          "arguments": {
+            "exp_id": "232cc6a2-b124-4d83-a335-862d0faa8a68",
+            "org_id": "53c4af8a-6385-4a6a-891d-4286fb3cb8d8"
+          }
+        }
+      }
+    ],
+    "extensions": [
+      {
+        "name": "reliably",
+        "pauses": [],
+        "termination": null,
+        "execution_url": "https://app.reliably.dev/executions/view/?id=0450d794-4896-4acf-9437-c4e447ab203d&exp=232cc6a2-b124-4d83-a335-862d0faa8a68",
+        "extra": [
+          {
+            "type": "url",
+            "provider": "github",
+            "topic": "commit",
+            "value": "https://github.com/Lawouach/ctkgh/tree/main/plans/0fbe9914-67ad-4843-8733-17da736abcee"
+          },
+          {
+            "type": "url",
+            "provider": "github",
+            "topic": "repo",
+            "value": "https://github.com/Lawouach/ctkgh"
+          },
+          {
+            "type": "url",
+            "provider": "github",
+            "topic": "run",
+            "value": "https://github.com/Lawouach/ctkgh/actions/runs/5548041506"
+          }
+        ],
+        "chaostoolkit_extensions": [
+          {
+            "name": "chaostoolkit-aws",
+            "version": "0.23.4"
+          }
+        ]
+      }
+    ],
+    "description": "This experiment should peform a non-destructive operation against your system. Still we recommend you try it against a non-production environment. This kind of experiment is useful when you want to measure how your system is performing.",
+    "configuration": {
+      "name": {
+        "key": "RELIABLY_PARAM_NAME",
+        "type": "env",
+        "default": "amazing-sheepdog-1681288074",
+        "env_var_type": "str"
+      }
+    },
+    "contributions": {}
+  },
+  "start": "2023-07-13T21:25:40.705979",
+  "status": "completed",
+  "deviated": false,
+  "steady_states": {
+    "before": null,
+    "after": null,
+    "during": []
+  },
+  "run": [
+    {
+      "activity": {
+        "name": "describe-cluster",
+        "type": "probe",
+        "provider": {
+          "func": "describe_cluster",
+          "type": "python",
+          "module": "chaosaws.eks.probes",
+          "arguments": {
+            "name": "${name}"
+          }
+        }
+      },
+      "output": null,
+      "start": "2023-07-13T21:25:42.299018",
+      "status": "failed",
+      "exception": [
+        "Traceback (most recent call last):\n",
+        "  File \"/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaoslib/provider/python.py\", line 56, in run_python_activity\n    return func(**arguments)\n           ^^^^^^^^^^^^^^^^^\n",
+        "  File \"/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosaws/eks/probes.py\", line 19, in describe_cluster\n    return client.describe_cluster(name=name)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/botocore/client.py\", line 534, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/botocore/client.py\", line 976, in _make_api_call\n    raise error_class(parsed_response, operation_name)\n",
+        "botocore.exceptions.ClientError: An error occurred (UnrecognizedClientException) when calling the DescribeCluster operation: The security token included in the request is invalid.\n",
+        "\nDuring handling of the above exception, another exception occurred:\n\n",
+        "chaoslib.exceptions.ActivityFailed: botocore.exceptions.ClientError: An error occurred (UnrecognizedClientException) when calling the DescribeCluster operation: The security token included in the request is invalid.\n"
+      ],
+      "end": "2023-07-13T21:25:43.505515",
+      "duration": 1.206497
+    }
+  ],
+  "rollbacks": [],
+  "end": "2023-07-13T21:25:43.822335",
+  "duration": 3.1216413974761963
+}

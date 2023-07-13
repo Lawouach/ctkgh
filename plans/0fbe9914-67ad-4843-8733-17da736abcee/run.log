@@ -1,0 +1,102 @@
+[2023-07-13T21:25:39.957584+00:00 INFO] [plan:263] ################################################################################
+[2023-07-13T21:25:39.957729+00:00 INFO] [plan:264] Starting Reliably experiment: https://app.reliably.dev/api/v1/organization/53c4af8a-6385-4a6a-891d-4286fb3cb8d8/experiments/232cc6a2-b124-4d83-a335-862d0faa8a68/raw
+[2023-07-13T21:25:40.334430+00:00 DEBUG] [caching:24] Building activity cache...
+[2023-07-13T21:25:40.334585+00:00 DEBUG] [caching:35] Cached 1 activities
+[2023-07-13T21:25:40.334701+00:00 INFO] [experiment:58] Validating the experiment's syntax
+[2023-07-13T21:25:40.335740+00:00 DEBUG] [configuration:63] Loading configuration...
+[2023-07-13T21:25:40.336164+00:00 DEBUG] [secret:78] Loading secrets...
+[2023-07-13T21:25:40.336236+00:00 DEBUG] [secret:103] Done loading secrets
+[2023-07-13T21:25:40.700078+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2023-07-13T21:25:40.700188+00:00 INFO] [experiment:109] Experiment looks valid
+[2023-07-13T21:25:40.700233+00:00 DEBUG] [caching:42] Clearing activities cache
+[2023-07-13T21:25:40.700300+00:00 DEBUG] [caching:24] Building activity cache...
+[2023-07-13T21:25:40.700343+00:00 DEBUG] [caching:35] Cached 1 activities
+[2023-07-13T21:25:40.700447+00:00 DEBUG] [configuration:63] Loading configuration...
+[2023-07-13T21:25:40.700503+00:00 DEBUG] [secret:78] Loading secrets...
+[2023-07-13T21:25:40.700542+00:00 DEBUG] [secret:103] Done loading secrets
+[2023-07-13T21:25:40.700578+00:00 DEBUG] [configuration:160] Loading dynamic configuration...
+[2023-07-13T21:25:40.700665+00:00 INFO] [run:369] Running experiment: Describe an EKS cluster
+[2023-07-13T21:25:40.706047+00:00 DEBUG] [__init__:64] Initializing controls
+[2023-07-13T21:25:40.706138+00:00 DEBUG] [__init__:73] Initializing control 'reliably'
+[2023-07-13T21:25:40.706198+00:00 DEBUG] [python:196] Control 'configure_control' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py'
+[2023-07-13T21:25:40.706311+00:00 DEBUG] [experiment:423] Configure Reliably's experiment control
+[2023-07-13T21:25:40.706460+00:00 DEBUG] [experiment:587] Sending plan '0fbe9914-67ad-4843-8733-17da736abcee' status: running
+[2023-07-13T21:25:41.478744+00:00 INFO] [experiment:202] Reliably execution: 0450d794-4896-4acf-9437-c4e447ab203d
+[2023-07-13T21:25:41.765754+00:00 DEBUG] [experiment:612] Sending execution state: {'current': 'running', 'started_on': '2023-07-13T21:25:40.706355+00:00', 'plan_id': '0fbe9914-67ad-4843-8733-17da736abcee'}
+[2023-07-13T21:25:42.293381+00:00 DEBUG] [experiment:81] Starting Reliably state checker now
+[2023-07-13T21:25:42.293498+00:00 INFO] [run:396] Steady-state strategy: default
+[2023-07-13T21:25:42.294587+00:00 INFO] [run:400] Rollbacks strategy: always
+[2023-07-13T21:25:42.294975+00:00 INFO] [run:405] No steady state hypothesis defined. That's ok, just exploring.
+[2023-07-13T21:25:42.295416+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'experiment'
+[2023-07-13T21:25:42.295842+00:00 DEBUG] [python:196] Control 'before_experiment_control' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py'
+[2023-07-13T21:25:42.296430+00:00 INFO] [run:679] Playing your experiment's method now...
+[2023-07-13T21:25:42.296872+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'method'
+[2023-07-13T21:25:42.297274+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2023-07-13T21:25:42.297724+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'activity'
+[2023-07-13T21:25:42.298117+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-07-13T21:25:42.298478+00:00 INFO] [activity:215] Probe: describe-cluster
+[2023-07-13T21:25:42.799043+00:00 DEBUG] [python:33] Activity 'describe-cluster' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosaws/eks/probes.py'
+[2023-07-13T21:25:42.799601+00:00 DEBUG] [__init__:67] The configuration key `aws_region` is not set, looking in the environment instead for `AWS_REGION` or `AWS_DEFAULT_REGION`
+[2023-07-13T21:25:42.799924+00:00 DEBUG] [__init__:76] Using AWS region 'eu-central-1'
+[2023-07-13T21:25:42.811261+00:00 DEBUG] [__init__:85] Client will be using profile 'default' from boto3 session
+[2023-07-13T21:25:42.879695+00:00 DEBUG] [probes:17] Describing EKS cluster: amazing-sheepdog-1681288074
+[2023-07-13T21:25:43.501584+00:00 DEBUG] [activity:292] Activity failed
+Traceback (most recent call last):
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+    return func(**arguments)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosaws/eks/probes.py", line 19, in describe_cluster
+    return client.describe_cluster(name=name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/botocore/client.py", line 534, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/botocore/client.py", line 976, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (UnrecognizedClientException) when calling the DescribeCluster operation: The security token included in the request is invalid.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaoslib/activity.py", line 285, in run_activity
+    result = run_python_activity(activity, configuration, secrets)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaoslib/provider/python.py", line 58, in run_python_activity
+    raise ActivityFailed(
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+    return func(**arguments)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosaws/eks/probes.py", line 19, in describe_cluster
+    return client.describe_cluster(name=name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/botocore/client.py", line 534, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/botocore/client.py", line 976, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+chaoslib.exceptions.ActivityFailed: botocore.exceptions.ClientError: An error occurred (UnrecognizedClientException) when calling the DescribeCluster operation: The security token included in the request is invalid.
+[2023-07-13T21:25:43.504327+00:00 ERROR] [activity:243]   => failed: botocore.exceptions.ClientError: An error occurred (UnrecognizedClientException) when calling the DescribeCluster operation: The security token included in the request is invalid.
+[2023-07-13T21:25:43.821547+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'activity'
+[2023-07-13T21:25:43.821729+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-07-13T21:25:43.821814+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'method'
+[2023-07-13T21:25:43.821871+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2023-07-13T21:25:43.821954+00:00 WARNING] [run:722] Rollbacks were explicitly requested to be played
+[2023-07-13T21:25:43.822006+00:00 INFO] [run:959] Let's rollback...
+[2023-07-13T21:25:43.822074+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'rollback'
+[2023-07-13T21:25:43.822134+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2023-07-13T21:25:43.822183+00:00 INFO] [rollback:31] No declared rollbacks, let's move on.
+[2023-07-13T21:25:43.822242+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'rollback'
+[2023-07-13T21:25:43.822292+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2023-07-13T21:25:43.822352+00:00 INFO] [run:510] Experiment ended with status: completed
+[2023-07-13T21:25:43.822405+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'experiment'
+[2023-07-13T21:25:43.822461+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_experiment_control'
+[2023-07-13T21:25:43.822507+00:00 DEBUG] [__init__:103] Cleaning up controls
+[2023-07-13T21:25:43.822554+00:00 DEBUG] [__init__:112] Cleaning up control 'reliably'
+[2023-07-13T21:25:43.822601+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2023-07-13T21:25:43.822649+00:00 INFO] [experiment:248] Finishing Reliably execution...
+[2023-07-13T21:25:43.855772+00:00 DEBUG] [experiment:163] Stopping Reliably state checker now
+[2023-07-13T21:25:43.856112+00:00 DEBUG] [experiment:494] Completing execution '0450d794-4896-4acf-9437-c4e447ab203d' status: completed
+[2023-07-13T21:25:44.202506+00:00 DEBUG] [experiment:587] Sending plan '0fbe9914-67ad-4843-8733-17da736abcee' status: completed
+[2023-07-13T21:25:44.519381+00:00 DEBUG] [experiment:612] Sending execution state: {'current': 'finished', 'status': 'completed', 'deviated': False, 'plan_id': '0fbe9914-67ad-4843-8733-17da736abcee'}
+[2023-07-13T21:25:45.087994+00:00 INFO] [experiment:311] Finished Reliably execution. Bye!
+[2023-07-13T21:25:45.088472+00:00 DEBUG] [caching:42] Clearing activities cache
