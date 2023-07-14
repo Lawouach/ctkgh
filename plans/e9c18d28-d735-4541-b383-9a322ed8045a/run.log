@@ -1,0 +1,93 @@
+[2023-07-14T06:59:44.103422+00:00 INFO] [plan:263] ################################################################################
+[2023-07-14T06:59:44.103662+00:00 INFO] [plan:264] Starting Reliably experiment: https://app.reliably.dev/api/v1/organization/53c4af8a-6385-4a6a-891d-4286fb3cb8d8/experiments/232cc6a2-b124-4d83-a335-862d0faa8a68/raw
+[2023-07-14T06:59:44.437884+00:00 DEBUG] [caching:24] Building activity cache...
+[2023-07-14T06:59:44.438062+00:00 DEBUG] [caching:35] Cached 1 activities
+[2023-07-14T06:59:44.438206+00:00 INFO] [experiment:58] Validating the experiment's syntax
+[2023-07-14T06:59:44.438272+00:00 DEBUG] [configuration:63] Loading configuration...
+[2023-07-14T06:59:44.438344+00:00 DEBUG] [secret:78] Loading secrets...
+[2023-07-14T06:59:44.438400+00:00 DEBUG] [secret:103] Done loading secrets
+[2023-07-14T06:59:44.608003+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2023-07-14T06:59:44.608149+00:00 INFO] [experiment:109] Experiment looks valid
+[2023-07-14T06:59:44.608198+00:00 DEBUG] [caching:42] Clearing activities cache
+[2023-07-14T06:59:44.608276+00:00 DEBUG] [caching:24] Building activity cache...
+[2023-07-14T06:59:44.608320+00:00 DEBUG] [caching:35] Cached 1 activities
+[2023-07-14T06:59:44.608434+00:00 DEBUG] [configuration:63] Loading configuration...
+[2023-07-14T06:59:44.608490+00:00 DEBUG] [secret:78] Loading secrets...
+[2023-07-14T06:59:44.608527+00:00 DEBUG] [secret:103] Done loading secrets
+[2023-07-14T06:59:44.608567+00:00 DEBUG] [configuration:160] Loading dynamic configuration...
+[2023-07-14T06:59:44.608705+00:00 INFO] [run:369] Running experiment: Describe an EKS cluster
+[2023-07-14T06:59:44.610811+00:00 DEBUG] [__init__:64] Initializing controls
+[2023-07-14T06:59:44.610923+00:00 DEBUG] [__init__:73] Initializing control 'reliably'
+[2023-07-14T06:59:44.610989+00:00 DEBUG] [python:196] Control 'configure_control' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py'
+[2023-07-14T06:59:44.611105+00:00 DEBUG] [experiment:423] Configure Reliably's experiment control
+[2023-07-14T06:59:44.611297+00:00 DEBUG] [experiment:587] Sending plan 'e9c18d28-d735-4541-b383-9a322ed8045a' status: running
+[2023-07-14T06:59:45.404237+00:00 INFO] [experiment:202] Reliably execution: 3a7d882f-0ade-4ef8-9623-d076f7bd105c
+[2023-07-14T06:59:45.721360+00:00 DEBUG] [experiment:612] Sending execution state: {'current': 'running', 'started_on': '2023-07-14T06:59:44.611161+00:00', 'plan_id': 'e9c18d28-d735-4541-b383-9a322ed8045a'}
+[2023-07-14T06:59:46.052089+00:00 DEBUG] [experiment:81] Starting Reliably state checker now
+[2023-07-14T06:59:46.052225+00:00 INFO] [run:396] Steady-state strategy: default
+[2023-07-14T06:59:46.053371+00:00 INFO] [run:400] Rollbacks strategy: always
+[2023-07-14T06:59:46.053661+00:00 INFO] [run:405] No steady state hypothesis defined. That's ok, just exploring.
+[2023-07-14T06:59:46.053998+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'experiment'
+[2023-07-14T06:59:46.054330+00:00 DEBUG] [python:196] Control 'before_experiment_control' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py'
+[2023-07-14T06:59:46.054895+00:00 INFO] [run:679] Playing your experiment's method now...
+[2023-07-14T06:59:46.055469+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'method'
+[2023-07-14T06:59:46.055792+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2023-07-14T06:59:46.056170+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'activity'
+[2023-07-14T06:59:46.056479+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-07-14T06:59:46.056872+00:00 INFO] [activity:215] Probe: describe-cluster
+[2023-07-14T06:59:46.641492+00:00 DEBUG] [python:33] Activity 'describe-cluster' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosaws/eks/probes.py'
+[2023-07-14T06:59:46.642179+00:00 DEBUG] [__init__:67] The configuration key `aws_region` is not set, looking in the environment instead for `AWS_REGION` or `AWS_DEFAULT_REGION`
+[2023-07-14T06:59:46.642464+00:00 DEBUG] [activity:292] Activity failed
+Traceback (most recent call last):
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+    return func(**arguments)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosaws/eks/probes.py", line 16, in describe_cluster
+    client = aws_client("eks", configuration, secrets)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosaws/__init__.py", line 73, in aws_client
+    raise InterruptExecution("AWS requires a region to be set!")
+chaoslib.exceptions.InterruptExecution: AWS requires a region to be set!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaoslib/activity.py", line 285, in run_activity
+    result = run_python_activity(activity, configuration, secrets)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaoslib/provider/python.py", line 58, in run_python_activity
+    raise ActivityFailed(
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+    return func(**arguments)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosaws/eks/probes.py", line 16, in describe_cluster
+    client = aws_client("eks", configuration, secrets)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosaws/__init__.py", line 73, in aws_client
+    raise InterruptExecution("AWS requires a region to be set!")
+chaoslib.exceptions.ActivityFailed: chaoslib.exceptions.InterruptExecution: AWS requires a region to be set!
+[2023-07-14T06:59:46.647756+00:00 ERROR] [activity:243]   => failed: chaoslib.exceptions.InterruptExecution: AWS requires a region to be set!
+[2023-07-14T06:59:47.025213+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'activity'
+[2023-07-14T06:59:47.025462+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-07-14T06:59:47.025609+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'method'
+[2023-07-14T06:59:47.025687+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2023-07-14T06:59:47.025780+00:00 WARNING] [run:722] Rollbacks were explicitly requested to be played
+[2023-07-14T06:59:47.025841+00:00 INFO] [run:959] Let's rollback...
+[2023-07-14T06:59:47.025923+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'rollback'
+[2023-07-14T06:59:47.025993+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2023-07-14T06:59:47.026049+00:00 INFO] [rollback:31] No declared rollbacks, let's move on.
+[2023-07-14T06:59:47.026120+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'rollback'
+[2023-07-14T06:59:47.026178+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2023-07-14T06:59:47.026262+00:00 INFO] [run:510] Experiment ended with status: completed
+[2023-07-14T06:59:47.026322+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'experiment'
+[2023-07-14T06:59:47.026380+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_experiment_control'
+[2023-07-14T06:59:47.026430+00:00 DEBUG] [__init__:103] Cleaning up controls
+[2023-07-14T06:59:47.026488+00:00 DEBUG] [__init__:112] Cleaning up control 'reliably'
+[2023-07-14T06:59:47.026550+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2023-07-14T06:59:47.026605+00:00 INFO] [experiment:248] Finishing Reliably execution...
+[2023-07-14T06:59:47.061878+00:00 DEBUG] [experiment:163] Stopping Reliably state checker now
+[2023-07-14T06:59:47.062357+00:00 DEBUG] [experiment:494] Completing execution '3a7d882f-0ade-4ef8-9623-d076f7bd105c' status: completed
+[2023-07-14T06:59:47.463300+00:00 DEBUG] [experiment:587] Sending plan 'e9c18d28-d735-4541-b383-9a322ed8045a' status: completed
+[2023-07-14T06:59:47.869771+00:00 DEBUG] [experiment:612] Sending execution state: {'current': 'finished', 'status': 'completed', 'deviated': False, 'plan_id': 'e9c18d28-d735-4541-b383-9a322ed8045a'}
+[2023-07-14T06:59:48.386726+00:00 INFO] [experiment:311] Finished Reliably execution. Bye!
+[2023-07-14T06:59:48.386991+00:00 DEBUG] [caching:42] Clearing activities cache
