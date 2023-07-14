@@ -1,0 +1,67 @@
+[2023-07-14T07:03:13.282117+00:00 INFO] [plan:263] ################################################################################
+[2023-07-14T07:03:13.282276+00:00 INFO] [plan:264] Starting Reliably experiment: https://app.reliably.dev/api/v1/organization/53c4af8a-6385-4a6a-891d-4286fb3cb8d8/experiments/232cc6a2-b124-4d83-a335-862d0faa8a68/raw
+[2023-07-14T07:03:13.552952+00:00 DEBUG] [caching:24] Building activity cache...
+[2023-07-14T07:03:13.553094+00:00 DEBUG] [caching:35] Cached 1 activities
+[2023-07-14T07:03:13.553205+00:00 INFO] [experiment:58] Validating the experiment's syntax
+[2023-07-14T07:03:13.553262+00:00 DEBUG] [configuration:63] Loading configuration...
+[2023-07-14T07:03:13.553318+00:00 DEBUG] [secret:78] Loading secrets...
+[2023-07-14T07:03:13.553368+00:00 DEBUG] [secret:103] Done loading secrets
+[2023-07-14T07:03:13.739572+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'validate_control'
+[2023-07-14T07:03:13.739686+00:00 INFO] [experiment:109] Experiment looks valid
+[2023-07-14T07:03:13.739733+00:00 DEBUG] [caching:42] Clearing activities cache
+[2023-07-14T07:03:13.739802+00:00 DEBUG] [caching:24] Building activity cache...
+[2023-07-14T07:03:13.739845+00:00 DEBUG] [caching:35] Cached 1 activities
+[2023-07-14T07:03:13.739948+00:00 DEBUG] [configuration:63] Loading configuration...
+[2023-07-14T07:03:13.740593+00:00 DEBUG] [secret:78] Loading secrets...
+[2023-07-14T07:03:13.740645+00:00 DEBUG] [secret:103] Done loading secrets
+[2023-07-14T07:03:13.740850+00:00 DEBUG] [configuration:160] Loading dynamic configuration...
+[2023-07-14T07:03:13.741023+00:00 INFO] [run:369] Running experiment: Describe an EKS cluster
+[2023-07-14T07:03:13.743031+00:00 DEBUG] [__init__:64] Initializing controls
+[2023-07-14T07:03:13.743109+00:00 DEBUG] [__init__:73] Initializing control 'reliably'
+[2023-07-14T07:03:13.743161+00:00 DEBUG] [python:196] Control 'configure_control' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py'
+[2023-07-14T07:03:13.743263+00:00 DEBUG] [experiment:423] Configure Reliably's experiment control
+[2023-07-14T07:03:13.743415+00:00 DEBUG] [experiment:587] Sending plan 'c8ea048c-43ce-4856-9820-1d114495107c' status: running
+[2023-07-14T07:03:14.364364+00:00 INFO] [experiment:202] Reliably execution: 8ba8c90c-29a6-4333-91da-8a6e2dc1f189
+[2023-07-14T07:03:14.653402+00:00 DEBUG] [experiment:612] Sending execution state: {'current': 'running', 'started_on': '2023-07-14T07:03:13.743302+00:00', 'plan_id': 'c8ea048c-43ce-4856-9820-1d114495107c'}
+[2023-07-14T07:03:14.981249+00:00 DEBUG] [experiment:81] Starting Reliably state checker now
+[2023-07-14T07:03:14.981361+00:00 INFO] [run:396] Steady-state strategy: default
+[2023-07-14T07:03:14.982249+00:00 INFO] [run:400] Rollbacks strategy: always
+[2023-07-14T07:03:14.982510+00:00 INFO] [run:405] No steady state hypothesis defined. That's ok, just exploring.
+[2023-07-14T07:03:14.982766+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'experiment'
+[2023-07-14T07:03:14.983027+00:00 DEBUG] [python:196] Control 'before_experiment_control' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py'
+[2023-07-14T07:03:14.983384+00:00 INFO] [run:679] Playing your experiment's method now...
+[2023-07-14T07:03:14.983661+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'method'
+[2023-07-14T07:03:14.983904+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_method_control'
+[2023-07-14T07:03:14.984200+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'activity'
+[2023-07-14T07:03:14.984442+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_activity_control'
+[2023-07-14T07:03:14.984768+00:00 INFO] [activity:215] Probe: describe-cluster
+[2023-07-14T07:03:15.394348+00:00 DEBUG] [python:33] Activity 'describe-cluster' loaded from '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosaws/eks/probes.py'
+[2023-07-14T07:03:15.394896+00:00 DEBUG] [__init__:67] The configuration key `aws_region` is not set, looking in the environment instead for `AWS_REGION` or `AWS_DEFAULT_REGION`
+[2023-07-14T07:03:15.395197+00:00 DEBUG] [__init__:76] Using AWS region 'eu-central-1'
+[2023-07-14T07:03:15.406207+00:00 DEBUG] [__init__:85] Client will be using profile 'default' from boto3 session
+[2023-07-14T07:03:15.449213+00:00 DEBUG] [probes:17] Describing EKS cluster: amazing-sheepdog-1681288074
+[2023-07-14T07:03:16.035756+00:00 DEBUG] [activity:235]   => succeeded with '{'ResponseMetadata': {'RequestId': '4d6364ca-89fd-4891-b59a-f453e5c200de', 'HTTPStatusCode': 200, 'HTTPHeaders': {'date': 'Fri, 14 Jul 2023 07:03:15 GMT', 'content-type': 'application/json', 'content-length': '3381', 'connection': 'keep-alive', 'x-amzn-requestid': '4d6364ca-89fd-4891-b59a-f453e5c200de', 'access-control-allow-origin': '*', 'access-control-allow-headers': '*,Authorization,Date,X-Amz-Date,X-Amz-Security-Token,X-Amz-Target,content-type,x-amz-content-sha256,x-amz-user-agent,x-amzn-platform-id,x-amzn-trace-id', 'x-amz-apigw-id': 'ICrwJG9VliAFhrg=', 'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE,OPTIONS', 'access-control-expose-headers': 'x-amzn-errortype,x-amzn-errormessage,x-amzn-trace-id,x-amzn-requestid,x-amz-apigw-id,date', 'x-amzn-trace-id': 'Root=1-64b0f333-79ae05022835a25a325a2edc'}, 'RetryAttempts': 0}, 'cluster': {'name': 'amazing-sheepdog-1681288074', 'arn': 'arn:aws:eks:eu-central-1:912823331559:cluster/amazing-sheepdog-1681288074', 'createdAt': datetime.datetime(2023, 4, 12, 8, 28, 23, 870000, tzinfo=tzlocal()), 'version': '1.25', 'endpoint': 'https://16659CB7A902C9A7EF2F8F8631B6CA2F.gr7.eu-central-1.eks.amazonaws.com', 'roleArn': 'arn:aws:iam::912823331559:role/eksctl-amazing-sheepdog-1681288074-clu-ServiceRole-T1LMQFZL6UU0', 'resourcesVpcConfig': {'subnetIds': ['subnet-09345d629d850e2db', 'subnet-0807a3da277f76784', 'subnet-0ee9d67b77a59cd04', 'subnet-0ac37ee694893b51f', 'subnet-091ca85ab6a479b90', 'subnet-035561c0bf2a650e2'], 'securityGroupIds': ['sg-0ced8280c1c6ab813'], 'clusterSecurityGroupId': 'sg-0fc932a507a8671dd', 'vpcId': 'vpc-038eef5b9b8024f6e', 'endpointPublicAccess': True, 'endpointPrivateAccess': False, 'publicAccessCidrs': ['0.0.0.0/0']}, 'kubernetesNetworkConfig': {'serviceIpv4Cidr': '10.100.0.0/16', 'ipFamily': 'ipv4'}, 'logging': {'clusterLogging': [{'types': ['api', 'audit', 'authenticator', 'controllerManager', 'scheduler'], 'enabled': False}]}, 'identity': {'oidc': {'issuer': 'https://oidc.eks.eu-central-1.amazonaws.com/id/16659CB7A902C9A7EF2F8F8631B6CA2F'}}, 'status': 'ACTIVE', 'certificateAuthority': {'data': 'LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1EUXhNakE0TXpNeE1Gb1hEVE16TURRd09UQTRNek14TUZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTjRKCnY1bGlib2ZqVzZGcHplZEhrWHV2MlQwVnFqMzMyNUVQM2VlK2dFOWl5eVhKRmVVbThmMS94M1BVSUxxb3BhMkcKVzRzRk9yQ08zRUtqTWZ2SWdWcjh5bk1ueTF1L2NJeGd1WEcwY0JJZHNoZEQyV3dzcHd3S2ZrYnJDZ0luSS9uVApvQjJqZHpwQ29xQjVLaWFjb084c1ZKQkNQcGExN3Vrck5iVW5FbDVJWEtSeG0wbGFrRmNQcGFBYzc4L0FoSlVVCjVZTkJIdXRpQTFRVXNSM291ZzhZV3JnZThNNHY5SGZRUXN3eW8rS2VJOHRmaVZKV1FtM21iQ2RVY0hJcHUrTTEKVjM3cnl5UjcyK3N6NXhDRk02cXdWeUpxMFRhblExbVNoUXl6WEdkL2I0THdhT3pUR053bmY5cHRDZ1ZrUEpLSApFMmlWNlMwRHBWRUdzQXQ0eGxzQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZDOENxMDZ0QjFOWDRhREtnME9PdWsvbjVhTVNNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBRXdHTzdMMlcvc1lUWEx3R3ROTAplUTFmRHpCR2hFT0ZZV2lDc0RPWWptNi9tOFhwZVIybDh6VWN6c1NJbzVudm5uUThmbTRyMzBrekpGWXdSblFtCm41c3JqeFBnQ1Fkd3hsQ0tmYndXRTV0R1JxVWlJWmdvdDRkMEZMTnJHT1JsdVlVTzhNOE4rWWtiM09qKzdWOFUKVkZ5d2xsejRmZlEvM3BjMGsrS2xaOFg0TTI2b0JoalR5SEZqQjV0Z3FZb2dXbEs4dm9HaGdvakx0d2ovMU5TRwpDT2Nnc20xQ09CRTA2R0N4L1hRaHd2WnpUbEpoYnBLWDN6QXdzUnRySlJ5VWUxYkpld3N6Z09BZEQ3RGFXVVdkCm5XbC9FajY3WFBhd0xIS3d6cUk5QlhjZUMyQitlMGh5NWJsN2d2MnRPOHBueVZpZVdTdVFFRVYzaVF3UE5kOHkKMzkwPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=='}, 'platformVersion': 'eks.4', 'tags': {'aws:cloudformation:stack-name': 'eksctl-amazing-sheepdog-1681288074-cluster', 'alpha.eksctl.io/cluster-name': 'amazing-sheepdog-1681288074', 'aws:cloudformation:stack-id': 'arn:aws:cloudformation:eu-central-1:912823331559:stack/eksctl-amazing-sheepdog-1681288074-cluster/ec2f8bc0-d90b-11ed-946c-06d7de8e78ac', 'eksctl.cluster.k8s.io/v1alpha1/cluster-name': 'amazing-sheepdog-1681288074', 'alpha.eksctl.io/cluster-oidc-enabled': 'true', 'aws:cloudformation:logical-id': 'ControlPlane', 'alpha.eksctl.io/eksctl-version': '0.136.0', 'Name': 'eksctl-amazing-sheepdog-1681288074-cluster/ControlPlane'}}}'
+[2023-07-14T07:03:16.299804+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'activity'
+[2023-07-14T07:03:16.299980+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_activity_control'
+[2023-07-14T07:03:16.300064+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'method'
+[2023-07-14T07:03:16.300121+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_method_control'
+[2023-07-14T07:03:16.300198+00:00 WARNING] [run:722] Rollbacks were explicitly requested to be played
+[2023-07-14T07:03:16.300249+00:00 INFO] [run:959] Let's rollback...
+[2023-07-14T07:03:16.300425+00:00 DEBUG] [__init__:460] Applying before-control 'reliably' on 'rollback'
+[2023-07-14T07:03:16.300482+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'before_rollback_control'
+[2023-07-14T07:03:16.300531+00:00 INFO] [rollback:31] No declared rollbacks, let's move on.
+[2023-07-14T07:03:16.300590+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'rollback'
+[2023-07-14T07:03:16.300641+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_rollback_control'
+[2023-07-14T07:03:16.300701+00:00 INFO] [run:510] Experiment ended with status: completed
+[2023-07-14T07:03:16.300753+00:00 DEBUG] [__init__:460] Applying after-control 'reliably' on 'experiment'
+[2023-07-14T07:03:16.300806+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'after_experiment_control'
+[2023-07-14T07:03:16.300855+00:00 DEBUG] [__init__:103] Cleaning up controls
+[2023-07-14T07:03:16.300902+00:00 DEBUG] [__init__:112] Cleaning up control 'reliably'
+[2023-07-14T07:03:16.300950+00:00 DEBUG] [python:192] Control module '/home/runner/work/ctkgh/ctkgh/.venv/lib/python3.11/site-packages/chaosreliably/controls/experiment.py' does not declare 'cleanup_control'
+[2023-07-14T07:03:16.301002+00:00 INFO] [experiment:248] Finishing Reliably execution...
+[2023-07-14T07:03:16.349153+00:00 DEBUG] [experiment:163] Stopping Reliably state checker now
+[2023-07-14T07:03:16.349582+00:00 DEBUG] [experiment:494] Completing execution '8ba8c90c-29a6-4333-91da-8a6e2dc1f189' status: completed
+[2023-07-14T07:03:16.663104+00:00 DEBUG] [experiment:587] Sending plan 'c8ea048c-43ce-4856-9820-1d114495107c' status: completed
+[2023-07-14T07:03:16.988538+00:00 DEBUG] [experiment:612] Sending execution state: {'current': 'finished', 'status': 'completed', 'deviated': False, 'plan_id': 'c8ea048c-43ce-4856-9820-1d114495107c'}
+[2023-07-14T07:03:17.410697+00:00 INFO] [experiment:311] Finished Reliably execution. Bye!
+[2023-07-14T07:03:17.410899+00:00 DEBUG] [caching:42] Clearing activities cache

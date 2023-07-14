@@ -1,0 +1,201 @@
+{
+  "chaoslib-version": "1.36.3",
+  "platform": "Linux-5.15.0-1041-azure-x86_64-with-glibc2.35",
+  "node": "fv-az629-687",
+  "experiment": {
+    "tags": [
+      "AWS",
+      "EKS"
+    ],
+    "title": "Describe an EKS cluster",
+    "method": [
+      {
+        "name": "describe-cluster",
+        "type": "probe",
+        "provider": {
+          "func": "describe_cluster",
+          "type": "python",
+          "module": "chaosaws.eks.probes",
+          "arguments": {
+            "name": "${name}"
+          }
+        }
+      }
+    ],
+    "version": "1.0.0",
+    "controls": [
+      {
+        "name": "reliably",
+        "provider": {
+          "type": "python",
+          "module": "chaosreliably.controls.experiment",
+          "arguments": {
+            "exp_id": "232cc6a2-b124-4d83-a335-862d0faa8a68",
+            "org_id": "53c4af8a-6385-4a6a-891d-4286fb3cb8d8"
+          }
+        }
+      }
+    ],
+    "extensions": [
+      {
+        "name": "reliably",
+        "pauses": [],
+        "termination": null,
+        "execution_url": "https://app.reliably.dev/executions/view/?id=8ba8c90c-29a6-4333-91da-8a6e2dc1f189&exp=232cc6a2-b124-4d83-a335-862d0faa8a68",
+        "extra": [
+          {
+            "type": "url",
+            "provider": "github",
+            "topic": "commit",
+            "value": "https://github.com/Lawouach/ctkgh/tree/main/plans/c8ea048c-43ce-4856-9820-1d114495107c"
+          },
+          {
+            "type": "url",
+            "provider": "github",
+            "topic": "repo",
+            "value": "https://github.com/Lawouach/ctkgh"
+          },
+          {
+            "type": "url",
+            "provider": "github",
+            "topic": "run",
+            "value": "https://github.com/Lawouach/ctkgh/actions/runs/5551420349"
+          }
+        ],
+        "chaostoolkit_extensions": [
+          {
+            "name": "chaostoolkit-aws",
+            "version": "0.23.4"
+          }
+        ]
+      }
+    ],
+    "description": "This experiment should peform a non-destructive operation against your system. Still we recommend you try it against a non-production environment. This kind of experiment is useful when you want to measure how your system is performing.",
+    "configuration": {
+      "name": {
+        "key": "RELIABLY_PARAM_NAME",
+        "type": "env",
+        "default": "amazing-sheepdog-1681288074",
+        "env_var_type": "str"
+      }
+    },
+    "contributions": {}
+  },
+  "start": "2023-07-14T07:03:13.742970",
+  "status": "completed",
+  "deviated": false,
+  "steady_states": {
+    "before": null,
+    "after": null,
+    "during": []
+  },
+  "run": [
+    {
+      "activity": {
+        "name": "describe-cluster",
+        "type": "probe",
+        "provider": {
+          "func": "describe_cluster",
+          "type": "python",
+          "module": "chaosaws.eks.probes",
+          "arguments": {
+            "name": "${name}"
+          }
+        }
+      },
+      "output": {
+        "ResponseMetadata": {
+          "RequestId": "4d6364ca-89fd-4891-b59a-f453e5c200de",
+          "HTTPStatusCode": 200,
+          "HTTPHeaders": {
+            "date": "Fri, 14 Jul 2023 07:03:15 GMT",
+            "content-type": "application/json",
+            "content-length": "3381",
+            "connection": "keep-alive",
+            "x-amzn-requestid": "4d6364ca-89fd-4891-b59a-f453e5c200de",
+            "access-control-allow-origin": "*",
+            "access-control-allow-headers": "*,Authorization,Date,X-Amz-Date,X-Amz-Security-Token,X-Amz-Target,content-type,x-amz-content-sha256,x-amz-user-agent,x-amzn-platform-id,x-amzn-trace-id",
+            "x-amz-apigw-id": "ICrwJG9VliAFhrg=",
+            "access-control-allow-methods": "GET,HEAD,PUT,POST,DELETE,OPTIONS",
+            "access-control-expose-headers": "x-amzn-errortype,x-amzn-errormessage,x-amzn-trace-id,x-amzn-requestid,x-amz-apigw-id,date",
+            "x-amzn-trace-id": "Root=1-64b0f333-79ae05022835a25a325a2edc"
+          },
+          "RetryAttempts": 0
+        },
+        "cluster": {
+          "name": "amazing-sheepdog-1681288074",
+          "arn": "arn:aws:eks:eu-central-1:912823331559:cluster/amazing-sheepdog-1681288074",
+          "createdAt": "2023-04-12T08:28:23.870000+00:00",
+          "version": "1.25",
+          "endpoint": "https://16659CB7A902C9A7EF2F8F8631B6CA2F.gr7.eu-central-1.eks.amazonaws.com",
+          "roleArn": "arn:aws:iam::912823331559:role/eksctl-amazing-sheepdog-1681288074-clu-ServiceRole-T1LMQFZL6UU0",
+          "resourcesVpcConfig": {
+            "subnetIds": [
+              "subnet-09345d629d850e2db",
+              "subnet-0807a3da277f76784",
+              "subnet-0ee9d67b77a59cd04",
+              "subnet-0ac37ee694893b51f",
+              "subnet-091ca85ab6a479b90",
+              "subnet-035561c0bf2a650e2"
+            ],
+            "securityGroupIds": [
+              "sg-0ced8280c1c6ab813"
+            ],
+            "clusterSecurityGroupId": "sg-0fc932a507a8671dd",
+            "vpcId": "vpc-038eef5b9b8024f6e",
+            "endpointPublicAccess": true,
+            "endpointPrivateAccess": false,
+            "publicAccessCidrs": [
+              "0.0.0.0/0"
+            ]
+          },
+          "kubernetesNetworkConfig": {
+            "serviceIpv4Cidr": "10.100.0.0/16",
+            "ipFamily": "ipv4"
+          },
+          "logging": {
+            "clusterLogging": [
+              {
+                "types": [
+                  "api",
+                  "audit",
+                  "authenticator",
+                  "controllerManager",
+                  "scheduler"
+                ],
+                "enabled": false
+              }
+            ]
+          },
+          "identity": {
+            "oidc": {
+              "issuer": "https://oidc.eks.eu-central-1.amazonaws.com/id/16659CB7A902C9A7EF2F8F8631B6CA2F"
+            }
+          },
+          "status": "ACTIVE",
+          "certificateAuthority": {
+            "data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1EUXhNakE0TXpNeE1Gb1hEVE16TURRd09UQTRNek14TUZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTjRKCnY1bGlib2ZqVzZGcHplZEhrWHV2MlQwVnFqMzMyNUVQM2VlK2dFOWl5eVhKRmVVbThmMS94M1BVSUxxb3BhMkcKVzRzRk9yQ08zRUtqTWZ2SWdWcjh5bk1ueTF1L2NJeGd1WEcwY0JJZHNoZEQyV3dzcHd3S2ZrYnJDZ0luSS9uVApvQjJqZHpwQ29xQjVLaWFjb084c1ZKQkNQcGExN3Vrck5iVW5FbDVJWEtSeG0wbGFrRmNQcGFBYzc4L0FoSlVVCjVZTkJIdXRpQTFRVXNSM291ZzhZV3JnZThNNHY5SGZRUXN3eW8rS2VJOHRmaVZKV1FtM21iQ2RVY0hJcHUrTTEKVjM3cnl5UjcyK3N6NXhDRk02cXdWeUpxMFRhblExbVNoUXl6WEdkL2I0THdhT3pUR053bmY5cHRDZ1ZrUEpLSApFMmlWNlMwRHBWRUdzQXQ0eGxzQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZDOENxMDZ0QjFOWDRhREtnME9PdWsvbjVhTVNNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBRXdHTzdMMlcvc1lUWEx3R3ROTAplUTFmRHpCR2hFT0ZZV2lDc0RPWWptNi9tOFhwZVIybDh6VWN6c1NJbzVudm5uUThmbTRyMzBrekpGWXdSblFtCm41c3JqeFBnQ1Fkd3hsQ0tmYndXRTV0R1JxVWlJWmdvdDRkMEZMTnJHT1JsdVlVTzhNOE4rWWtiM09qKzdWOFUKVkZ5d2xsejRmZlEvM3BjMGsrS2xaOFg0TTI2b0JoalR5SEZqQjV0Z3FZb2dXbEs4dm9HaGdvakx0d2ovMU5TRwpDT2Nnc20xQ09CRTA2R0N4L1hRaHd2WnpUbEpoYnBLWDN6QXdzUnRySlJ5VWUxYkpld3N6Z09BZEQ3RGFXVVdkCm5XbC9FajY3WFBhd0xIS3d6cUk5QlhjZUMyQitlMGh5NWJsN2d2MnRPOHBueVZpZVdTdVFFRVYzaVF3UE5kOHkKMzkwPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+          },
+          "platformVersion": "eks.4",
+          "tags": {
+            "aws:cloudformation:stack-name": "eksctl-amazing-sheepdog-1681288074-cluster",
+            "alpha.eksctl.io/cluster-name": "amazing-sheepdog-1681288074",
+            "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-central-1:912823331559:stack/eksctl-amazing-sheepdog-1681288074-cluster/ec2f8bc0-d90b-11ed-946c-06d7de8e78ac",
+            "eksctl.cluster.k8s.io/v1alpha1/cluster-name": "amazing-sheepdog-1681288074",
+            "alpha.eksctl.io/cluster-oidc-enabled": "true",
+            "aws:cloudformation:logical-id": "ControlPlane",
+            "alpha.eksctl.io/eksctl-version": "0.136.0",
+            "Name": "eksctl-amazing-sheepdog-1681288074-cluster/ControlPlane"
+          }
+        }
+      },
+      "start": "2023-07-14T07:03:14.985227",
+      "status": "succeeded",
+      "end": "2023-07-14T07:03:16.035912",
+      "duration": 1.050685
+    }
+  ],
+  "rollbacks": [],
+  "end": "2023-07-14T07:03:16.300685",
+  "duration": 2.559626340866089
+}
